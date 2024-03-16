@@ -58,6 +58,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   hint: 'enter your email',
                   icon: Icons.email_outlined,
                   show: false,
+                  isPassword: false,
                 ),
                 SizedBox(
                   height: 16,
@@ -66,6 +67,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   hint: 'enter your password',
                   icon: Icons.lock_outline,
                   show: false,
+                  isPassword: true,
                 ),
                 SizedBox(
                   height: 16,
@@ -74,6 +76,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   hint: 'Re-enter your password',
                   icon: Icons.lock_outline,
                   show: false,
+                  isPassword: true,
                 ),
                 SizedBox(
                   height: 16,
@@ -85,6 +88,7 @@ class _MySignInPageState extends State<MySignInPage> {
                       children: [
                         Checkbox(
                           value: isChecked,
+                          activeColor: Colors.blue,
                           onChanged: (newValue) {
                             setState(() {
                               isChecked = newValue ?? false;

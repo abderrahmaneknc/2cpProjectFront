@@ -40,6 +40,7 @@ class MyRessetPass extends StatelessWidget {
                 hint: 'Re-type your password',
                 icon: Icons.lock_outline,
                 show: false,
+                isPassword: true,
               ),
               SizedBox(
                 height: 16,
@@ -48,6 +49,7 @@ class MyRessetPass extends StatelessWidget {
                 hint: 'Re-type your password',
                 icon: Icons.lock_outline,
                 show: false,
+                isPassword: true,
               ),
             ],
           ),

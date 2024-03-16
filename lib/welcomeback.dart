@@ -59,6 +59,7 @@ class _WelcbackState extends State<Welcback> {
                   hint: 'enter your email',
                   icon: Icons.email_outlined,
                   show: false,
+                  isPassword: false,
                 ),
                 SizedBox(
                   height: 16,
@@ -66,7 +67,8 @@ class _WelcbackState extends State<Welcback> {
                 MyBoxes(
                   hint: 'enter your password',
                   icon: Icons.lock_outline,
-                  show: false,
+                  show: true,
+                  isPassword: true,
                 ),
                 SizedBox(
                   height: 25,
