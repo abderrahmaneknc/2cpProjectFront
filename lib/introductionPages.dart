@@ -48,24 +48,40 @@ class _IntroductionPagesState extends State<IntroductionPages> {
                 text1: 'Mind Connect',
                 text2:
                     'Connect with brilliant minds, explore their expertise, and collaborate effortlessly throught our app.',
+                ww: 248,
+                hh: 278,
+                f1: 28,
+                f2: 20,
               ),
               Intropagetmplt(
                 picture: 'assets/ph2.jpg',
                 text1: 'Expert Insight',
                 text2:
                     'Dive into exper-authored blogs across diverse fields on our app, igniting inspiration and insight with each read.',
+                ww: 248,
+                hh: 278,
+                f1: 28,
+                f2: 20,
               ),
               Intropagetmplt(
                 picture: 'assets/ph3.jpg',
                 text1: 'Active Rewards',
                 text2:
                     'Be active, aern points, unlock exlusive benefits tailored to you -from special features to rewards.',
+                ww: 248,
+                hh: 278,
+                f1: 28,
+                f2: 20,
               ),
               Intropagetmplt(
                 picture: 'assets/ph4.jpg',
                 text1: 'Diverse Learning',
                 text2:
                     'Discover diverse resources and live courses in one app, tailores enhance your learning journey across various fields.',
+                ww: 248,
+                hh: 278,
+                f1: 28,
+                f2: 20,
               ),
             ],
           ),
@@ -81,7 +97,7 @@ class _IntroductionPagesState extends State<IntroductionPages> {
                   onPressed: () {
                     Navigator.pushNamed(context, '//');
                   },
-                  size:10,
+                  size: 10,
                 ),
               ),
             ),

@@ -6,11 +6,20 @@ class Intropagetmplt extends StatelessWidget {
     required this.picture,
     required this.text1,
     required this.text2,
+    required this.ww,
+    required this.hh,
+    required this.f1,
+    required this.f2,
   }) : super(key: key);
 
   final String picture;
   final String text1;
   final String text2;
+  final double ww;
+  final double hh;
+  final double f1;
+
+  final double f2;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +36,8 @@ class Intropagetmplt extends StatelessWidget {
               borderRadius: BorderRadius.circular(
                   20), // Adjust the border radius as needed
               child: Container(
-                width: 248,
-                height: 278,
+                width: ww,
+                height: hh,
                 child: Image.asset(
                   picture,
                   fit: BoxFit.cover,
@@ -42,7 +51,7 @@ class Intropagetmplt extends StatelessWidget {
                 Text(
                   text1,
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: f1,
                     color: Color(0xFF2D3D51),
                     fontWeight: FontWeight.bold,
                   ),
@@ -51,7 +60,7 @@ class Intropagetmplt extends StatelessWidget {
                 Text(
                   text2,
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: f2,
                     color: Colors.grey[600],
                   ),
                   textAlign: TextAlign.center,
