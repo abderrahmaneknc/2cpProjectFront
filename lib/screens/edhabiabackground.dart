@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prj/edahabia.dart';
+import 'package:prj/screens/edahabia.dart';
 
-import 'txtbutton.dart';
+import '../items/txtbutton.dart';
 
 class Edahbback extends StatelessWidget {
   const Edahbback({Key? key});

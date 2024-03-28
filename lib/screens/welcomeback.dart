@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'boxes.dart';
+import '../items/boxes.dart';
 import 'forgotpassword.dart';
-import 'elvButton.dart';
-import 'txtbutton.dart';
+import '../items/elvButton.dart';
+import '../items/txtbutton.dart';
 
 class Welcback extends StatefulWidget {
   const Welcback({Key? key}) : super(key: key);

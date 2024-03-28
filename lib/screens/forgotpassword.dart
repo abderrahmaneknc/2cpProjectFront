@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'boxes.dart';
-import 'digits.dart';
-import 'elvButton.dart';
+import '../items/boxes.dart';
+import '../items/digits.dart';
+import '../items/elvButton.dart';
 
 class buildSheet extends StatelessWidget {
   const buildSheet({super.key});

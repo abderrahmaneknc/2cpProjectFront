@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'elvButton.dart';
-import 'numberbox.dart';
-import 'rectanglebutton.dart';
+import '../items/elvButton.dart';
+import '../items/numberbox.dart';
+import '../items/rectanglebutton.dart';
 
 class Edahabia extends StatelessWidget {
   const Edahabia({Key? key}) : super(key: key);

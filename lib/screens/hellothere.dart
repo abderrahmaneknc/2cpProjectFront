@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'txtbutton.dart';
-import 'boxes.dart';
-import 'elvButton.dart';
+import '../items/txtbutton.dart';
+import '../items/boxes.dart';
+import '../items/elvButton.dart';
 
 class MySignInPage extends StatefulWidget {
   const MySignInPage({Key? key}) : super(key: key);
