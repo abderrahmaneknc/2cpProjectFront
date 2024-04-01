@@ -125,7 +125,7 @@ class _WelcbackState extends State<Welcback> {
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
-                  onPressed: () {},
+                  onPressed: () { Navigator.pushNamed(context, 'profile');},
                 ),
                 SizedBox(
                   height: 20,
@@ -153,7 +153,9 @@ class _WelcbackState extends State<Welcback> {
                   logo: true,
                   assets: 'assets/google_logo_icon_147282.png',
                   txtcolor: Colors.black,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'profile');
+                  },
                 ),
                 SizedBox(
                   height: 100,

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:prj/screens/profilescreen.dart';
 import 'screens/edhabiabackground.dart';
 import 'screens/hellothere.dart';
 import 'screens/introductionPages.dart';
+import 'screens/success.dart';
 import 'screens/viewprofile.dart';
-import 'success.dart';
 import 'screens/welcomeback.dart';
 
 void main() {
@@ -17,14 +18,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'profile',
+      initialRoute: '/',
       routes: {
         '/': (context) => IntroductionPages(),
         '//': (context) => Welcback(),
         '///': (context) => MySignInPage(),
         '////': (context) => Edahbback(),
         '/////': (context) => Success(),
-         'profile': (context) => ViewProfile(),
+         'viewprofile': (context) => ViewProfile(),
+         'profile':(context) => MyProfile(),
       },
     );
   }

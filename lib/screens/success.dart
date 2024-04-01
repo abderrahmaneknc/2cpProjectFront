@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'items/elvButton.dart';
-import 'screens/intropagetemplate.dart';
+
+import '../items/elvButton.dart';
+import 'intropagetemplate.dart';
+
 
 class Success extends StatelessWidget {
   const Success({Key? key}) : super(key: key);

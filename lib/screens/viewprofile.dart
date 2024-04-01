@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import '../items/clickbutton.dart';
@@ -19,7 +21,7 @@ class ViewProfile extends StatelessWidget {
               width: double.infinity,
               height: 291 * height,
               child: Image.asset(
-                'assets/Screenshot 2024-03-19 013106.png',
+                'assets/anime-Profile-Pictures.jpg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -34,9 +36,14 @@ class ViewProfile extends StatelessWidget {
               top: 24 * height,
               left: 24 * width,
               child: CircleAvatar(
-                  child: Icon(
-                    Icons.arrow_back_ios_rounded,
-                    color: Colors.white,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'profile');
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Colors.white,
+                    ),
                   ),
                   backgroundColor: Colors.grey.withOpacity(0.5),
                   radius: 13 * width),
@@ -84,7 +91,7 @@ class ViewProfile extends StatelessWidget {
                     child: Image(
                         fit: BoxFit.cover,
                         image: AssetImage(
-                          'assets/Screenshot 2024-03-20 024617.png',
+                          'assets/images.jpg',
                         )),
                   ),
                 ),
@@ -94,118 +101,175 @@ class ViewProfile extends StatelessWidget {
               left: (width * 130) - 10,
               top: 200 * height,
               child: SizedBox(
-                  height: 34 * height,
-                  width: 117 * width,
-                  child: ClickButton(
-                      text: 'Add Selection',
-                      showicon: false,
-                      fill: Colors.transparent,
-                      txtclr: Colors.white)),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 266.0 * height),
-              child: Container(
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40))),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 10.0 * height),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: 10.0 * height,
-                            left: 30 * width,
-                            right: 22 * width),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Username',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'Meghar yacine',
-                                  style: TextStyle(fontSize: 9, height: 1.2),
-                                ),
-                              ],
-                            ),
-                            Spacer(),
-                            IconButton(
-                              icon: Icon(Icons.edit),
-                              onPressed: () {},
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: 15.0 * height,
-                            left: 30 * width,
-                            right: 22 * width),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Main Profession',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'Design',
-                                  style: TextStyle(fontSize: 9, height: 1.2),
-                                ),
-                              ],
-                            ),
-                            Spacer(),
-                            IconButton(
-                              icon: Icon(Icons.edit),
-                              onPressed: () {},
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: 15.0 * height,
-                            left: 30 * width,
-                            right: 22 * width),
-                        child: Wrap(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'About',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Spacer(),
-                                IconButton(
-                                  icon: Icon(Icons.edit),
-                                  onPressed: () {},
-                                ),
-                              ],
-                            ),
-                            Text(
-                              'Lorem ipsum dolor sit amet consectetur. Vel quisque porta dignissim proin volutpat nibh faucibus. Faucibus pellentesque massa feugiat diam non sed risus malesuada.',
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                height: 34 * height,
+                width: 117 * width,
+                child: ClickButton(
+                  text: 'Add Selection',
+                  showicon: false,
+                  fill: Colors.transparent,
+                  txtclr: Colors.white,
+                  fnct: () {},
                 ),
+              ),
+            ),
+            SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 266 * height),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(40),
+                              topRight: Radius.circular(40))),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 10.0 * height),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 10.0 * height,
+                                  left: 30 * width,
+                                  right: 22 * width),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Username',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Meghar yacine',
+                                        style: TextStyle(
+                                            fontSize: 13, height: 1.2),
+                                      ),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  IconButton(
+                                    icon: Icon(Icons.edit),
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 15.0 * height,
+                                  left: 30 * width,
+                                  right: 22 * width),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Main Profession',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Design',
+                                        style: TextStyle(
+                                            fontSize: 13, height: 1.2),
+                                      ),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  IconButton(
+                                    icon: Icon(Icons.edit),
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 15.0 * height,
+                                  left: 30 * width,
+                                  right: 22 * width),
+                              child: Wrap(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'About',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      IconButton(
+                                        icon: Icon(Icons.edit),
+                                        onPressed: () {},
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    'Lorem ipsum dolor sit amet consectetur. Vel quisque porta dignissim proin volutpat nibh faucibus. Faucibus pellentesque massa feugiat diam non sed risus malesuada.',
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 15.0 * height,
+                                  left: 30 * width,
+                                  right: 22 * width),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'MY Media',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      IconButton(
+                                        icon: Icon(Icons.edit),
+                                        onPressed: () {},
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    '-insta link',
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                  Text(
+                                    '-Behance link',
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                  Text(
+                                    '-linkedin link',
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                  Text(
+                                    '-Git hub link',
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

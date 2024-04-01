@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'boxdigits.dart';
 import 'elvButton.dart';
-import '../resetPassword.dart';
+import '../screens/resetPassword.dart';
 import 'txtbutton.dart';
 
 class Digits extends StatelessWidget {
