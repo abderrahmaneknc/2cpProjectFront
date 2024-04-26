@@ -8,7 +8,7 @@ class Mybuttons extends StatelessWidget {
     required this.txtcolor,
     required this.logo,
     required this.assets,
-    required this.onPressed, 
+    required this.onPressed,
   }) : super(key: key);
 
   final String text;
@@ -16,13 +16,13 @@ class Mybuttons extends StatelessWidget {
   final bool logo;
   final String assets;
   final Color txtcolor;
-  final VoidCallback onPressed; 
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
-        onPressed: onPressed, 
+        onPressed: onPressed,
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
           fixedSize: MaterialStateProperty.all(Size(350, 40)),

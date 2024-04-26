@@ -92,6 +92,8 @@ class _IntroductionPagesState extends State<IntroductionPages> {
               right: 0,
               child: Center(
                 child: MyTxtButtons(
+                                        weight: FontWeight.normal,
+
                   text: 'done',
                   color: Color(0xFF2D3D51),
                   onPressed: () {

@@ -65,6 +65,8 @@ class Digits extends StatelessWidget {
                   padding: EdgeInsets.all(2),
                 ),
                 child: MyTxtButtons(
+                                        weight: FontWeight.normal,
+
                   text: 'Send again',
                   color: Color(0xFF2D3D51),
                   onPressed: () {},

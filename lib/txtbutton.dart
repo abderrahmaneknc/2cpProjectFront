@@ -7,12 +7,14 @@ class MyTxtButtons extends StatelessWidget {
     required this.color,
     required this.onPressed,
     required this.size,
+    required this.weight,
   }) : super(key: key);
 
   final String text;
   final Color color;
   final VoidCallback onPressed;
   final double size;
+  final FontWeight weight;
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -25,6 +27,7 @@ class MyTxtButtons extends StatelessWidget {
         style: TextStyle(
           color: color,
           fontSize: size,
+          fontWeight: weight,
         ),
       ),
     );

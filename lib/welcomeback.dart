@@ -19,7 +19,7 @@ class _WelcbackState extends State<Welcback> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(40.0),
+          padding: const EdgeInsets.only(top :32,left:24,right: 24),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,6 +68,7 @@ class _WelcbackState extends State<Welcback> {
                   hint: 'enter your password',
                   icon: Icons.lock_outline,
                   show: true,
+                  
                   isPassword: true,
                 ),
                 SizedBox(
@@ -94,6 +95,7 @@ class _WelcbackState extends State<Welcback> {
                     Spacer(),
                     MyTxtButtons(
                       text: 'Forget password',
+                      weight: FontWeight.normal,
                       color: Color(0xFF2D3D51),
                       onPressed: () {
                         showModalBottomSheet(
@@ -169,6 +171,8 @@ class _WelcbackState extends State<Welcback> {
                       ),
                     ),
                     MyTxtButtons(
+                                            weight: FontWeight.normal,
+
                       text: 'Create an account',
                       color: Color(0xFF2D3D51),
                       onPressed: () {

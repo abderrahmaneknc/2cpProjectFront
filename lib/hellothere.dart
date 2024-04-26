@@ -18,7 +18,7 @@ class _MySignInPageState extends State<MySignInPage> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(40.0),
+          padding: const EdgeInsets.only(top: 32.0, right: 24, left: 24),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   ),
                 ),
                 Text(
-                  'There',
+                  'There!',
                   style: TextStyle(
                     height: 1,
                     fontSize: 33,
@@ -55,7 +55,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   height: 40,
                 ),
                 MyBoxes(
-                  hint: 'enter your email',
+                  hint: 'Enter your email',
                   icon: Icons.email_outlined,
                   show: false,
                   isPassword: false,
@@ -64,7 +64,8 @@ class _MySignInPageState extends State<MySignInPage> {
                   height: 16,
                 ),
                 MyBoxes(
-                  hint: 'enter your password',
+
+                  hint: 'Enter your password',
                   icon: Icons.lock_outline,
                   show: false,
                   isPassword: true,
@@ -103,6 +104,7 @@ class _MySignInPageState extends State<MySignInPage> {
                           ),
                         ),
                         MyTxtButtons(
+                          weight: FontWeight.normal,
                           text: 'terms and services',
                           color: Color(0xFF2D3D51),
                           onPressed: () {},
@@ -122,6 +124,7 @@ class _MySignInPageState extends State<MySignInPage> {
                             ),
                           ),
                           MyTxtButtons(
+                            weight: FontWeight.normal,
                             text: 'Privacy Policy',
                             color: Color(0xFF2D3D51),
                             onPressed: () {},
@@ -141,7 +144,9 @@ class _MySignInPageState extends State<MySignInPage> {
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'email_verification');
+                  },
                 ),
                 SizedBox(
                   height: 20,
@@ -185,6 +190,7 @@ class _MySignInPageState extends State<MySignInPage> {
                       ),
                     ),
                     MyTxtButtons(
+                      weight: FontWeight.normal,
                       text: 'Sign in',
                       color: Color(0xFF2D3D51),
                       onPressed: () {

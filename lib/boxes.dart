@@ -29,7 +29,16 @@ class _MyBoxesState extends State<MyBoxes> {
         obscureText: widget.isPassword ? _isObscure : false,
         decoration: InputDecoration(
           hintText: widget.hint,
-          prefixIcon: Icon(widget.icon),
+          hintStyle: TextStyle(
+            // Apply your desired style to the hint text
+            fontSize: 12,
+            color: Color(0xA5313638),
+            // Add more style properties as needed
+          ),
+          prefixIcon: Icon(
+            widget.icon,
+            color: Colors.black.withOpacity(0.4),
+          ),
           suffixIcon: widget.isPassword
               ? GestureDetector(
                   onTap: () {
@@ -39,6 +48,7 @@ class _MyBoxesState extends State<MyBoxes> {
                   },
                   child: Icon(
                     _isObscure ? Icons.visibility_off : Icons.visibility,
+                    color: Colors.black.withOpacity(0.4), // Adjust opacity here
                   ),
                 )
               : null,
@@ -52,7 +62,7 @@ class _MyBoxesState extends State<MyBoxes> {
             borderRadius: BorderRadius.circular(20),
             borderSide: BorderSide(color: Colors.blue),
           ),
-          contentPadding: EdgeInsets.symmetric(vertical: 12),
+          contentPadding: EdgeInsets.symmetric(vertical: -15),
         ),
       ),
     );

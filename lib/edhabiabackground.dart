@@ -13,6 +13,8 @@ class Edahbback extends StatelessWidget {
       child: Center(
         child: SingleChildScrollView(
           child: MyTxtButtons(
+                                  weight: FontWeight.normal,
+
             text: 'edahabia button',
             color: Color.fromARGB(255, 255, 255, 255),
             size: 13,
