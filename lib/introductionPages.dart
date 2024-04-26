@@ -42,7 +42,7 @@ class _IntroductionPagesState extends State<IntroductionPages> {
           PageView(
             controller: _controller,
             onPageChanged: (index) => _onPageChange(),
-            children: [
+            children: const [
               Intropagetmplt(
                 picture: 'assets/ph1.jpg',
                 text1: 'Mind Connect',
@@ -95,7 +95,7 @@ class _IntroductionPagesState extends State<IntroductionPages> {
                                         weight: FontWeight.normal,
 
                   text: 'done',
-                  color: Color(0xFF2D3D51),
+                  color: const Color(0xFF2D3D51),
                   onPressed: () {
                     Navigator.pushNamed(context, '//');
                   },
@@ -104,11 +104,11 @@ class _IntroductionPagesState extends State<IntroductionPages> {
               ),
             ),
           Align(
-            alignment: Alignment(0, 0.75),
+            alignment: const Alignment(0, 0.75),
             child: SmoothPageIndicator(
               controller: _controller,
               count: 4,
-              effect: WormEffect(
+              effect: const WormEffect(
                 dotWidth: 10,
                 dotHeight: 10,
                 spacing: 8,

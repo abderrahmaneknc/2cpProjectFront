@@ -14,6 +14,8 @@ import 'hellothere.dart';
 import 'introductionPages.dart';
 import 'success.dart';
 import 'welcomeback.dart';
+import 'profilescreen.dart';
+import 'viewprofile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,6 +45,8 @@ class MyApp extends StatelessWidget {
         'add_experiences': (context) => AddExperiences(),
         'email_verification': (context) => EmailVerification(),
         'verified': (context) => verified(),
+         'viewprofile': (context) => ViewProfile(),
+         'profile':(context) => MyProfile(),
       },
     );
   }
