@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'elvButton.dart';
 import 'intropagetemplate.dart';
-import 'verified.dart';
+import 'verifieDialogue.dart';
 
 class EmailVerification extends StatelessWidget {
   const EmailVerification({Key? key}) : super(key: key);
@@ -40,27 +40,18 @@ class EmailVerification extends StatelessWidget {
                 ),
               ),
               Mybuttons(
-                text: 'Resent Verification Email',
+                text: 'Resend Verification Email',
                 color: Color(0xFF2D3D51),
                 logo: false,
                 assets: '',
                 txtcolor: Colors.white,
                 onPressed: () {
-                                       showModalBottomSheet(
+                  showDialog(
                     context: context,
-                    isScrollControlled: false,
                     builder: (BuildContext context) {
-                      return SingleChildScrollView(
-                        child: Container(
-                          padding: EdgeInsets.only(
-                            bottom: MediaQuery.of(context).viewInsets.bottom,
-                          ),
-                          child:   verified(),
-                        ),
-                      );
+                      return VerificationDialog(); // Show the dialog
                     },
-                  );     
-
+                  );
                 },
               ),
             ],
