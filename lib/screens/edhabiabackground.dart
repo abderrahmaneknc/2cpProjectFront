@@ -4,17 +4,18 @@ import 'package:prj/screens/edahabia.dart';
 import '../items/txtbutton.dart';
 
 class Edahbback extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const Edahbback({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF2D3D51),
+      color: const Color(0xFF2D3D51),
       child: Center(
         child: SingleChildScrollView(
           child: MyTxtButtons(
             text: 'edahabia button',
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: const Color.fromARGB(255, 255, 255, 255),
             size: 13,
             onPressed: () {
               showModalBottomSheet(
@@ -29,7 +30,7 @@ class Edahbback extends StatelessWidget {
                                   bottom:
                                       MediaQuery.of(context).viewInsets.bottom,
                                 ),
-                                child: Edahabia(),
+                                child: const Edahabia(),
                               ),
                             );
                 },

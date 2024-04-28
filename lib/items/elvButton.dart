@@ -1,3 +1,8 @@
+// ignore: duplicate_ignore
+// ignore: file_names
+
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class Mybuttons extends StatelessWidget {
@@ -8,7 +13,7 @@ class Mybuttons extends StatelessWidget {
     required this.txtcolor,
     required this.logo,
     required this.assets,
-    required this.onPressed, 
+    required this.onPressed,
   }) : super(key: key);
 
   final String text;
@@ -16,22 +21,22 @@ class Mybuttons extends StatelessWidget {
   final bool logo;
   final String assets;
   final Color txtcolor;
-  final VoidCallback onPressed; 
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
-        onPressed: onPressed, 
+        onPressed: onPressed,
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
-          fixedSize: MaterialStateProperty.all(Size(350, 40)),
+          fixedSize: MaterialStateProperty.all(const Size(350, 40)),
           backgroundColor: MaterialStateProperty.all(color),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
-              side: BorderSide(
-                color: const Color.fromARGB(255, 197, 193, 193),
+              side: const BorderSide(
+                color: Color.fromARGB(255, 197, 193, 193),
               ),
             ),
           ),
@@ -45,10 +50,10 @@ class Mybuttons extends StatelessWidget {
                     height: 40,
                     width: 40,
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Text(
                     text,
-                    style: TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 ],
               )

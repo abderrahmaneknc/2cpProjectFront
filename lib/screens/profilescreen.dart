@@ -34,23 +34,23 @@ class MyProfile extends StatelessWidget {
               top: 24 * height,
               left: 24 * width,
               child: CircleAvatar(
+                  backgroundColor: Colors.grey.withOpacity(0.5),
+                  radius: 13 * width,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.pushNamed(context, 'btnavbar');
                     },
                     child: Icon(
                       Icons.arrow_back_ios_rounded,
                       color: Colors.white,
                     ),
-                  ),
-                  backgroundColor: Colors.grey.withOpacity(0.5),
-                  radius: 13 * width),
+                  )),
             ),
             Positioned(
                 top: 24 * height,
                 left: 108 * width,
                 child: Column(
-                  children: [
+                  children: const [
                     Text(
                       'Meghar yacine',
                       style: TextStyle(
@@ -61,7 +61,7 @@ class MyProfile extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 12,
                           height: 1,
-                          color: const Color.fromARGB(236, 255, 255, 255)),
+                          color: Color.fromARGB(236, 255, 255, 255)),
                     )
                   ],
                 )),
@@ -69,12 +69,12 @@ class MyProfile extends StatelessWidget {
               top: 24 * height,
               left: 305 * width,
               child: CircleAvatar(
+                  backgroundColor: Colors.grey.withOpacity(0.5),
+                  radius: 13 * width,
                   child: Icon(
                     Icons.more_vert_rounded,
                     color: Colors.white,
-                  ),
-                  backgroundColor: Colors.grey.withOpacity(0.5),
-                  radius: 13 * width),
+                  )),
             ),
             Positioned(
                 top: 91,
@@ -218,12 +218,12 @@ class MyProfile extends StatelessWidget {
                           height: 39 * height,
                           width: 311 * width,
                           child: ClickButton(
-                            text: 'Sign up',
+                            text: 'Sign Out',
                             showicon: true,
                             fill: const Color(0xFF2D3D51),
                             txtclr: Colors.white,
                             fnct: () {
-                              Navigator.pushNamed(context, '/');
+                              Navigator.pushNamed(context, '///');
                             },
                           ),
                         ),

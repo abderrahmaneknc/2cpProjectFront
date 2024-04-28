@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyBoxes extends StatefulWidget {
-  MyBoxes({
+  const MyBoxes({
     Key? key,
     required this.hint,
     required this.icon,
@@ -15,6 +15,7 @@ class MyBoxes extends StatefulWidget {
   final bool isPassword;
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyBoxesState createState() => _MyBoxesState();
 }
 
@@ -44,15 +45,15 @@ class _MyBoxesState extends State<MyBoxes> {
               : null,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(
-              color: const Color.fromARGB(255, 197, 193, 193),
+            borderSide: const BorderSide(
+              color: Color.fromARGB(255, 197, 193, 193),
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(color: Colors.blue),
+            borderSide: const BorderSide(color: Colors.blue),
           ),
-          contentPadding: EdgeInsets.symmetric(vertical: 12),
+          contentPadding: const EdgeInsets.symmetric(vertical: 12),
         ),
       ),
     );
