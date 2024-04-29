@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'txtbutton.dart';
 import 'boxes.dart';
 import 'elvButton.dart';
+=======
+import 'boxes.dart';
+import 'elvButton.dart';
+import 'txtbutton.dart';
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
 
 class MySignInPage extends StatefulWidget {
   const MySignInPage({Key? key}) : super(key: key);
@@ -23,7 +29,7 @@ class _MySignInPageState extends State<MySignInPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Hello',
                   style: TextStyle(
                     height: 0.9,
@@ -32,8 +38,13 @@ class _MySignInPageState extends State<MySignInPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+<<<<<<< HEAD
                 Text(
                   'There!',
+=======
+                const Text(
+                  'There',
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
                   style: TextStyle(
                     height: 1,
                     fontSize: 33,
@@ -41,7 +52,7 @@ class _MySignInPageState extends State<MySignInPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Text(
@@ -51,7 +62,7 @@ class _MySignInPageState extends State<MySignInPage> {
                     color: Colors.grey[500],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 MyBoxes(
@@ -60,7 +71,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   show: false,
                   isPassword: false,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 MyBoxes(
@@ -70,7 +81,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   show: false,
                   isPassword: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 MyBoxes(
@@ -79,7 +90,7 @@ class _MySignInPageState extends State<MySignInPage> {
                   show: false,
                   isPassword: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Column(
@@ -96,7 +107,7 @@ class _MySignInPageState extends State<MySignInPage> {
                             });
                           },
                         ),
-                        Text(
+                        const Text(
                           'By signing up, you agree to our',
                           style: TextStyle(
                             color: Colors.grey,
@@ -106,7 +117,7 @@ class _MySignInPageState extends State<MySignInPage> {
                         MyTxtButtons(
                           weight: FontWeight.normal,
                           text: 'terms and services',
-                          color: Color(0xFF2D3D51),
+                          color: const Color(0xFF2D3D51),
                           onPressed: () {},
                           size: 11,
                         ),
@@ -116,7 +127,7 @@ class _MySignInPageState extends State<MySignInPage> {
                       padding: const EdgeInsets.only(left: 50),
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             'and',
                             style: TextStyle(
                               color: Colors.grey,
@@ -126,7 +137,7 @@ class _MySignInPageState extends State<MySignInPage> {
                           MyTxtButtons(
                             weight: FontWeight.normal,
                             text: 'Privacy Policy',
-                            color: Color(0xFF2D3D51),
+                            color: const Color(0xFF2D3D51),
                             onPressed: () {},
                             size: 11,
                           ),
@@ -135,12 +146,12 @@ class _MySignInPageState extends State<MySignInPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Mybuttons(
                   text: 'Sign up',
-                  color: Color(0xFF2D3D51),
+                  color: const Color(0xFF2D3D51),
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
@@ -148,16 +159,16 @@ class _MySignInPageState extends State<MySignInPage> {
                     Navigator.pushNamed(context, 'email_verification');
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Row(
+                const Row(
                   children: [
                     Expanded(
-                      child: Divider(),
+                      child: const Divider(),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(' OR '),
                     ),
                     Expanded(
@@ -165,7 +176,7 @@ class _MySignInPageState extends State<MySignInPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Mybuttons(
@@ -176,13 +187,13 @@ class _MySignInPageState extends State<MySignInPage> {
                   txtcolor: Colors.black,
                   onPressed: () {},
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Already have an account?',
                       style: TextStyle(
                         color: Colors.grey,
@@ -192,7 +203,7 @@ class _MySignInPageState extends State<MySignInPage> {
                     MyTxtButtons(
                       weight: FontWeight.normal,
                       text: 'Sign in',
-                      color: Color(0xFF2D3D51),
+                      color: const Color(0xFF2D3D51),
                       onPressed: () {
                         Navigator.pushNamed(context, '//');
                       },

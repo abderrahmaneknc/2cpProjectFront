@@ -20,7 +20,7 @@ class MyTxtButtons extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        padding: EdgeInsets.all(2),
+        padding: const EdgeInsets.all(2),
       ),
       child: Text(
         text,

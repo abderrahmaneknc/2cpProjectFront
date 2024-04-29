@@ -5,6 +5,7 @@ class Myboxdigits extends StatefulWidget {
   const Myboxdigits({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyboxdigitsState createState() => _MyboxdigitsState();
 }
 
@@ -32,7 +33,7 @@ class _MyboxdigitsState extends State<Myboxdigits> {
       child: Container(
         width: 50,
         height: 50,
-        margin: EdgeInsets.only(right: 13),
+        margin: const EdgeInsets.only(right: 13),
         child: TextField(
           controller: _controller,
           textAlign: TextAlign.center,
@@ -43,15 +44,15 @@ class _MyboxdigitsState extends State<Myboxdigits> {
             counterText: '',
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide(
-                color: const Color.fromARGB(255, 197, 193, 193),
+              borderSide: const BorderSide(
+                color: Color.fromARGB(255, 197, 193, 193),
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide(color: Colors.blue),
+              borderSide: const BorderSide(color: Colors.blue),
             ),
-            contentPadding: EdgeInsets.symmetric(vertical: 12),
+            contentPadding: const EdgeInsets.symmetric(vertical: 12),
           ),
           onChanged: (value) {
             

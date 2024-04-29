@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'boxes.dart';
+<<<<<<< HEAD
 import 'forgotpassword.dart';
 import 'elvButton.dart';
+=======
+import 'elvButton.dart';
+import 'forgotpassword.dart';
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
 import 'txtbutton.dart';
 
 class Welcback extends StatefulWidget {
@@ -24,7 +29,7 @@ class _WelcbackState extends State<Welcback> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Welcome',
                   style: TextStyle(
                     height: 0.9,
@@ -33,7 +38,7 @@ class _WelcbackState extends State<Welcback> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   'Back!',
                   style: TextStyle(
                     height: 1,
@@ -42,7 +47,7 @@ class _WelcbackState extends State<Welcback> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Text(
@@ -52,7 +57,7 @@ class _WelcbackState extends State<Welcback> {
                     color: Colors.grey[500],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 MyBoxes(
@@ -61,7 +66,7 @@ class _WelcbackState extends State<Welcback> {
                   show: false,
                   isPassword: false,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 MyBoxes(
@@ -70,7 +75,7 @@ class _WelcbackState extends State<Welcback> {
                   show: true,
                   isPassword: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 Row(
@@ -84,18 +89,22 @@ class _WelcbackState extends State<Welcback> {
                         });
                       },
                     ),
-                    Text(
+                    const Text(
                       'Remember me ',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 13,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     MyTxtButtons(
                       text: 'Forget password',
+<<<<<<< HEAD
                       weight: FontWeight.normal,
                       color: Color(0xFF2D3D51),
+=======
+                      color: const Color(0xFF2D3D51),
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
@@ -107,7 +116,7 @@ class _WelcbackState extends State<Welcback> {
                                   bottom:
                                       MediaQuery.of(context).viewInsets.bottom,
                                 ),
-                                child: buildSheet(),
+                                child: const buildSheet(),
                               ),
                             );
                           },
@@ -117,29 +126,33 @@ class _WelcbackState extends State<Welcback> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Mybuttons(
                   text: 'Sign in',
-                  color: Color(0xFF2D3D51),
+                  color: const Color(0xFF2D3D51),
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
+<<<<<<< HEAD
                   onPressed: () {
                     Navigator.pushNamed(context, 'profile');
                   },
+=======
+                  onPressed: () { Navigator.pushNamed(context, 'btnavbar');},
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Row(
+                const Row(
                   children: [
                     Expanded(
-                      child: Divider(),
+                      child: const Divider(),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(' OR '),
                     ),
                     Expanded(
@@ -147,7 +160,7 @@ class _WelcbackState extends State<Welcback> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Mybuttons(
@@ -157,16 +170,16 @@ class _WelcbackState extends State<Welcback> {
                   assets: 'assets/google_logo_icon_147282.png',
                   txtcolor: Colors.black,
                   onPressed: () {
-                    Navigator.pushNamed(context, 'profile');
+                    Navigator.pushNamed(context, 'btnavbar');
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Don\'t have an account?',
                       style: TextStyle(
                         color: Colors.grey,
@@ -176,7 +189,7 @@ class _WelcbackState extends State<Welcback> {
                     MyTxtButtons(
                       weight: FontWeight.normal,
                       text: 'Create an account',
-                      color: Color(0xFF2D3D51),
+                      color: const Color(0xFF2D3D51),
                       onPressed: () {
                         Navigator.pushNamed(context, '///');
                       },

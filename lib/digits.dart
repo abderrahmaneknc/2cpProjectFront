@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'boxdigits.dart';
 import 'elvButton.dart';
+<<<<<<< HEAD
 import 'resetPassword.dart';
+=======
+import '../resetPassword.dart';
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
 import 'txtbutton.dart';
 
 class Digits extends StatelessWidget {
@@ -16,7 +19,7 @@ class Digits extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          const Text(
             'Enter 5 Digits Code',
             style: TextStyle(
               fontSize: 24,
@@ -24,7 +27,7 @@ class Digits extends StatelessWidget {
               color: Color(0xFF2D3D51),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(
@@ -34,10 +37,10 @@ class Digits extends StatelessWidget {
               color: Colors.grey[500],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Myboxdigits(),
@@ -47,7 +50,7 @@ class Digits extends StatelessWidget {
               Myboxdigits(),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Row(
@@ -62,25 +65,25 @@ class Digits extends StatelessWidget {
               TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(
-                  padding: EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(2),
                 ),
                 child: MyTxtButtons(
                   weight: FontWeight.normal,
                   text: 'Send again',
-                  color: Color(0xFF2D3D51),
+                  color: const Color(0xFF2D3D51),
                   onPressed: () {},
                   size: 13,
                 ),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Center(
             child: Mybuttons(
               text: 'Continue',
-              color: Color(0xFF2D3D51),
+              color: const Color(0xFF2D3D51),
               logo: false,
               assets: '',
               txtcolor: Colors.white,
@@ -95,7 +98,7 @@ class Digits extends StatelessWidget {
                         padding: EdgeInsets.only(
                           bottom: MediaQuery.of(context).viewInsets.bottom,
                         ),
-                        child: MyRessetPass(),
+                        child: const MyRessetPass(),
                       ),
                     );
                   },

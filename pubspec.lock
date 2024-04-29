@@ -123,6 +123,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -208,6 +209,16 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1+1"
+=======
+  ionicons:
+    dependency: "direct main"
+    description:
+      name: ionicons
+      sha256: "5496bc65a16115ecf05b15b78f494ee4a8869504357668f0a11d689e970523cf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2"
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
   lints:
     dependency: transitive
     description:
@@ -351,4 +362,8 @@ packages:
     version: "0.3.0"
 sdks:
   dart: ">=3.2.3 <4.0.0"
+<<<<<<< HEAD
   flutter: ">=3.16.0"
+=======
+  flutter: ">=1.17.0"
+>>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28

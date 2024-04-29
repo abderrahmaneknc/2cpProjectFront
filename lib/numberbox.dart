@@ -22,15 +22,15 @@ class Boxnumber extends StatelessWidget {
         counterText: '',
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
-          borderSide: BorderSide(
-           color : const Color.fromARGB(255, 197, 193, 193),
+          borderSide: const BorderSide(
+           color : Color.fromARGB(255, 197, 193, 193),
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
-          borderSide: BorderSide(color: Colors.blue),
+          borderSide: const BorderSide(color: Colors.blue),
         ),
-        contentPadding: EdgeInsets.symmetric(vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(vertical: 12),
       ),
     );
   }
