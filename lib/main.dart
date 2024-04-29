@@ -6,6 +6,7 @@ import 'package:prj/screens/profilescreen.dart';
 import 'screens/edhabiabackground.dart';
 import 'screens/hellothere.dart';
 import 'screens/introductionPages.dart';
+import 'screens/rescorpage.dart';
 import 'screens/success.dart';
 import 'screens/viewprofile.dart';
 import 'screens/welcomeback.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: 'b',
       routes: {
         '/': (context) => IntroductionPages(),
         '//': (context) => const Welcback(),
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         'blogs': (context) => BlogsScreen(),
         'blogsds': (context) => BlogsDetailScreen(),
         'btnavbar':(context) => MyBottomNavigationBar(),
+       'b':(context) => ResCorPage(),
         
       },
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:prj/screens/blogsscreen.dart';
 import 'package:prj/screens/homescreen.dart';
 import 'package:prj/screens/profilescreen.dart';
@@ -67,149 +68,185 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           if (showContainers)
             Positioned(
               left: 80 * width,
-              top: 355 * height,
+              top: 342 * height,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  AnimatedContainer(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25.0),
+                  GestureDetector(
+                    onTap: () {},
+                    child: AnimatedContainer(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25.0),
+                        ),
                       ),
-                    ),
-                    duration: Duration(milliseconds: 500),
-                    width: 200 * width,
-                    height: 48 * height,
-                    alignment: Alignment.center,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: const Color(0xFF2D3D51),
-                        ),
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        Text(
-                          'Share your profile',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: const Color(0xFF2D3D51),
+                      duration: Duration(milliseconds: 500),
+                      width: 200 * width,
+                      height: 48 * height,
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10 * width,
                           ),
-                        ),
-                      ],
+                          CircleAvatar(
+                            child: Image.asset(
+                              'assets/Customer.png',
+                              fit: BoxFit.cover,
+                              height: 24 * height,
+                              width: 24 * width,
+                            ),
+                            backgroundColor: const Color(0xFF2D3D51),
+                          ),
+                          SizedBox(
+                            width: 10 * width,
+                          ),
+                          Text(
+                            'Share your profile',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: const Color(0xFF2D3D51),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: 5 * height,
+                    height: 7 * height,
                   ),
-                  AnimatedContainer(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25.0),
+                  GestureDetector(
+                    onTap: () {},
+                    child: AnimatedContainer(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25.0),
+                        ),
                       ),
-                    ),
-                    duration: Duration(milliseconds: 500),
-                    width: 200 * width,
-                    height: 48 * height,
-                    alignment: Alignment.center,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: const Color(0xFF2D3D51),
-                        ),
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        Text(
-                          'add your blog',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: const Color(0xFF2D3D51),
+                      duration: Duration(milliseconds: 500),
+                      width: 200 * width,
+                      height: 48 * height,
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10 * width,
                           ),
-                        ),
-                      ],
+                          CircleAvatar(
+                            child: Image.asset(
+                              'assets/Vector.png',
+                              fit: BoxFit.cover,
+                              height: 18 * height,
+                              width: 16.6 * width,
+                            ),
+                            backgroundColor: const Color(0xFF2D3D51),
+                          ),
+                          SizedBox(
+                            width: 10 * width,
+                          ),
+                          Text(
+                            'add your blog',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: const Color(0xFF2D3D51),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: 5 * height,
+                    height: 7 * height,
                   ),
-                  AnimatedContainer(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25.0),
+                  GestureDetector(
+                    onTap: () {},
+                    child: AnimatedContainer(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25.0),
+                        ),
                       ),
-                    ),
-                    duration: Duration(milliseconds: 500),
-                    width: 200 * width,
-                    height: 48 * height,
-                    alignment: Alignment.center,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: const Color(0xFF2D3D51),
-                        ),
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        Text(
-                          'add your resourses',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: const Color(0xFF2D3D51),
+                      duration: Duration(milliseconds: 500),
+                      width: 200 * width,
+                      height: 48 * height,
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10 * width,
                           ),
-                        ),
-                      ],
+                          CircleAvatar(
+                            child: Image.asset(
+                              'assets/Group (2).png',
+                              fit: BoxFit.cover,
+                              height: 16 * height,
+                              width: 20 * width,
+                            ),
+                            backgroundColor: const Color(0xFF2D3D51),
+                          ),
+                          SizedBox(
+                            width: 10 * width,
+                          ),
+                          Text(
+                            'add your resourses',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: const Color(0xFF2D3D51),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: 5 * height,
+                    height: 7 * height,
                   ),
-                  AnimatedContainer(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25.0),
+                  GestureDetector(
+                    onTap: () {},
+                    child: AnimatedContainer(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(25.0),
+                        ),
                       ),
-                    ),
-                    duration: Duration(milliseconds: 500),
-                    width: 200 * width,
-                    height: 48 * height,
-                    alignment: Alignment.center,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: const Color(0xFF2D3D51),
-                        ),
-                        SizedBox(
-                          width: 10 * width,
-                        ),
-                        Text(
-                          'add your live courses',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: const Color(0xFF2D3D51),
+                      duration: Duration(milliseconds: 500),
+                      width: 200 * width,
+                      height: 48 * height,
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10 * width,
                           ),
-                        ),
-                      ],
+                          CircleAvatar(
+                            child: Image.asset(
+                              'assets/Group (2).png',
+                              fit: BoxFit.cover,
+                              height: 16 * height,
+                              width: 20 * width,
+                            ),
+                            backgroundColor: const Color(0xFF2D3D51),
+                          ),
+                          SizedBox(
+                            width: 10 * width,
+                          ),
+                          Text(
+                            'add your live courses',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: const Color(0xFF2D3D51),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -218,7 +255,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 58 * height,
+        height: 56 * height,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -243,114 +280,156 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 1 * width,
+                width: 0.1,
               ),
-              MaterialButton(
-                minWidth: 5 * width,
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.home_outlined,
-                      size: 35,
-                    ),
-                    Text(
-                      'home',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 10 * width,
-                          height: 1),
-                    ),
-                  ],
+              InkWell(
+                child: Container(
+                  height: 35 * height,
+                  width: 70 * width,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/icons8-accueil-48.png',
+                        fit: BoxFit.cover,
+                        height: 24 * height,
+                        width: 24 * width,
+                      ),
+                      SizedBox(
+                        height: 11 * height,
+                        width: 27 * width,
+                        child: Text(
+                          'Home',
+                          style: TextStyle(
+                              color: _currentIndex == 0
+                                  ? const Color(0xFF2D3D51)
+                                  : null,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 10,
+                              height: 1),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                onPressed: () {
+                onTap: () {
                   _onItemTapped(0);
                 },
               ),
-              MaterialButton(
-                minWidth: 42 * width,
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.call_to_action_outlined,
-                      size: 35,
-                    ),
-                    Text(
-                      'blogs',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 10 * width,
-                          height: 1),
-                    ),
-                  ],
+              InkWell(
+                child: Container(
+                  height: 31 * height,
+                  width: 70 * width,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/Group (1).png',
+                        fit: BoxFit.cover,
+                        height: 21 * height,
+                        width: 19 * width,
+                      ),
+                      SizedBox(
+                        height: 9 * width,
+                        child: Text(
+                          'Blogs',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 10,
+                              height: 1),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                onPressed: () {
+                onTap: () {
                   _onItemTapped(1);
                 },
               ),
-              MaterialButton(
-                  minWidth: 28 * width,
+              SizedBox(width: 7 * width),
+              InkWell(
                   child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15.0),
+                        ),
+                        color: const Color(0xFF2D3D51),
                       ),
-                      color: const Color(0xFF2D3D51),
-                    ),
-                    height: 44 * height,
-                    width: 44 * width,
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 27,
-                    ),
-                  ),
-                  onPressed: () {
+                      height: 41 * height,
+                      width: 39 * width,
+                      child: Image.asset(
+                        'assets/Plus.png',
+                        height: 16 * height,
+                        width: 16 * width,
+                        fit: BoxFit.scaleDown,
+                      )),
+                  onTap: () {
                     _toggleContainersVisibility();
                   }),
-              MaterialButton(
-                minWidth: 42 * width,
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.book_outlined,
-                      size: 35,
-                    ),
-                    Text(
-                      'res/cor',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 10 * width,
-                          height: 1),
-                    ),
-                  ],
+              SizedBox(width: 7 * width),
+              InkWell(
+                child: Container(
+                  height: 33 * height,
+                  width: 70 * width,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/comment-blog-icon 1.png',
+                        fit: BoxFit.contain,
+                        height: 22 * height,
+                        width: 23 * width,
+                      ),
+                      SizedBox(
+                        child: Text(
+                          'res/cor',
+                          style: TextStyle(
+                              color: _currentIndex == 0
+                                  ? const Color(0xFF2D3D51)
+                                  : null,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 10,
+                              height: 1),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                onPressed: () {
+                onTap: () {
                   _onItemTapped(2);
                 },
               ),
-              MaterialButton(
-                minWidth: 42 * width,
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.person_4_outlined,
-                      size: 35,
-                    ),
-                    Text(
-                      'profile',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 10 * width,
-                          height: 1),
-                    ),
-                  ],
+              InkWell(
+                child: Container(
+                  height: 33 * height,
+                  width: 70 * width,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/icons8-utilisateur-sexe-neutre-32.png',
+                        fit: BoxFit.contain,
+                        height: 22 * height,
+                        width: 23 * width,
+                      ),
+                      SizedBox(
+                        height: 11 * height,
+                        child: Text(
+                          'Profile',
+                          style: TextStyle(
+                              color: _currentIndex == 0
+                                  ? const Color(0xFF2D3D51)
+                                  : null,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 10,
+                              height: 1.2),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                onPressed: () {
+                onTap: () {
                   _onItemTapped(3);
                 },
               ),
               SizedBox(
-                width: 1 * width,
+                width: 0.1,
               )
             ],
           ),
