@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'intropagetemplate.dart';
-import '../items/txtbutton.dart';
+import '../intropagetemplate.dart';
+import 'txtbutton.dart';
 
 class IntroductionPages extends StatefulWidget {
   IntroductionPages({Key? key}) : super(key: key);

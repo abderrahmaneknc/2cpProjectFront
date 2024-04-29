@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:prj/screens/blogsscreen.dart';
-import 'package:prj/screens/bologsdetailedscreen.dart';
-import 'package:prj/screens/bottomnavbar.dart';
-import 'package:prj/screens/profilescreen.dart';
-import 'screens/edhabiabackground.dart';
-import 'screens/hellothere.dart';
-import 'screens/introductionPages.dart';
-import 'screens/rescorpage.dart';
-import 'screens/success.dart';
-import 'screens/viewprofile.dart';
-import 'screens/welcomeback.dart';
+import 'package:prj/blogsscreen.dart';
+import 'package:prj/bologsdetailedscreen.dart';
+
+import 'bottomnavbar.dart';
+import 'edhabiabackground.dart';
+import 'hellothere.dart';
+import 'introductionPages.dart';
+import 'profilescreen.dart';
+
+import 'rescorpage.dart';
+import 'success.dart';
+import 'viewprofile.dart';
+import 'welcomeback.dart';
 
 void main() {
   runApp(const MyApp());

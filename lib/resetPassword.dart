@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../items/boxes.dart';
-import '../items/elvButton.dart';
+import 'boxes.dart';
+import 'elvButton.dart';
+
 
 class MyRessetPass extends StatelessWidget {
   const MyRessetPass({super.key});

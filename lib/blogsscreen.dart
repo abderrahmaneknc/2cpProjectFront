@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../items/bloglistitem.dart';
-import '../items/txtfdbutton.dart';
+import 'bloglistitem.dart';
+import 'txtfdbutton.dart';
+
+
 
 class BlogsScreen extends StatelessWidget {
   const BlogsScreen({super.key});
@@ -12,14 +14,13 @@ class BlogsScreen extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double height = screenHeight / 640;
     double width = screenWidth / 360;
-  
-  
+
     return SafeArea(
         child: Scaffold(
       backgroundColor: Color.fromARGB(255, 248, 247, 244),
       body: Padding(
         padding: EdgeInsets.only(
-            top: 34 * height, left: 24 * width, right: 24 * width),
+            top: 28 * height, left: 24 * width, right: 24 * width),
         child: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -38,18 +39,17 @@ class BlogsScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
+                    top: 20 * height,
                     bottom: 20 * height,
                     left: 10 * width,
                   ),
-                  child: SizedBox(
-                    height: 22 * height,
-                    width: 22 * width,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.notifications_none_sharp,
-                        size: 30,
-                      ),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Image.asset(
+                      'assets/Notification.png',
+                      fit: BoxFit.cover,
+                      height: 24 * height,
+                      width: 22 * width,
                     ),
                   ),
                 ),

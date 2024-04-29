@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import '../items/boxes.dart';
-import 'forgotpassword.dart';
-import '../items/elvButton.dart';
-import '../items/txtbutton.dart';
+import 'boxes.dart';
+import 'elvButton.dart';
+import 'txtbutton.dart';
 
-class Welcback extends StatefulWidget {
-  const Welcback({Key? key}) : super(key: key);
+class MySignInPage extends StatefulWidget {
+  const MySignInPage({Key? key}) : super(key: key);
 
   @override
-  _WelcbackState createState() => _WelcbackState();
+  _MySignInPageState createState() => _MySignInPageState();
 }
 
-class _WelcbackState extends State<Welcback> {
+class _MySignInPageState extends State<MySignInPage> {
   bool isChecked = false;
 
   @override
@@ -25,7 +24,7 @@ class _WelcbackState extends State<Welcback> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Welcome',
+                  'Hello',
                   style: TextStyle(
                     height: 0.9,
                     fontSize: 33,
@@ -34,7 +33,7 @@ class _WelcbackState extends State<Welcback> {
                   ),
                 ),
                 const Text(
-                  'Back!',
+                  'There',
                   style: TextStyle(
                     height: 1,
                     fontSize: 33,
@@ -67,65 +66,82 @@ class _WelcbackState extends State<Welcback> {
                 MyBoxes(
                   hint: 'enter your password',
                   icon: Icons.lock_outline,
-                  show: true,
+                  show: false,
                   isPassword: true,
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 16,
                 ),
-                Row(
+                MyBoxes(
+                  hint: 'Re-enter your password',
+                  icon: Icons.lock_outline,
+                  show: false,
+                  isPassword: true,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Checkbox(
-                      value: isChecked,
-                      activeColor: Colors.blue,
-                      onChanged: (newBool) {
-                        setState(() {
-                          isChecked = newBool!;
-                        });
-                      },
-                    ),
-                    const Text(
-                      'Remember me ',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 13,
-                      ),
-                    ),
-                    const Spacer(),
-                    MyTxtButtons(
-                      text: 'Forget password',
-                      color: const Color(0xFF2D3D51),
-                      onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          builder: (BuildContext context) {
-                            return SingleChildScrollView(
-                              child: Container(
-                                padding: EdgeInsets.only(
-                                  bottom:
-                                      MediaQuery.of(context).viewInsets.bottom,
-                                ),
-                                child: const buildSheet(),
-                              ),
-                            );
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: isChecked,
+                          activeColor: Colors.blue,
+                          onChanged: (newValue) {
+                            setState(() {
+                              isChecked = newValue ?? false;
+                            });
                           },
-                        );
-                      },
-                      size: 13,
+                        ),
+                        const Text(
+                          'By signing up, you agree to our',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 10,
+                          ),
+                        ),
+                        MyTxtButtons(
+                          text: 'terms and services',
+                          color: const Color(0xFF2D3D51),
+                          onPressed: () {},
+                          size: 11,
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50),
+                      child: Row(
+                        children: [
+                          const Text(
+                            'and',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 10,
+                            ),
+                          ),
+                          MyTxtButtons(
+                            text: 'Privacy Policy',
+                            color: const Color(0xFF2D3D51),
+                            onPressed: () {},
+                            size: 11,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 Mybuttons(
-                  text: 'Sign in',
+                  text: 'Sign up',
                   color: const Color(0xFF2D3D51),
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
-                  onPressed: () { Navigator.pushNamed(context, 'btnavbar');},
+                  onPressed: () {},
                 ),
                 const SizedBox(
                   height: 20,
@@ -153,28 +169,26 @@ class _WelcbackState extends State<Welcback> {
                   logo: true,
                   assets: 'assets/google_logo_icon_147282.png',
                   txtcolor: Colors.black,
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'btnavbar');
-                  },
+                  onPressed: () {},
                 ),
                 const SizedBox(
-                  height: 100,
+                  height: 15,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Don\'t have an account?',
+                      'Already have an account?',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 13,
                       ),
                     ),
                     MyTxtButtons(
-                      text: 'Create an account',
+                      text: 'Sign in',
                       color: const Color(0xFF2D3D51),
                       onPressed: () {
-                        Navigator.pushNamed(context, '///');
+                        Navigator.pushNamed(context, '//');
                       },
                       size: 13,
                     ),

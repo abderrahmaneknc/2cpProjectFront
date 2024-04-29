@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../items/clickbutton.dart';
+import 'clickbutton.dart';
+
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
@@ -212,7 +213,7 @@ class MyProfile extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          top: 36 * height,
+                          top: 30 * height,
                         ),
                         child: SizedBox(
                           height: 39 * height,

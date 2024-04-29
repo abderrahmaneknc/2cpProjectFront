@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../items/clickbutton.dart';
+import 'clickbutton.dart';
+
 
 class ViewProfile extends StatefulWidget {
   const ViewProfile({super.key});
