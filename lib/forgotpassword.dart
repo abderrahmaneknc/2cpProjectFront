@@ -9,7 +9,7 @@ class buildSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(40.0),
+      padding: const EdgeInsets.only(top: 32, left: 24, right: 24, bottom: 32),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -39,9 +39,7 @@ class buildSheet extends StatelessWidget {
             icon: Icons.email_outlined,
             show: false,
           ),
-          
-        
-           SizedBox(
+          SizedBox(
             height: 30,
           ),
           Mybuttons(
