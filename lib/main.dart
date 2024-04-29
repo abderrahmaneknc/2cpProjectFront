@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prj/addToProfile.dart';
 import 'package:prj/add_media.dart';
 import 'package:prj/verified.dart';
+import 'addBlog.dart';
 import 'add_certf.dart';
 import 'add_education.dart';
 import 'add_experiences.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '//////',
+      initialRoute: 'addBlog',
       routes: {
         '/': (context) => IntroductionPages(),
         '//': (context) => Welcback(),
@@ -45,8 +46,9 @@ class MyApp extends StatelessWidget {
         'add_experiences': (context) => AddExperiences(),
         'email_verification': (context) => EmailVerification(),
         'verified': (context) => verified(),
-         'viewprofile': (context) => ViewProfile(),
-         'profile':(context) => MyProfile(),
+        'viewprofile': (context) => ViewProfile(),
+        'profile': (context) => MyProfile(),
+        'addBlog': (context) => AddBLog(),
       },
     );
   }
