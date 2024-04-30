@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-<<<<<<< HEAD
-import '../clickbutton.dart';
-=======
-import 'clickbutton.dart';
+import 'package:prj/items/clickbutton.dart';
+import 'package:prj/items/clickbutton.dart';
 
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});

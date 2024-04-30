@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'clickbutton.dart';
+import 'package:prj/items/clickbutton.dart';
 
 
 class ViewProfile extends StatefulWidget {

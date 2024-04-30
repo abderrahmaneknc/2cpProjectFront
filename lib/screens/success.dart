@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'elvButton.dart';
-<<<<<<< HEAD
-=======
+import 'package:prj/items/elvButton.dart';
 
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
 import 'intropagetemplate.dart';
 
 

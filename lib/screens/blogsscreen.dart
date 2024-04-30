@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'bloglistitem.dart';
-import 'txtfdbutton.dart';
+import 'package:prj/items/bloglistitem.dart';
+import 'package:prj/items/txtfdbutton.dart';
 
 
 

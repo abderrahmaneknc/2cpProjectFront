@@ -63,11 +63,7 @@ class _MyBoxesState extends State<MyBoxes> {
             borderRadius: BorderRadius.circular(20),
             borderSide: const BorderSide(color: Colors.blue),
           ),
-<<<<<<< HEAD
-          contentPadding: EdgeInsets.symmetric(vertical: -15),
-=======
           contentPadding: const EdgeInsets.symmetric(vertical: 12),
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
         ),
       ),
     );

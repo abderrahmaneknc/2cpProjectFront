@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'txtbutton.dart';
-import 'boxes.dart';
-import 'elvButton.dart';
-=======
-import 'boxes.dart';
-import 'elvButton.dart';
-import 'txtbutton.dart';
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
+import 'package:prj/items/txtbutton.dart';
+import 'package:prj/items/boxes.dart';
+import 'package:prj/items/elvButton.dart';
 
 class MySignInPage extends StatefulWidget {
   const MySignInPage({Key? key}) : super(key: key);
@@ -38,13 +32,8 @@ class _MySignInPageState extends State<MySignInPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-<<<<<<< HEAD
                 Text(
                   'There!',
-=======
-                const Text(
-                  'There',
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
                   style: TextStyle(
                     height: 1,
                     fontSize: 33,

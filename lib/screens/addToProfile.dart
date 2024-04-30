@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'txtbutton.dart';
+import 'package:prj/items/txtbutton.dart';
 
 class AddToProfile extends StatelessWidget {
   const AddToProfile({Key? key}) : super(key: key);

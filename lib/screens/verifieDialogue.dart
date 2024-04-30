@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'elvButton.dart';
+import 'package:prj/items/elvButton.dart';
 
 class VerificationDialog extends StatelessWidget {
   @override

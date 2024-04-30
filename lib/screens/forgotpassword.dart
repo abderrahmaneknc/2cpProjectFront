@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'boxes.dart';
-import 'digits.dart';
-import 'elvButton.dart';
-=======
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
+import 'package:prj/items/boxes.dart';
+import 'package:prj/items/digits.dart';
 
-import 'boxes.dart';
-import 'digits.dart';
-import 'elvButton.dart';
+import 'package:prj/items/elvButton.dart';
+
+import 'package:prj/items/boxes.dart';
+
+import 'package:prj/items/elvButton.dart';
 
 // ignore: camel_case_types
 class buildSheet extends StatelessWidget {

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'boxes.dart';
-<<<<<<< HEAD
+import 'package:prj/items/boxes.dart';
 import 'forgotpassword.dart';
-import 'elvButton.dart';
-=======
-import 'elvButton.dart';
-import 'forgotpassword.dart';
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
-import 'txtbutton.dart';
+import 'package:prj/items/elvButton.dart';
+
+
+import 'package:prj/items/txtbutton.dart';
 
 class Welcback extends StatefulWidget {
   const Welcback({Key? key}) : super(key: key);
@@ -99,12 +96,9 @@ class _WelcbackState extends State<Welcback> {
                     const Spacer(),
                     MyTxtButtons(
                       text: 'Forget password',
-<<<<<<< HEAD
                       weight: FontWeight.normal,
                       color: Color(0xFF2D3D51),
-=======
-                      color: const Color(0xFF2D3D51),
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
+                     
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
@@ -135,13 +129,9 @@ class _WelcbackState extends State<Welcback> {
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
-<<<<<<< HEAD
                   onPressed: () {
                     Navigator.pushNamed(context, 'profile');
                   },
-=======
-                  onPressed: () { Navigator.pushNamed(context, 'btnavbar');},
->>>>>>> c57d7881da6ffeef9a07581fe7066fead5eb6f28
                 ),
                 const SizedBox(
                   height: 20,

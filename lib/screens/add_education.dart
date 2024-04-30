@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prj/textfield2all.dart';
 
-import 'elvButton.dart';
+
+import 'package:prj/items/elvButton.dart';
+import 'package:prj/items/textfield2all.dart';
 
 class AddEducation extends StatelessWidget {
   const AddEducation({Key? key});

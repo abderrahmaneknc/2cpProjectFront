@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prj/textfield2all.dart';
+import 'package:prj/items/textfield2all.dart';
 
-import 'elvButton.dart';
+import 'package:prj/items/elvButton.dart';
 
-class Addlanguage extends StatelessWidget {
-  const Addlanguage({Key? key});
+class AddSkills extends StatelessWidget {
+  const AddSkills({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Addlanguage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          'Languages',
+          'Skills',
           style: TextStyle(
             color: Color(0xFF2D3D51),
             fontSize: 24,
@@ -37,7 +37,7 @@ class Addlanguage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'choose the language that you can communicate with :',
+                  'Add Your Skills. Enhance Your Profile :',
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey[600],
@@ -45,7 +45,7 @@ class Addlanguage extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Text(
-                  'Language',
+                  'Skill',
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey[600],
@@ -63,7 +63,7 @@ class Addlanguage extends StatelessWidget {
                 ),
                 SizedBox(height: 0),
                 Text(
-                  'Proficiency',
+                  'Where did you use if before',
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey[600],
@@ -79,6 +79,41 @@ class Addlanguage extends StatelessWidget {
                   weight: FontWeight.w400,
                   maxCharacters: 80,
                 ),
+                SizedBox(height: 8),
+                Text(
+                  'Add your image',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(0),
+                    fixedSize: MaterialStateProperty.all(Size(80, 5)),
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        side: BorderSide(
+                          color: Color(0xFF2D3D51),
+                        ),
+                      ),
+                    ),
+                  ),
+                  child: Text(
+                    'Add',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF2D3D51),
+                      fontSize: 12,
+                    ),
+                  ),
+                )
               ],
             ),
           ),

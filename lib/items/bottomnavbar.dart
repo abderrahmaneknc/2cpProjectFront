@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:prj/blogsscreen.dart';
-import 'package:prj/homescreen.dart';
-import 'package:prj/profilescreen.dart';
-import 'package:prj/rescorpage.dart';
+import 'package:prj/screens/blogsscreen.dart';
+import 'package:prj/screens/homescreen.dart';
+import 'package:prj/screens/profilescreen.dart';
+import 'package:prj/screens/rescorpage.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   @override

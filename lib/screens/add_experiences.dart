@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prj/textfield2all.dart';
+import 'package:prj/items/textfield2all.dart';
 
-import 'elvButton.dart';
+import 'package:prj/items/elvButton.dart';
 
-class AddCertf extends StatelessWidget {
-  const AddCertf({Key? key});
+class AddExperiences extends StatelessWidget {
+  const AddExperiences({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class AddCertf extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          'Education',
+          'Experiences',
           style: TextStyle(
             color: Color(0xFF2D3D51),
             fontSize: 24,
@@ -42,7 +42,7 @@ class AddCertf extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Build trust. Add certifications & licenses now :',
+                          'Elevate your profile. Showcase your experiences :',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
@@ -50,7 +50,7 @@ class AddCertf extends StatelessWidget {
                         ),
                         SizedBox(height: 16),
                         Text(
-                          'name',
+                          'Title',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
@@ -68,7 +68,7 @@ class AddCertf extends StatelessWidget {
                         ),
                         SizedBox(height: 0),
                         Text(
-                          'Issuing organization',
+                          'Employment type',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
@@ -86,14 +86,28 @@ class AddCertf extends StatelessWidget {
                         ),
                         SizedBox(height: 0),
                         Text(
-                          'Credential URL',
+                          'Company name',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
                           ),
                         ),
+                        Textfieldd2(
+                          maxCharacters: 80,
+                          texthint: '',
+                          size: 16,
+                          color: Color(0xFF2D3D51),
+                          weight: FontWeight.w400,
+                        ),
                         SizedBox(
                           height: 6,
+                        ),
+                        Text(
+                          'Location',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey[600],
+                          ),
                         ),
                         Textfieldd2(
                           maxCharacters: 80,
@@ -104,7 +118,7 @@ class AddCertf extends StatelessWidget {
                         ),
                         SizedBox(height: 0),
                         Text(
-                          'Date',
+                          'Start date',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
@@ -143,7 +157,48 @@ class AddCertf extends StatelessWidget {
                           ),
                           style: TextStyle(),
                         ),
-                        SizedBox(height: 24),
+                        SizedBox(height: 16),
+                        Text(
+                          'End date',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Color(0xFBFBFBFB),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey,
+                              ), // All border color
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 10.0, horizontal: 0.0),
+                            counterStyle: TextStyle(color: Colors.grey[600]),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                Icons.calendar_today,
+                                color: Colors.black
+                                    .withOpacity(0.5), // Adjust opacity here
+                              ),
+                              onPressed: () {
+                                // Add your calendar button functionality here
+                              },
+                            ),
+                          ),
+                          style: TextStyle(),
+                        ),
+                        SizedBox(height: 8),
                         Text(
                           'Add your image',
                           style: TextStyle(
