@@ -31,6 +31,8 @@ class _MyBoxesState extends State<MyBoxes> {
         decoration: InputDecoration(
           hintText: widget.hint,
           hintStyle: TextStyle(
+            fontFamily: "AeonikTRIAL",
+
             // Apply your desired style to the hint text
             fontSize: 12,
             color: Color(0xA5313638),
@@ -63,7 +65,7 @@ class _MyBoxesState extends State<MyBoxes> {
             borderRadius: BorderRadius.circular(20),
             borderSide: const BorderSide(color: Colors.blue),
           ),
-          contentPadding: const EdgeInsets.symmetric(vertical: 12),
+          contentPadding: const EdgeInsets.symmetric(vertical: -13),
         ),
       ),
     );

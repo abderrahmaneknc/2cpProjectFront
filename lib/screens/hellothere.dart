@@ -3,20 +3,21 @@ import 'package:prj/items/txtbutton.dart';
 import 'package:prj/items/boxes.dart';
 import 'package:prj/items/elvButton.dart';
 
-class MySignInPage extends StatefulWidget {
-  const MySignInPage({Key? key}) : super(key: key);
+class MySignUpPage extends StatefulWidget {
+  const MySignUpPage({Key? key}) : super(key: key);
 
   @override
   _MySignInPageState createState() => _MySignInPageState();
 }
 
-class _MySignInPageState extends State<MySignInPage> {
+class _MySignInPageState extends State<MySignUpPage> {
   bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFFBFBFB),
         body: Padding(
           padding: const EdgeInsets.only(top: 32.0, right: 24, left: 24),
           child: SingleChildScrollView(
@@ -26,6 +27,7 @@ class _MySignInPageState extends State<MySignInPage> {
                 const Text(
                   'Hello',
                   style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     height: 0.9,
                     fontSize: 33,
                     color: Color(0xFF2D3D51),
@@ -35,6 +37,7 @@ class _MySignInPageState extends State<MySignInPage> {
                 Text(
                   'There!',
                   style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     height: 1,
                     fontSize: 33,
                     color: Colors.black,
@@ -47,6 +50,7 @@ class _MySignInPageState extends State<MySignInPage> {
                 Text(
                   'Sign in to unlock exclusive features, tailored experiences, and seamless access to your account.',
                   style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     fontSize: 12,
                     color: Colors.grey[500],
                   ),
@@ -64,7 +68,6 @@ class _MySignInPageState extends State<MySignInPage> {
                   height: 16,
                 ),
                 MyBoxes(
-
                   hint: 'Enter your password',
                   icon: Icons.lock_outline,
                   show: false,
@@ -99,6 +102,7 @@ class _MySignInPageState extends State<MySignInPage> {
                         const Text(
                           'By signing up, you agree to our',
                           style: TextStyle(
+                            fontFamily: "AeonikTRIAL",
                             color: Colors.grey,
                             fontSize: 10,
                           ),
@@ -119,6 +123,7 @@ class _MySignInPageState extends State<MySignInPage> {
                           const Text(
                             'and',
                             style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               color: Colors.grey,
                               fontSize: 10,
                             ),
@@ -185,6 +190,7 @@ class _MySignInPageState extends State<MySignInPage> {
                     const Text(
                       'Already have an account?',
                       style: TextStyle(
+                        fontFamily: "AeonikTRIAL",
                         color: Colors.grey,
                         fontSize: 13,
                       ),

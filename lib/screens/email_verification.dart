@@ -11,6 +11,7 @@ class EmailVerification extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xFFFBFBFB),
           leading: Padding(
             padding: const EdgeInsets.only(top: 25, left: 10),
             child: IconButton(
@@ -21,40 +22,45 @@ class EmailVerification extends StatelessWidget {
             ),
           ),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                child: Intropagetmplt(
-                  picture:
-                      'assets/Screenshot_26-4-2024_215221_www.figma.com.jpeg',
-                  text1: 'Email Verification',
-                  text2:
-                      'Please check your email for the verification link. If you don'
-                      't see it, please check your spam folder or click below to resend.',
-                  ww: 207,
-                  hh: 233,
-                  f1: 28,
-                  f2: 12,
-                ),
-              ),
-              Mybuttons(
-                text: 'Resend Verification Email',
-                color: Color(0xFF2D3D51),
-                logo: false,
-                assets: '',
-                txtcolor: Colors.white,
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return VerificationDialog(); // Show the dialog
+        body: Container(
+          color: Color(0xFFFBFBFB),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 32, left: 24, right: 24),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Intropagetmplt(
+                      picture: 'assets/Group 289.jpg',
+                      text1: 'Email Verification',
+                      text2:
+                          'Please check your email for the verification link. If you don'
+                          't see it, please check your spam folder or click below to resend.',
+                      ww: 207,
+                      hh: 233,
+                      f1: 28,
+                      f2: 12,
+                    ),
+                  ),
+                  Mybuttons(
+                    text: 'Resend Verification Email',
+                    color: Color(0xFF2D3D51),
+                    logo: false,
+                    assets: '',
+                    txtcolor: Color(0xFFFBFBFB),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return VerificationDialog(); // Show the dialog
+                        },
+                      );
                     },
-                  );
-                },
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

@@ -37,6 +37,7 @@ class _IntroductionPagesState extends State<IntroductionPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           PageView(
@@ -44,7 +45,7 @@ class _IntroductionPagesState extends State<IntroductionPages> {
             onPageChanged: (index) => _onPageChange(),
             children: const [
               Intropagetmplt(
-                picture: 'assets/ph1.jpg',
+                picture: 'assets/Rectangle 128.jpg',
                 text1: 'Mind Connect',
                 text2:
                     'Connect with brilliant minds, explore their expertise, and collaborate effortlessly throught our app.',
@@ -92,12 +93,11 @@ class _IntroductionPagesState extends State<IntroductionPages> {
               right: 0,
               child: Center(
                 child: MyTxtButtons(
-                                        weight: FontWeight.normal,
-
+                  weight: FontWeight.normal,
                   text: 'done',
                   color: const Color(0xFF2D3D51),
                   onPressed: () {
-                    Navigator.pushNamed(context, '//');
+                    Navigator.pushNamed(context, 'signIn');
                   },
                   size: 10,
                 ),

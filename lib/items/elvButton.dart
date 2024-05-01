@@ -50,7 +50,6 @@ class Mybuttons extends StatelessWidget {
                     height: 40,
                     width: 40,
                   ),
-                  const SizedBox(width: 10),
                   Text(
                     text,
                     style: const TextStyle(color: Colors.black),

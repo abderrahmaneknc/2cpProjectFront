@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => IntroductionPages(),
-          'signIn': (context) => Welcback(),
-          'signUp': (context) => MySignInPage(),
+          'signIn': (context) => MySignInPage(),
+          'signUp': (context) => MySignUpPage(),
           'bckDhabia': (context) => Edahbback(),
           'success_after_payment': (context) => Success(),
           'add_toprofile': (context) => AddToProfile(),

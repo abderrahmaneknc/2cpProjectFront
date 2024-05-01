@@ -3,23 +3,23 @@ import 'package:prj/items/boxes.dart';
 import 'forgotpassword.dart';
 import 'package:prj/items/elvButton.dart';
 
-
 import 'package:prj/items/txtbutton.dart';
 
-class Welcback extends StatefulWidget {
-  const Welcback({Key? key}) : super(key: key);
+class MySignInPage extends StatefulWidget {
+  const MySignInPage({Key? key}) : super(key: key);
 
   @override
   _WelcbackState createState() => _WelcbackState();
 }
 
-class _WelcbackState extends State<Welcback> {
+class _WelcbackState extends State<MySignInPage> {
   bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFFBFBFB),
         body: Padding(
           padding: const EdgeInsets.only(top: 32, left: 24, right: 24),
           child: SingleChildScrollView(
@@ -29,6 +29,7 @@ class _WelcbackState extends State<Welcback> {
                 const Text(
                   'Welcome',
                   style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     height: 0.9,
                     fontSize: 33,
                     color: Color(0xFF2D3D51),
@@ -38,6 +39,7 @@ class _WelcbackState extends State<Welcback> {
                 const Text(
                   'Back!',
                   style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     height: 1,
                     fontSize: 33,
                     color: Colors.black,
@@ -50,6 +52,7 @@ class _WelcbackState extends State<Welcback> {
                 Text(
                   'Sign in to unlock exclusive features, tailored experiences, and seamless access to your account.',
                   style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     fontSize: 12,
                     color: Colors.grey[500],
                   ),
@@ -58,7 +61,7 @@ class _WelcbackState extends State<Welcback> {
                   height: 40,
                 ),
                 MyBoxes(
-                  hint: 'enter your email',
+                  hint: 'Enter your email',
                   icon: Icons.email_outlined,
                   show: false,
                   isPassword: false,
@@ -67,13 +70,10 @@ class _WelcbackState extends State<Welcback> {
                   height: 16,
                 ),
                 MyBoxes(
-                  hint: 'enter your password',
+                  hint: 'Enter your password',
                   icon: Icons.lock_outline,
                   show: true,
                   isPassword: true,
-                ),
-                const SizedBox(
-                  height: 25,
                 ),
                 Row(
                   children: [
@@ -89,6 +89,7 @@ class _WelcbackState extends State<Welcback> {
                     const Text(
                       'Remember me ',
                       style: TextStyle(
+                        fontFamily: "AeonikTRIAL",
                         color: Colors.grey,
                         fontSize: 13,
                       ),
@@ -98,7 +99,6 @@ class _WelcbackState extends State<Welcback> {
                       text: 'Forget password',
                       weight: FontWeight.normal,
                       color: Color(0xFF2D3D51),
-                     
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
@@ -129,9 +129,7 @@ class _WelcbackState extends State<Welcback> {
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'profile');
-                  },
+                  onPressed: () {},
                 ),
                 const SizedBox(
                   height: 20,
@@ -143,7 +141,14 @@ class _WelcbackState extends State<Welcback> {
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(' OR '),
+                      child: Text(
+                        ' OR ',
+                        style: TextStyle(
+                          fontFamily: "AeonikTRIAL",
+                          color: Colors.grey,
+                          fontSize: 13,
+                        ),
+                      ),
                     ),
                     Expanded(
                       child: Divider(),
@@ -181,7 +186,7 @@ class _WelcbackState extends State<Welcback> {
                       text: 'Create an account',
                       color: const Color(0xFF2D3D51),
                       onPressed: () {
-                        Navigator.pushNamed(context, '///');
+                        Navigator.pushNamed(context, 'signUp');
                       },
                       size: 13,
                     ),
