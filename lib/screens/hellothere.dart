@@ -200,7 +200,7 @@ class _MySignInPageState extends State<MySignUpPage> {
                       text: 'Sign in',
                       color: const Color(0xFF2D3D51),
                       onPressed: () {
-                        Navigator.pushNamed(context, '//');
+                        Navigator.pushNamed(context, 'signIn');
                       },
                       size: 13,
                     ),

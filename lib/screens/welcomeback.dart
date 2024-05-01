@@ -3,6 +3,7 @@ import 'package:prj/items/boxes.dart';
 import 'forgotpassword.dart';
 import 'package:prj/items/elvButton.dart';
 
+
 import 'package:prj/items/txtbutton.dart';
 
 class MySignInPage extends StatefulWidget {
@@ -99,6 +100,7 @@ class _WelcbackState extends State<MySignInPage> {
                       text: 'Forget password',
                       weight: FontWeight.normal,
                       color: Color(0xFF2D3D51),
+                     
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
@@ -129,7 +131,9 @@ class _WelcbackState extends State<MySignInPage> {
                   logo: false,
                   assets: '',
                   txtcolor: Colors.white,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'profile');
+                  },
                 ),
                 const SizedBox(
                   height: 20,
@@ -186,7 +190,7 @@ class _WelcbackState extends State<MySignInPage> {
                       text: 'Create an account',
                       color: const Color(0xFF2D3D51),
                       onPressed: () {
-                        Navigator.pushNamed(context, 'signUp');
+                        Navigator.pushNamed(context, '///');
                       },
                       size: 13,
                     ),

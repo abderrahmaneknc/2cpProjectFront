@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+
 import 'package:prj/screens/blogsscreen.dart';
 import 'package:prj/screens/homescreen.dart';
 import 'package:prj/screens/profilescreen.dart';
@@ -118,7 +119,9 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                     height: 7 * height,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, 'addBlog');
+                    },
                     child: AnimatedContainer(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -321,11 +324,10 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   width: 70 * width,
                   child: Column(
                     children: [
-                      Image.asset(
-                        'assets/Group (1).png',
-                        fit: BoxFit.cover,
-                        height: 21 * height,
-                        width: 19 * width,
+                      Image(
+                        height: 20 * height,
+                        width: 20 * width,
+                        image: Svg('assets/Group.svg'),
                       ),
                       SizedBox(
                         height: 9 * width,
@@ -344,7 +346,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   _onItemTapped(1);
                 },
               ),
-              SizedBox(width: 7 * width),
+              SizedBox(width: 5 * width),
               InkWell(
                   child: Container(
                       decoration: BoxDecoration(
@@ -353,8 +355,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         ),
                         color: const Color(0xFF2D3D51),
                       ),
-                      height: 41 * height,
-                      width: 39 * width,
+                      height: 38 * height,
+                      width: 44 * width,
                       child: Image.asset(
                         'assets/Plus.png',
                         height: 16 * height,
@@ -364,18 +366,19 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   onTap: () {
                     _toggleContainersVisibility();
                   }),
-              SizedBox(width: 7 * width),
+              SizedBox(width: 5 * width),
               InkWell(
                 child: Container(
                   height: 33 * height,
                   width: 70 * width,
                   child: Column(
                     children: [
-                      Image.asset(
-                        'assets/comment-blog-icon 1.png',
-                        fit: BoxFit.contain,
-                        height: 22 * height,
-                        width: 23 * width,
+                      Image(
+                        height: 24 * height,
+                        width: 24 * width,
+                        image: Svg(
+                          'assets/comment-blog-icon 1.svg',
+                        ),
                       ),
                       SizedBox(
                         child: Text(

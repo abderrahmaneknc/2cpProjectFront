@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:prj/items/bloglistitem.dart';
 import 'package:prj/items/txtfdbutton.dart';
-
-
 
 class BlogsScreen extends StatelessWidget {
   const BlogsScreen({super.key});
@@ -41,53 +40,23 @@ class BlogsScreen extends StatelessWidget {
                   padding: EdgeInsets.only(
                     top: 20 * height,
                     bottom: 20 * height,
-                    left: 10 * width,
+                    left: 18 * width,
                   ),
                   child: GestureDetector(
                     onTap: () {},
-                    child: Image.asset(
-                      'assets/Notification.png',
-                      fit: BoxFit.cover,
+                    child: SizedBox(
                       height: 24 * height,
-                      width: 22 * width,
+                      width: 24 * width,
+                      child: Image.asset(
+                        'assets/Notification.png',
+                        fit: BoxFit.contain,
+                        height: 24 * height,
+                        width: 22 * width,
+                      ),
                     ),
                   ),
                 ),
               ],
-            ),
-            SizedBox(
-              height: 24 * height,
-            ),
-            SizedBox(
-              height: 25 * height,
-              width: 175 * width,
-              child: Text(
-                'Blog of The Week',
-                style: TextStyle(
-                    fontSize: 21 * width,
-                    height: 1,
-                    fontFamily: AutofillHints.addressCity,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(
-              height: 4 * height,
-            ),
-            SizedBox(
-              height: 14 * height,
-              width: 135 * width,
-              child: Text(
-                'Tranding blogs and news',
-                style: TextStyle(
-                    height: 1,
-                    fontSize: 11 * width,
-                    color: Color.fromARGB(206, 49, 54, 56),
-                    fontFamily: AutofillHints.addressCity),
-              ),
-            ),
-            // ignore: prefer_const_constructors
-            SizedBox(
-              height: 10 * height,
             ),
             SizedBox(
               height: 600,
