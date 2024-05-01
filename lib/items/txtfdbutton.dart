@@ -23,8 +23,8 @@ class TextFieldbt extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius:
                 fixed ? BorderRadius.circular(20) : BorderRadius.circular(25),
-            borderSide:
-                const BorderSide(color: Color.fromARGB(128, 97, 97, 97), width: 1),
+            borderSide: const BorderSide(
+                color: Color.fromARGB(128, 97, 97, 97), width: 1),
           ),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(
@@ -33,7 +33,9 @@ class TextFieldbt extends StatelessWidget {
           ),
           hintText: hinttext,
           hintStyle: const TextStyle(
-              fontSize: 13, color: Color.fromARGB(197, 97, 97, 97)),
+              fontFamily: "AeonikTRIAL",
+              fontSize: 13,
+              color: Color.fromARGB(197, 97, 97, 97)),
           prefixIcon: Icon(
             frontic,
             color: const Color.fromARGB(175, 158, 158, 158),

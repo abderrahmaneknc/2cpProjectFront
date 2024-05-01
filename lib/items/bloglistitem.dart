@@ -29,9 +29,9 @@ class _BlogsListState extends State<BlogsList> {
               child: Text(
                 'Blog of The Week',
                 style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     fontSize: 21 * width,
                     height: 1,
-                    fontFamily: AutofillHints.addressCity,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -44,10 +44,11 @@ class _BlogsListState extends State<BlogsList> {
               child: Text(
                 'Tranding blogs and news',
                 style: TextStyle(
-                    height: 1,
-                    fontSize: 11 * width,
-                    color: Color.fromARGB(206, 49, 54, 56),
-                    fontFamily: AutofillHints.addressCity),
+                  fontFamily: "AeonikTRIAL",
+                  height: 1,
+                  fontSize: 11 * width,
+                  color: Color.fromARGB(206, 49, 54, 56),
+                ),
               ),
             ),
             // ignore: prefer_const_constructors
@@ -102,7 +103,9 @@ class _BlogsListState extends State<BlogsList> {
                       Text(
                         'Jane Cooper. 5 days',
                         style: TextStyle(
-                            color: Colors.white, fontSize: 10 * width),
+                            fontFamily: "AeonikTRIAL",
+                            color: Colors.white,
+                            fontSize: 10 * width),
                       ),
                     ],
                   ),
@@ -134,8 +137,8 @@ class _BlogsListState extends State<BlogsList> {
                           child: Text(
                         'Touch',
                         style: TextStyle(
+                            fontFamily: "AeonikTRIAL",
                             color: Colors.white,
-                            fontFamily: AutofillHints.addressCity,
                             fontSize: 10 * width),
                       )),
                     ),
@@ -152,9 +155,9 @@ class _BlogsListState extends State<BlogsList> {
                         Text(
                           'Digital Despach: Tech Inshights',
                           style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               fontSize: 18 * width,
                               height: 1.2,
-                              fontFamily: AutofillHints.addressCity,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         ),

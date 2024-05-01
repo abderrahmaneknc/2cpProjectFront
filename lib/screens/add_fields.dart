@@ -8,20 +8,34 @@ class Addfields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFBFBFB),
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        backgroundColor: Color(0xFFFBFBFB),
+        leading: Padding(
+          padding: const EdgeInsets.only(top: 25, left: 10),
+          child: CircleAvatar(
+            backgroundColor: const Color(0x592D3D51),
+            radius: 15,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: const Color(0xFF2D3D51),
+              ),
+            ),
+          ),
         ),
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Fields',
-          style: TextStyle(
-            color: Color(0xFF2D3D51),
-            fontSize: 24,
-            fontWeight: FontWeight.w800,
+        title: Padding(
+          padding: const EdgeInsets.only(top: 25),
+          child: Text(
+            'Add Fields',
+            style: TextStyle(
+              color: Color(0xFF2D3D51),
+              fontSize: 24,
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
         centerTitle: true,
@@ -45,7 +59,7 @@ class Addfields extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16),
-                    
+
                     // Your other widgets go here
                   ],
                 ),

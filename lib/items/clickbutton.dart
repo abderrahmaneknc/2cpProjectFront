@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -43,7 +41,10 @@ class ClickButton extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
-                  color: txtclr, fontSize: 17, fontWeight: FontWeight.bold),
+                  fontFamily: "AeonikTRIAL",
+                  color: txtclr,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold),
             ),
           ],
         )),

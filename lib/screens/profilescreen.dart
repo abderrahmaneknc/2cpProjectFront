@@ -54,11 +54,15 @@ class MyProfile extends StatelessWidget {
                     Text(
                       'Meghar yacine',
                       style: TextStyle(
-                          fontSize: 20, height: 1, color: Colors.white),
+                          fontFamily: "AeonikTRIAL",
+                          fontSize: 20,
+                          height: 1,
+                          color: Colors.white),
                     ),
                     Text(
                       'Flutter Devlopper',
                       style: TextStyle(
+                          fontFamily: "AeonikTRIAL",
                           fontSize: 12,
                           height: 1,
                           color: Color.fromARGB(236, 255, 255, 255)),
