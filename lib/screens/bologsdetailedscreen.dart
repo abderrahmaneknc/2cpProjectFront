@@ -157,9 +157,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
             top: height * 565,
             left: width * 103,
             child: Container(
-              child: Row(children: [
-                SizedBox(),
-              ],),
+             
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 color: Colors.white,
