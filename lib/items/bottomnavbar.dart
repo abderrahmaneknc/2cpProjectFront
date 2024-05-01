@@ -95,8 +95,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                             child: Image.asset(
                               'assets/Customer.png',
                               fit: BoxFit.cover,
-                              height: 24 * height,
-                              width: 24 * width,
+                              height: 21 * height,
+                              width: 21 * width,
                             ),
                             backgroundColor: const Color(0xFF2D3D51),
                           ),
@@ -142,8 +142,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                             child: Image.asset(
                               'assets/Vector.png',
                               fit: BoxFit.cover,
-                              height: 18 * height,
-                              width: 16.6 * width,
+                              height: 16 * height,
+                              width: 17 * width,
                             ),
                             backgroundColor: const Color(0xFF2D3D51),
                           ),
@@ -258,7 +258,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 56 * height,
+        height: 56 * height * 0.87,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -287,19 +287,19 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               ),
               InkWell(
                 child: Container(
-                  height: 35 * height,
-                  width: 70 * width,
+                  height: 35 * height * 0.87,
+                  width: 70 * width * 0.87,
                   child: Column(
                     children: [
                       Image.asset(
                         'assets/icons8-accueil-48.png',
                         fit: BoxFit.cover,
-                        height: 24 * height,
-                        width: 24 * width,
+                        height: 24 * height * 0.87,
+                        width: 24 * width * 0.87,
                       ),
                       SizedBox(
-                        height: 11 * height,
-                        width: 27 * width,
+                        height: 11 * height * 0.87,
+                        width: 27 * width * 0.87,
                         child: Text(
                           'Home',
                           style: TextStyle(
@@ -307,7 +307,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,
-                              fontSize: 10,
+                              fontSize: 10 * 0.87,
                               height: 1),
                         ),
                       ),
@@ -320,13 +320,13 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               ),
               InkWell(
                 child: Container(
-                  height: 31 * height,
-                  width: 70 * width,
+                  height: 31 * height * 0.87,
+                  width: 70 * width * 0.87,
                   child: Column(
                     children: [
                       Image(
-                        height: 20 * height,
-                        width: 20 * width,
+                        height: 20 * height * 0.87,
+                        width: 20 * width * 0.87,
                         image: Svg('assets/Group.svg'),
                       ),
                       SizedBox(
@@ -335,7 +335,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           'Blogs',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 10,
+                              fontSize: 10 * 0.87,
                               height: 1),
                         ),
                       ),
@@ -355,12 +355,12 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         ),
                         color: const Color(0xFF2D3D51),
                       ),
-                      height: 38 * height,
-                      width: 44 * width,
+                      height: 38 * height * 0.87,
+                      width: 44 * width * 0.87,
                       child: Image.asset(
                         'assets/Plus.png',
-                        height: 16 * height,
-                        width: 16 * width,
+                        height: 16 * height * 0.87,
+                        width: 16 * width * 0.87,
                         fit: BoxFit.scaleDown,
                       )),
                   onTap: () {
@@ -369,13 +369,13 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               SizedBox(width: 5 * width),
               InkWell(
                 child: Container(
-                  height: 33 * height,
-                  width: 70 * width,
+                  height: 31 * height * 0.87,
+                  width: 70 * width * 0.87,
                   child: Column(
                     children: [
                       Image(
-                        height: 24 * height,
-                        width: 24 * width,
+                        height: 22 * height * 0.87,
+                        width: 22 * width * 0.87,
                         image: Svg(
                           'assets/comment-blog-icon 1.svg',
                         ),
@@ -388,7 +388,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,
-                              fontSize: 10,
+                              fontSize: 10 * 0.87,
                               height: 1),
                         ),
                       ),
@@ -401,18 +401,18 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               ),
               InkWell(
                 child: Container(
-                  height: 33 * height,
-                  width: 70 * width,
+                  height: 33 * height * 0.87,
+                  width: 70 * width * 0.87,
                   child: Column(
                     children: [
                       Image.asset(
                         'assets/icons8-utilisateur-sexe-neutre-32.png',
                         fit: BoxFit.contain,
-                        height: 22 * height,
-                        width: 23 * width,
+                        height: 22 * height * 0.87,
+                        width: 23 * width * 0.87,
                       ),
                       SizedBox(
-                        height: 11 * height,
+                        height: 11 * height * 0.87,
                         child: Text(
                           'Profile',
                           style: TextStyle(
@@ -420,7 +420,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,
-                              fontSize: 10,
+                              fontSize: 10 * 0.87,
                               height: 1.2),
                         ),
                       ),

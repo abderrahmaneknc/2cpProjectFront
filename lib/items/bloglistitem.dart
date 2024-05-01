@@ -73,7 +73,7 @@ class _BlogsListState extends State<BlogsList> {
                   child: Image.asset(
                     'assets/anime-Profile-Pictures.jpg',
                     width: 312 * width,
-                    height: 180 * height,
+                    height: 182 * height,
                     fit: BoxFit.cover,
                   ),
                 ),
