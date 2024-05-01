@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 
-class BlogsDetailScreen extends StatelessWidget {
-  const BlogsDetailScreen({super.key});
+import 'package:flutter/services.dart'; // Import services library
 
+class BlogsDetailScreen extends StatefulWidget {
+  BlogsDetailScreen({super.key});
+
+  @override
+  State<BlogsDetailScreen> createState() => _BlogsDetailScreenState();
+}
+
+class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
+  bool b1 = true;
+  bool b2 = false;
+  bool b0 = false;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -28,7 +38,7 @@ class BlogsDetailScreen extends StatelessWidget {
               color: Colors.black12.withOpacity(0.5),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(top: 130.0, left: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +92,7 @@ class BlogsDetailScreen extends StatelessWidget {
                             topLeft: Radius.circular(40),
                             topRight: Radius.circular(40))),
                     width: double.infinity,
-                    child: const Padding(
+                    child: Padding(
                       padding: EdgeInsets.only(left: 25, right: 25),
                       child: Column(
                         children: [
@@ -107,6 +117,8 @@ class BlogsDetailScreen extends StatelessWidget {
             top: 24 * height,
             left: 24 * width,
             child: CircleAvatar(
+                backgroundColor: Colors.grey.withOpacity(0.5),
+                radius: 13 * width,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -115,32 +127,28 @@ class BlogsDetailScreen extends StatelessWidget {
                     Icons.arrow_back_ios_rounded,
                     color: Colors.white,
                   ),
-                ),
-                backgroundColor: Colors.grey.withOpacity(0.5),
-                radius: 13 * width),
+                )),
           ),
           Positioned(
             top: 24 * height,
             left: 305 * width,
             child: CircleAvatar(
+                backgroundColor: Colors.grey.withOpacity(0.5),
+                radius: 13 * width,
                 child: GestureDetector(
                   onTap: () {},
                   child: Icon(
                     Icons.more_vert_rounded,
                     color: Colors.white,
                   ),
-                ),
-                backgroundColor: Colors.grey.withOpacity(0.5),
-                radius: 13 * width),
+                )),
           ),
           Positioned(
             top: height * 565,
             left: width * 103,
             child: Container(
-              child: Row(children: [
-                SizedBox(),
-              ],),
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(5)),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
@@ -151,8 +159,80 @@ class BlogsDetailScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              height: 40,
-              width: width * 150,
+              height: 45,
+              width: width * 156,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SizedBox(
+                  height: 16 * height,
+                  width: 132 * width,
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () => setState(() {
+                          b0 = !b0;
+                        }),
+                        child: Image.asset(
+                          b0
+                              ? 'assets/icons8-bookmark-48.png'
+                              : 'assets/icons8-bookmark-24.png',
+                          height: 16 * height,
+                          width: width * 16,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 12 * width,
+                      ),
+                      GestureDetector(
+                        onTap: () => setState(() {
+                          b1 = !b1;
+                        }),
+                        child: Image.asset(
+                          b1
+                              ? 'assets/icons8-curved-arrow-down-50.png'
+                              : 'assets/icons8-bas-3-50 (2).png',
+                          height: 16 * height,
+                          width: width * 16,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10 * width,
+                      ),
+                      Text(
+                        '16K',
+                        style: TextStyle(fontSize: 11 * height),
+                      ),
+                      SizedBox(
+                        width: 10 * width,
+                      ),
+                      GestureDetector(
+                        onTap: () => setState(() {
+                          b2 = !b2;
+                        }),
+                        child: Image.asset(
+                          b2 ? 'assets/upblack.png' : 'assets/upwhite.png',
+                          fit: BoxFit.contain,
+                          height: 16 * height,
+                          width: width * 16,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 12 * width,
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/icons8-partager-30.png',
+                          fit: BoxFit.contain,
+                          height: 16 * height,
+                          width: width * 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           )
         ],
