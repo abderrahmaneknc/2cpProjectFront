@@ -31,11 +31,17 @@ class TextFieldbt extends StatelessWidget {
               Radius.circular(25),
             ),
           ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xFF2D3D51),
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(25),
+            ),
+          ),
           hintText: hinttext,
           hintStyle: const TextStyle(
-              fontFamily: "AeonikTRIAL",
-              fontSize: 13,
-              color: Color.fromARGB(197, 97, 97, 97)),
+              fontSize: 13, color: Color.fromARGB(197, 97, 97, 97)),
           prefixIcon: Icon(
             frontic,
             color: const Color.fromARGB(175, 158, 158, 158),

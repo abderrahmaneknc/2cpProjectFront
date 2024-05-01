@@ -63,7 +63,9 @@ class _MyBoxesState extends State<MyBoxes> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(color: Colors.blue),
+            borderSide: const BorderSide(
+              color: Color(0xFF2D3D51),
+            ),
           ),
           contentPadding: const EdgeInsets.symmetric(vertical: -13),
         ),

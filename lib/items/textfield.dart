@@ -29,13 +29,14 @@ class Textfieldd extends StatelessWidget {
           ), // Bottom border color
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.blue), // Bottom border color
+          borderSide: BorderSide(
+            color: Color(0xFF2D3D51),
+          ), // Bottom border color
         ),
         contentPadding:
             EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0), // Padding
       ),
       style: TextStyle(
-        
         fontSize: size,
         fontWeight: weight,
         color: color,

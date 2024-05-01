@@ -61,7 +61,9 @@ class _Textfieldd2State extends State<Textfieldd2> {
           borderRadius: BorderRadius.circular(5.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blue),
+          borderSide: BorderSide(
+            color: Color(0xFF2D3D51),
+          ),
           borderRadius: BorderRadius.circular(5.0),
         ),
         contentPadding: EdgeInsets.fromLTRB(

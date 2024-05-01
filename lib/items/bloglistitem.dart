@@ -129,7 +129,7 @@ class _BlogsListState extends State<BlogsList> {
                     height: 18 * height,
                     width: 47 * width,
                     decoration: const BoxDecoration(
-                        color: Colors.blue,
+                        color: Color(0xFF2D3D51),
                         borderRadius: BorderRadius.all(Radius.circular(25))),
                     child: GestureDetector(
                       onTap: () => Navigator.pushNamed(context, 'blogsds'),
