@@ -130,7 +130,7 @@ class _WelcbackState extends State<MySignInPage> {
                   assets: '',
                   txtcolor: Colors.white,
                   onPressed: () {
-                    Navigator.pushNamed(context, 'profile');
+                    Navigator.pushNamed(context, 'btnavbar');
                   },
                 ),
                 const SizedBox(
