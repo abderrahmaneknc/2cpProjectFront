@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:prj/items/boxes.dart';
 import 'package:prj/items/elvButton.dart';
 
-
 class MyRessetPass extends StatelessWidget {
   const MyRessetPass({super.key});
 
@@ -17,6 +16,7 @@ class MyRessetPass extends StatelessWidget {
           Text(
             'Reset Password',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Color(0xFF2D3D51),
@@ -28,6 +28,7 @@ class MyRessetPass extends StatelessWidget {
           Text(
             'Set the new password for your account so you can login and access all features.',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 12,
               color: Colors.grey[500],
             ),

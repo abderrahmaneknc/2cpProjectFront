@@ -11,7 +11,7 @@ class EmailVerification extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFFBFBFB),
+          backgroundColor: Colors.white,
           leading: Padding(
             padding: const EdgeInsets.only(top: 25, left: 10),
             child: IconButton(
@@ -23,7 +23,7 @@ class EmailVerification extends StatelessWidget {
           ),
         ),
         body: Container(
-          color: Color(0xFFFBFBFB),
+          color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.only(top: 32, left: 24, right: 24),
             child: Center(
@@ -48,7 +48,7 @@ class EmailVerification extends StatelessWidget {
                     color: Color(0xFF2D3D51),
                     logo: false,
                     assets: '',
-                    txtcolor: Color(0xFFFBFBFB),
+                    txtcolor: Colors.white,
                     onPressed: () {
                       showDialog(
                         context: context,

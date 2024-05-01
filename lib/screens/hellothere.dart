@@ -85,12 +85,14 @@ class _MySignInPageState extends State<MySignUpPage> {
                 const SizedBox(
                   height: 16,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
+                SizedBox(
+                  width: double.infinity,
+                  height: 60,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        child: Checkbox(
                           value: isChecked,
                           activeColor: Colors.blue,
                           onChanged: (newValue) {
@@ -99,49 +101,55 @@ class _MySignInPageState extends State<MySignUpPage> {
                             });
                           },
                         ),
-                        const Text(
-                          'By signing up, you agree to our',
+                      ),
+                      Positioned(
+                        top: 10,
+                        left: 40,
+                        child: const Text(
+                          'By signing up, you agree to our ',
                           style: TextStyle(
                             fontFamily: "AeonikTRIAL",
                             color: Colors.grey,
                             fontSize: 10,
                           ),
                         ),
-                        MyTxtButtons(
+                      ),
+                      Positioned(
+                        left: 187,
+                        top: -6.7,
+                        child: MyTxtButtons(
                           weight: FontWeight.normal,
-                          text: 'terms and services',
+                          text: 'Terms and of Services',
                           color: const Color(0xFF2D3D51),
                           onPressed: () {},
                           size: 11,
                         ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50),
-                      child: Row(
-                        children: [
-                          const Text(
-                            'and',
-                            style: TextStyle(
-                              fontFamily: "AeonikTRIAL",
-                              color: Colors.grey,
-                              fontSize: 10,
-                            ),
-                          ),
-                          MyTxtButtons(
-                            weight: FontWeight.normal,
-                            text: 'Privacy Policy',
-                            color: const Color(0xFF2D3D51),
-                            onPressed: () {},
-                            size: 11,
-                          ),
-                        ],
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
+                      Positioned(
+                        top: 10,
+                        left: 60,
+                        child: MyTxtButtons(
+                          weight: FontWeight.normal,
+                          text: 'Privacy Policy',
+                          color: const Color(0xFF2D3D51),
+                          onPressed: () {},
+                          size: 11,
+                        ),
+                      ),
+                      Positioned(
+                        top: 27,
+                        left: 40,
+                        child: const Text(
+                          'and ',
+                          style: TextStyle(
+                            fontFamily: "AeonikTRIAL",
+                            color: Colors.grey,
+                            fontSize: 10,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Mybuttons(
                   text: 'Sign up',

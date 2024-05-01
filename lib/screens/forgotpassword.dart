@@ -4,7 +4,6 @@ import 'package:prj/items/digits.dart';
 
 import 'package:prj/items/elvButton.dart';
 
-
 // ignore: camel_case_types
 class buildSheet extends StatelessWidget {
   const buildSheet({super.key});
@@ -19,6 +18,7 @@ class buildSheet extends StatelessWidget {
           Text(
             'Forgot Password',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Color(0xFF2D3D51),
@@ -30,6 +30,7 @@ class buildSheet extends StatelessWidget {
           Text(
             'Enter your email for the verification process, we will send you 5 digits code to your email.',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 12,
               color: Colors.grey[500],
             ),

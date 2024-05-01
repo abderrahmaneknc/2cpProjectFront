@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:prj/items/elvButton.dart';
@@ -30,6 +29,7 @@ class VerificationDialog extends StatelessWidget {
               Text(
                 'Verified!',
                 style: TextStyle(
+                  fontFamily: "AeonikTRIAL",
                   fontSize: 28.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -40,6 +40,7 @@ class VerificationDialog extends StatelessWidget {
                   'Yahoo! you have successfully verified your\nemail. You can now enjoy our \napplication.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
                     fontSize: 12.0,
                     color: Colors.grey[500],
                   ),

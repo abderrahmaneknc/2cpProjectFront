@@ -18,6 +18,7 @@ class Digits extends StatelessWidget {
           const Text(
             'Enter 5 Digits Code',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Color(0xFF2D3D51),
@@ -29,6 +30,7 @@ class Digits extends StatelessWidget {
           Text(
             'Enter the 5 digits code that you received on your email.',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 12,
               color: Colors.grey[500],
             ),
@@ -54,6 +56,7 @@ class Digits extends StatelessWidget {
               Text(
                 'Did not receive the email ?',
                 style: TextStyle(
+                  fontFamily: "AeonikTRIAL",
                   fontSize: 12,
                   color: Colors.grey[500],
                 ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:prj/items/clickbutton.dart';
 
-
 class ViewProfile extends StatefulWidget {
   const ViewProfile({super.key});
 
@@ -86,11 +85,15 @@ class _ViewProfileState extends State<ViewProfile> {
                     Text(
                       'Meghar yacine',
                       style: TextStyle(
-                          fontSize: 20, height: 1, color: Colors.white),
+                          fontFamily: "AeonikTRIAL",
+                          fontSize: 20,
+                          height: 1,
+                          color: Colors.white),
                     ),
                     Text(
                       'Flutter Devlopper',
                       style: TextStyle(
+                          fontFamily: "AeonikTRIAL",
                           fontSize: 12,
                           height: 1,
                           color: const Color.fromARGB(236, 255, 255, 255)),
@@ -147,13 +150,16 @@ class _ViewProfileState extends State<ViewProfile> {
                                       Text(
                                         'Username',
                                         style: TextStyle(
+                                          fontFamily: "AeonikTRIAL",
                                           fontSize: 24,
                                         ),
                                       ),
                                       Text(
                                         'Meghar yacine',
                                         style: TextStyle(
-                                            fontSize: 13, height: 1.2),
+                                            fontFamily: "AeonikTRIAL",
+                                            fontSize: 13,
+                                            height: 1.2),
                                       ),
                                     ],
                                   ),
@@ -179,13 +185,16 @@ class _ViewProfileState extends State<ViewProfile> {
                                       Text(
                                         'Main Profession',
                                         style: TextStyle(
+                                          fontFamily: "AeonikTRIAL",
                                           fontSize: 24,
                                         ),
                                       ),
                                       Text(
                                         'Design',
                                         style: TextStyle(
-                                            fontSize: 13, height: 1.2),
+                                            fontFamily: "AeonikTRIAL",
+                                            fontSize: 13,
+                                            height: 1.2),
                                       ),
                                     ],
                                   ),
@@ -209,6 +218,7 @@ class _ViewProfileState extends State<ViewProfile> {
                                       Text(
                                         'About',
                                         style: TextStyle(
+                                          fontFamily: "AeonikTRIAL",
                                           fontSize: 24,
                                         ),
                                       ),
@@ -221,7 +231,10 @@ class _ViewProfileState extends State<ViewProfile> {
                                   ),
                                   Text(
                                     'Lorem ipsum dolor sit amet consectetur. Vel quisque porta dignissim proin volutpat nibh faucibus. Faucibus pellentesque massa feugiat diam non sed risus malesuada.',
-                                    style: TextStyle(fontSize: 13),
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: "AeonikTRIAL",
+                                    ),
                                   ),
                                 ],
                               ),
@@ -239,6 +252,7 @@ class _ViewProfileState extends State<ViewProfile> {
                                       Text(
                                         'MY Media',
                                         style: TextStyle(
+                                          fontFamily: "AeonikTRIAL",
                                           fontSize: 24,
                                         ),
                                       ),
@@ -255,19 +269,31 @@ class _ViewProfileState extends State<ViewProfile> {
                                   ),
                                   Text(
                                     '-insta link',
-                                    style: TextStyle(fontSize: 13),
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: "AeonikTRIAL",
+                                    ),
                                   ),
                                   Text(
                                     '-Behance link',
-                                    style: TextStyle(fontSize: 13),
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: "AeonikTRIAL",
+                                    ),
                                   ),
                                   Text(
                                     '-linkedin link',
-                                    style: TextStyle(fontSize: 13),
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: "AeonikTRIAL",
+                                    ),
                                   ),
                                   Text(
                                     '-Git hub link',
-                                    style: TextStyle(fontSize: 13),
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: "AeonikTRIAL",
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 5 * height,
@@ -277,6 +303,7 @@ class _ViewProfileState extends State<ViewProfile> {
                                       Text(
                                         'What I am Good At',
                                         style: TextStyle(
+                                          fontFamily: "AeonikTRIAL",
                                           fontSize: 23,
                                         ),
                                       ),
@@ -376,8 +403,6 @@ class gdatitem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-   
     return ElevatedButton(
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -397,7 +422,11 @@ class gdatitem extends StatelessWidget {
       onPressed: () {},
       child: Text(
         gdattxt,
-        style: TextStyle(fontSize: 12, color: Color.fromARGB(255, 18, 56, 87)),
+        style: TextStyle(
+          fontSize: 12,
+          color: Color.fromARGB(255, 18, 56, 87),
+          fontFamily: "AeonikTRIAL",
+        ),
       ),
     );
   }

@@ -14,6 +14,7 @@ class verified extends StatelessWidget {
           Text(
             'Forgot Password',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Color(0xFF2D3D51),
@@ -25,6 +26,7 @@ class verified extends StatelessWidget {
           Text(
             'Enter your email for the verification process, we will send you 5 digits code to your email.',
             style: TextStyle(
+              fontFamily: "AeonikTRIAL",
               fontSize: 12,
               color: Colors.grey[500],
             ),
