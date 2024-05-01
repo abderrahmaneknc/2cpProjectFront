@@ -2,30 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:prj/items/elvButton.dart';
 import 'package:prj/items/textfield2all.dart';
 
-
-
-
 class AddCertf extends StatelessWidget {
   const AddCertf({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFFBFBFB),
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        backgroundColor: Color(0xFFFBFBFB),
+        leading: Padding(
+          padding: const EdgeInsets.only(top: 25, left: 10),
+          child: CircleAvatar(
+            backgroundColor: const Color(0x592D3D51),
+            radius: 15,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: const Color(0xFF2D3D51),
+              ),
+            ),
+          ),
         ),
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Education',
-          style: TextStyle(
-            color: Color(0xFF2D3D51),
-            fontSize: 24,
-            fontWeight: FontWeight.w800,
+        title: Padding(
+          padding: const EdgeInsets.only(top: 25),
+          child: Text(
+            'Add Certafication',
+            style: TextStyle(
+              color: Color(0xFF2D3D51),
+              fontSize: 24,
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
         centerTitle: true,

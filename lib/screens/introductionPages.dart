@@ -37,7 +37,7 @@ class _IntroductionPagesState extends State<IntroductionPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFFBFBFB),
       body: Stack(
         children: [
           PageView(

@@ -25,7 +25,7 @@ class Intropagetmplt extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xFFFBFBFB),
       ),
       padding: const EdgeInsets.fromLTRB(40.0, 0, 40, 40),
       child: Center(

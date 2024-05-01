@@ -42,6 +42,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
     double width = screenWidth / 360;
 
     return Scaffold(
+      backgroundColor: Color(0xFFFBFBFB),
       body: Stack(
         children: <Widget>[
           _pages[_currentIndex],
@@ -106,6 +107,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           Text(
                             'Share your profile',
                             style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                               color: const Color(0xFF2D3D51),
@@ -153,6 +155,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           Text(
                             'add your blog',
                             style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                               color: const Color(0xFF2D3D51),
@@ -198,6 +201,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           Text(
                             'add your resourses',
                             style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                               color: const Color(0xFF2D3D51),
@@ -243,6 +247,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           Text(
                             'add your live courses',
                             style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                               color: const Color(0xFF2D3D51),
@@ -303,11 +308,12 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         child: Text(
                           'Home',
                           style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               color: _currentIndex == 0
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,
-                              fontSize: 10 * 0.87,
+                              fontSize: 9 * 0.87,
                               height: 1),
                         ),
                       ),
@@ -334,8 +340,9 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         child: Text(
                           'Blogs',
                           style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               fontWeight: FontWeight.bold,
-                              fontSize: 10 * 0.87,
+                              fontSize: 9 * 0.87,
                               height: 1),
                         ),
                       ),
@@ -384,11 +391,12 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         child: Text(
                           'res/cor',
                           style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               color: _currentIndex == 0
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,
-                              fontSize: 10 * 0.87,
+                              fontSize: 9 * 0.87,
                               height: 1),
                         ),
                       ),
@@ -416,6 +424,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         child: Text(
                           'Profile',
                           style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
                               color: _currentIndex == 0
                                   ? const Color(0xFF2D3D51)
                                   : null,

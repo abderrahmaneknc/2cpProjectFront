@@ -11,7 +11,7 @@ import 'screens/add_language.dart';
 import 'screens/add_skills.dart';
 import 'screens/blogsscreen.dart';
 import 'screens/bologsdetailedscreen.dart';
-import 'package:prj/items/bottomnavbar.dart';
+import 'package:prj/screens/bottomnavbar.dart';
 import 'screens/edhabiabackground.dart';
 import 'screens/email_verification.dart';
 import 'screens/hellothere.dart';

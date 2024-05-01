@@ -14,12 +14,18 @@ class EmailVerification extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: Padding(
             padding: const EdgeInsets.only(top: 25, left: 10),
-            child: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+            child: CircleAvatar(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_rounded,
+                    color: const Color(0xFF2D3D51),
+                  ),
+                ),
+                backgroundColor: const Color(0x592D3D51),
+                radius: 15),
           ),
         ),
         body: Container(

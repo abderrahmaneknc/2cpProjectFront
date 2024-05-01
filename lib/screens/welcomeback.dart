@@ -79,7 +79,7 @@ class _WelcbackState extends State<MySignInPage> {
                   children: [
                     Checkbox(
                       value: isChecked,
-                      activeColor: Colors.blue,
+                      activeColor: Color(0xFF2D3D51),
                       onChanged: (newBool) {
                         setState(() {
                           isChecked = newBool!;

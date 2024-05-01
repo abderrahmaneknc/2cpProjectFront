@@ -23,10 +23,18 @@ class TextFieldbt extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius:
                 fixed ? BorderRadius.circular(20) : BorderRadius.circular(25),
-            borderSide:
-                const BorderSide(color: Color.fromARGB(128, 97, 97, 97), width: 1),
+            borderSide: const BorderSide(
+                color: Color.fromARGB(128, 97, 97, 97), width: 1),
           ),
           border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(25),
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xFF2D3D51),
+            ),
             borderRadius: BorderRadius.all(
               Radius.circular(25),
             ),

@@ -16,7 +16,7 @@ class BlogsScreen extends StatelessWidget {
 
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color.fromARGB(255, 248, 247, 244),
+      backgroundColor: Color(0xFFFBFBFB),
       body: Padding(
         padding: EdgeInsets.only(
             top: 28 * height, left: 24 * width, right: 24 * width),

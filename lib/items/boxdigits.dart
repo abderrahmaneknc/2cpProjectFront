@@ -50,13 +50,14 @@ class _MyboxdigitsState extends State<Myboxdigits> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5),
-              borderSide: const BorderSide(color: Colors.blue),
+              borderSide: const BorderSide(
+                color: Color(0xFF2D3D51),
+              ),
             ),
             contentPadding: const EdgeInsets.symmetric(vertical: 12),
           ),
           onChanged: (value) {
-            
-            if (value.length == 1 ) {
+            if (value.length == 1) {
               _focusNode.nextFocus();
             } else if (value.isEmpty) {
               _focusNode.previousFocus();
