@@ -3,7 +3,6 @@ import 'package:prj/items/boxes.dart';
 import 'forgotpassword.dart';
 import 'package:prj/items/elvButton.dart';
 
-
 import 'package:prj/items/txtbutton.dart';
 
 class Welcback extends StatefulWidget {
@@ -98,7 +97,6 @@ class _WelcbackState extends State<Welcback> {
                       text: 'Forget password',
                       weight: FontWeight.normal,
                       color: Color(0xFF2D3D51),
-                     
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
@@ -130,7 +128,7 @@ class _WelcbackState extends State<Welcback> {
                   assets: '',
                   txtcolor: Colors.white,
                   onPressed: () {
-                    Navigator.pushNamed(context, 'profile');
+                    Navigator.pushNamed(context, 'btnavbar');
                   },
                 ),
                 const SizedBox(
@@ -181,7 +179,7 @@ class _WelcbackState extends State<Welcback> {
                       text: 'Create an account',
                       color: const Color(0xFF2D3D51),
                       onPressed: () {
-                        Navigator.pushNamed(context, '///');
+                        Navigator.pushNamed(context, 'btnavbar');
                       },
                       size: 13,
                     ),

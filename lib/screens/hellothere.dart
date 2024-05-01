@@ -64,7 +64,6 @@ class _MySignInPageState extends State<MySignInPage> {
                   height: 16,
                 ),
                 MyBoxes(
-
                   hint: 'Enter your password',
                   icon: Icons.lock_outline,
                   show: false,
@@ -194,7 +193,7 @@ class _MySignInPageState extends State<MySignInPage> {
                       text: 'Sign in',
                       color: const Color(0xFF2D3D51),
                       onPressed: () {
-                        Navigator.pushNamed(context, '//');
+                        Navigator.pushNamed(context, 'signIn');
                       },
                       size: 13,
                     ),

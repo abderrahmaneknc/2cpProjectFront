@@ -133,6 +133,28 @@ class BlogsDetailScreen extends StatelessWidget {
                 backgroundColor: Colors.grey.withOpacity(0.5),
                 radius: 13 * width),
           ),
+          Positioned(
+            top: height * 565,
+            left: width * 103,
+            child: Container(
+              child: Row(children: [
+                SizedBox(),
+              ],),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    spreadRadius: 2,
+                    blurRadius: 6,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
+              height: 40,
+              width: width * 150,
+            ),
+          )
         ],
       ),
     ));

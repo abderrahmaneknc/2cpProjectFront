@@ -92,12 +92,11 @@ class _IntroductionPagesState extends State<IntroductionPages> {
               right: 0,
               child: Center(
                 child: MyTxtButtons(
-                                        weight: FontWeight.normal,
-
+                  weight: FontWeight.normal,
                   text: 'done',
                   color: const Color(0xFF2D3D51),
                   onPressed: () {
-                    Navigator.pushNamed(context, '//');
+                    Navigator.pushNamed(context, 'signIn');
                   },
                   size: 10,
                 ),

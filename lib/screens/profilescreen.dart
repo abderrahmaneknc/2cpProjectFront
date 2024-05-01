@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:prj/items/clickbutton.dart';
-import 'package:prj/items/clickbutton.dart';
-
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
@@ -155,7 +153,7 @@ class MyProfile extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 10.0 * height),
+                        padding: EdgeInsets.only(top: 7.0 * height),
                         child: SizedBox(
                           height: 39 * height,
                           width: 311 * width,
@@ -171,7 +169,7 @@ class MyProfile extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 10.0 * height),
+                        padding: EdgeInsets.only(top: 7.0 * height),
                         child: SizedBox(
                           height: 39 * height,
                           width: 311 * width,
@@ -185,7 +183,7 @@ class MyProfile extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 10.0 * height),
+                        padding: EdgeInsets.only(top: 7.0 * height),
                         child: SizedBox(
                           height: 39 * height,
                           width: 311 * width,
@@ -199,7 +197,7 @@ class MyProfile extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 10.0 * height),
+                        padding: EdgeInsets.only(top: 7.0 * height),
                         child: SizedBox(
                           height: 39 * height,
                           width: 311 * width,
@@ -214,18 +212,18 @@ class MyProfile extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          top: 30 * height,
+                          top: 25 * height,
                         ),
                         child: SizedBox(
                           height: 39 * height,
                           width: 311 * width,
                           child: ClickButton(
-                            text: 'Sign Out',
+                            text: 'Log Out',
                             showicon: true,
                             fill: const Color(0xFF2D3D51),
                             txtclr: Colors.white,
                             fnct: () {
-                              Navigator.pushNamed(context, '///');
+                              Navigator.pushNamed(context, 'signUp');
                             },
                           ),
                         ),
