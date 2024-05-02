@@ -41,7 +41,9 @@ class TextFieldbt extends StatelessWidget {
           ),
           hintText: hinttext,
           hintStyle: const TextStyle(
-              fontSize: 13, color: Color.fromARGB(197, 97, 97, 97)),
+              fontFamily: "AeonikTRIAL",
+              fontSize: 13,
+              color: Color.fromARGB(197, 97, 97, 97)),
           prefixIcon: Icon(
             frontic,
             color: const Color.fromARGB(175, 158, 158, 158),

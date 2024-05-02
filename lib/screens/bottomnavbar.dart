@@ -304,7 +304,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                       ),
                       SizedBox(
                         height: 11 * height * 0.87,
-                        width: 27 * width * 0.87,
+                        width: 23 * width * 0.87,
                         child: Text(
                           'Home',
                           style: TextStyle(
@@ -317,6 +317,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                               height: 1),
                         ),
                       ),
+                      
                     ],
                   ),
                 ),
@@ -326,7 +327,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               ),
               InkWell(
                 child: Container(
-                  height: 31 * height * 0.87,
+                  height: 32 * height * 0.87,
                   width: 70 * width * 0.87,
                   child: Column(
                     children: [
@@ -336,7 +337,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         image: Svg('assets/Group.svg'),
                       ),
                       SizedBox(
-                        height: 9 * width,
+                        height: 9 * width * 0.87,
                         child: Text(
                           'Blogs',
                           style: TextStyle(
@@ -362,7 +363,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         ),
                         color: const Color(0xFF2D3D51),
                       ),
-                      height: 38 * height * 0.87,
+                      height: 44 * height * 0.87,
                       width: 44 * width * 0.87,
                       child: Image.asset(
                         'assets/Plus.png',
@@ -376,7 +377,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               SizedBox(width: 5 * width),
               InkWell(
                 child: Container(
-                  height: 31 * height * 0.87,
+                  height: 32 * height * 0.87,
                   width: 70 * width * 0.87,
                   child: Column(
                     children: [

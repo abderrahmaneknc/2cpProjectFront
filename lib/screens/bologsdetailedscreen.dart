@@ -157,7 +157,6 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
             top: height * 565,
             left: width * 103,
             child: Container(
-             
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 color: Colors.white,
@@ -196,7 +195,12 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                       ),
                       GestureDetector(
                         onTap: () => setState(() {
-                          b1 = !b1;
+                          if (!b2 == b1) {
+                            b1 = !b1;
+                            b2 = b1;
+                          } else {
+                            b1 = !b1;
+                          }
                         }),
                         child: Image.asset(
                           b1
@@ -219,7 +223,12 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                       ),
                       GestureDetector(
                         onTap: () => setState(() {
-                          b2 = !b2;
+                          if (!b1 == b2) {
+                            b2 = !b2;
+                            b1 = b2;
+                          } else {
+                            b2 = !b2;
+                          }
                         }),
                         child: Image.asset(
                           b2 ? 'assets/upblack.png' : 'assets/upwhite.png',

@@ -36,7 +36,7 @@ class RectangularButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(
+          style: TextStyle( fontFamily: "AeonikTRIAL",
             color: textColor,
             fontSize: 16.0,
           ),
@@ -46,24 +46,5 @@ class RectangularButton extends StatelessWidget {
   }
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: RectangularButton(
-          text: 'Edit',
-          onPressed: () {},
-        ),
-      ),
-    );
-  }
-}
 
-void main() {
-  runApp(const MaterialApp(
-    home: MyWidget(),
-  ));
-}

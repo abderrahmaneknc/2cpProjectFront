@@ -50,7 +50,7 @@ class _BlogsListState extends State<BlogsList> {
                       height: 1,
                       fontSize: 11 * width,
                       color: Color.fromARGB(206, 49, 54, 56),
-                      fontFamily: AutofillHints.addressCity),
+                      fontFamily: "AeonikTRIAL",),
                 ),
               ),
               // ignore: prefer_const_constructors
@@ -104,7 +104,7 @@ class _BlogsListState extends State<BlogsList> {
                         ),
                         Text(
                           'Jane Cooper. 5 days',
-                          style: TextStyle(
+                          style: TextStyle( fontFamily: "AeonikTRIAL",
                               color: Colors.white, fontSize: 10 * width),
                         ),
                       ],
@@ -136,7 +136,7 @@ class _BlogsListState extends State<BlogsList> {
                         'Touch',
                         style: TextStyle(
                             color: Colors.white,
-                            fontFamily: AutofillHints.addressCity,
+                            fontFamily: "AeonikTRIAL",
                             fontSize: 10 * width),
                       )),
                     ),
@@ -154,7 +154,7 @@ class _BlogsListState extends State<BlogsList> {
                             style: TextStyle(
                                 fontSize: 18 * width,
                                 height: 1.2,
-                                fontFamily: AutofillHints.addressCity,
+                                fontFamily: "AeonikTRIAL",
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),

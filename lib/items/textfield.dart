@@ -36,7 +36,7 @@ class Textfieldd extends StatelessWidget {
         contentPadding:
             EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0), // Padding
       ),
-      style: TextStyle(
+      style: TextStyle( fontFamily: "AeonikTRIAL",
         fontSize: size,
         fontWeight: weight,
         color: color,

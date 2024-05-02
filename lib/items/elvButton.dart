@@ -52,13 +52,13 @@ class Mybuttons extends StatelessWidget {
                   ),
                   Text(
                     text,
-                    style: const TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black, fontFamily: "AeonikTRIAL",),
                   ),
                 ],
               )
             : Text(
                 text,
-                style: TextStyle(color: txtcolor),
+                style: TextStyle(color: txtcolor, fontFamily: "AeonikTRIAL",),
               ),
       ),
     );

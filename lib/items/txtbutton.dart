@@ -24,7 +24,7 @@ class MyTxtButtons extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(
+        style: TextStyle( fontFamily: "AeonikTRIAL",
           color: color,
           fontSize: size,
           fontWeight: weight,
