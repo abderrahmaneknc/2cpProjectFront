@@ -113,7 +113,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                               ),
                               'Artificial intelligence (AI) \n the field of computer science that studies how to create machines and software that can perform tasks that require human intelligence, such as reasoning, \n learning, perception, decision making, and natural language processing. AI has a long and rich his\ntory,\n dating back to ancient times, when philosophers and mathematicians tried to understand the nature and principles of human thought and reasoning. In this text, we will briefly overview some of the major milestones and achievements in the history of AI, from its origins to the present day.The Origins of AI: From Antiquity to the 19th CenturyThe idea of creating artificial beings that can think and act like humans can be traced back to ancient myths and legends, such  the golems of Jewish folklore, the mechanical servants of Hephaestus in Greek mythology, or the automata of Al-Jazari in medieval Islam. These stories reflect the human fascination and curiosity with the possibility of creating intelligent machines.The scientific foundations of AI began to emerge in the fields of logic, mathematics, and philosophy, with the works of thinkers such s Aristotle, Euclid, Descartes, Leibniz, and Boole. These pioneers developed formal systems of reasoning, calculation, and representation, which are essential for the development of AI. They also raised important questions about the nature and limits of human and machine intelligence, such as the mind-body problem, the Turing test, and the Chinese room argument.The birth of modern computers in the 19th and early 20th centuries provided the necessary tools and hardware for implementing AI. The inventions of Charles Babbage, Ada Lovelace, Alan Turing, John von Neumann, and others laid the foundations of computer science and engineering, and enabled the creation of programmable machines that can perform complex calculations and operations. These machines opened the door for the realization of AI'),
                           SizedBox(
-                            height: 30,
+                            height: 85,
                           ),
                         ],
                       ),
@@ -162,7 +162,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.4),
+                    color: Colors.black.withOpacity(0.2),
                     spreadRadius: 2,
                     blurRadius: 6,
                     offset: Offset(0, 2),
@@ -191,7 +191,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                         ),
                       ),
                       SizedBox(
-                        width: 12 * width,
+                        width: 21 * width,
                       ),
                       GestureDetector(
                         onTap: () => setState(() {
@@ -212,14 +212,14 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                         ),
                       ),
                       SizedBox(
-                        width: 10 * width,
+                        width: 4 * width,
                       ),
                       Text(
                         '16K',
                         style: TextStyle(fontSize: 11 * height),
                       ),
                       SizedBox(
-                        width: 10 * width,
+                        width: 4 * width,
                       ),
                       GestureDetector(
                         onTap: () => setState(() {
@@ -238,7 +238,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                         ),
                       ),
                       SizedBox(
-                        width: 12 * width,
+                        width: 21 * width,
                       ),
                       GestureDetector(
                         onTap: () {},
