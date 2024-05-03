@@ -94,7 +94,7 @@ class _MySignInPageState extends State<MySignUpPage> {
                         left: 0,
                         child: Checkbox(
                           value: isChecked,
-                          activeColor: Colors.blue,
+                          activeColor: const Color(0xFF2D3D51),
                           onChanged: (newValue) {
                             setState(() {
                               isChecked = newValue ?? false;

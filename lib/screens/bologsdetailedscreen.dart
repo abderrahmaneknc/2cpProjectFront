@@ -10,7 +10,7 @@ class BlogsDetailScreen extends StatefulWidget {
 }
 
 class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
-  bool b1 = true;
+  bool b1 = false;
   bool b2 = false;
   bool b0 = false;
   @override
@@ -162,9 +162,9 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 6,
+                    color: Colors.black.withOpacity(0.1),
+                    spreadRadius: 3,
+                    blurRadius: 10,
                     offset: Offset(0, 2),
                   ),
                 ],
@@ -172,7 +172,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
               height: 45,
               width: width * 156,
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(9.0),
                 child: SizedBox(
                   height: 16 * height,
                   width: 132 * width,
@@ -195,17 +195,19 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                       ),
                       GestureDetector(
                         onTap: () => setState(() {
-                          if (!b2 == b1) {
+                          if (!b2 & !b1) {
                             b1 = !b1;
-                            b2 = b1;
-                          } else {
+                          } else if (!b1 & b2) {
+                            b1 = !b1;
+                            b2 = !b2;
+                          } else if (b1 & !b2) {
                             b1 = !b1;
                           }
                         }),
                         child: Image.asset(
                           b1
-                              ? 'assets/icons8-curved-arrow-down-50.png'
-                              : 'assets/icons8-bas-3-50 (2).png',
+                              ? 'assets/icons8-bas-3-50 (2).png'
+                              : 'assets/icons8-curved-arrow-down-50.png',
                           height: 16 * height,
                           width: width * 16,
                           fit: BoxFit.contain,
@@ -223,10 +225,13 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                       ),
                       GestureDetector(
                         onTap: () => setState(() {
-                          if (!b1 == b2) {
+                          if (!b2 & !b1) {
                             b2 = !b2;
-                            b1 = b2;
-                          } else {
+                            b1 = false;
+                          } else if (!b2 & b1) {
+                            b1 = !b1;
+                            b2 = !b2;
+                          } else if (b2 & !b1) {
                             b2 = !b2;
                           }
                         }),
