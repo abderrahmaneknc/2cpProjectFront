@@ -12,7 +12,10 @@ class CourseItem extends StatelessWidget {
     double width = screenWidth / 360;
     return Padding(
       padding: EdgeInsets.only(
-          left: 8 * width, top: 5 * height, bottom: 10 * height),
+          right: 8 * width,
+          top: 5 * height,
+          bottom: 10 * height,
+          left: 1 * width),
       child: GestureDetector(
         onTap: () {},
         child: Container(
@@ -30,6 +33,8 @@ class CourseItem extends StatelessWidget {
               Radius.circular(25),
             ),
           ),
+          height: 137 * height,
+          width: 136 * width,
           child: Padding(
             padding: const EdgeInsets.all(4.0),
             child: Column(
@@ -112,8 +117,6 @@ class CourseItem extends StatelessWidget {
               ],
             ),
           ),
-          height: 137 * height,
-          width: 136 * width,
         ),
       ),
     );

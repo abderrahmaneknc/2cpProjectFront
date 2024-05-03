@@ -176,7 +176,7 @@ class _ResCorPageState extends State<ResCorPage> {
                       child: Row(
                         children: [
                           SizedBox(
-                            height: 170 * height,
+                            height: 160 * height,
                             child: ListView.builder(
                               physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,

@@ -19,102 +19,103 @@ class Ressourcesitem extends StatelessWidget {
             Radius.circular(15),
           ),
         ),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(13)),
-              child: Image.asset(
-                'assets/anime-Profile-Pictures.jpg',
-                width: 160 * width,
-                height: 160 * height,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(13),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 12.0),
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(13)),
+                child: Image.asset(
+                  'assets/anime-Profile-Pictures.jpg',
+                  width: 160 * width,
+                  height: 160 * height,
+                  fit: BoxFit.cover,
                 ),
-                color: Colors.black12.withOpacity(0.5),
               ),
-            ),
-            Positioned(
-              top: 12 * height,
-              left: 12 * width,
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.person,
-                    size: 25 * height,
-                    color: Colors.white,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(13),
                   ),
-                  SizedBox(
-                    width: width * 5,
-                  ),
-                  Text(
-                    'Jane Cooper',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 10 * width,
-                      fontFamily: "AeonikTRIAL",
-                    ),
-                  ),
-                ],
+                  color: Colors.black12.withOpacity(0.3),
+                ),
               ),
-            ),
-            Positioned(
-                top: height * 5,
-                left: 260 * width,
-                right: 20 * width,
-                child: IconButton(
-                  icon: Icon(
-                    Icons.bookmark_border,
-                    color: Colors.white,
-                    size: 25 * height,
-                  ),
-                  onPressed: () {},
-                )),
-            Positioned(
-              top: 87 * height,
-              left: 12 * width,
-              child: Container(
-                height: 18 * height,
-                width: 47 * width,
-                decoration: const BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.all(Radius.circular(25))),
-                child: Center(
-                    child: Text(
-                  'web dev',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 10 * width),
-                )),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: 108 * height, left: 12 * width, right: 16 * width),
-              child: SizedBox(
-                height: 5 * height,
-                width: 195 * width,
-                child: Wrap(
+              Positioned(
+                top: 2 * height,
+                left: 12 * width,
+                child: Row(
                   children: [
+                    Icon(
+                      Icons.person,
+                      size: 20 * height,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: width * 5,
+                    ),
                     Text(
-                      'Digital Despach: Tech Inshights',
+                      'Jane Cooper',
                       style: TextStyle(
-                          fontSize: 13.5 * width,
-                          height: 1.2,
-                          fontFamily: "AeonikTRIAL",
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                        color: Colors.white,
+                        fontSize: 10 * width,
+                        fontFamily: "AeonikTRIAL",
+                      ),
                     ),
                   ],
                 ),
               ),
-            ),
-          ],
+              Positioned(
+                  top: -height * 6,
+                  left: 114 * width,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.bookmark_border,
+                      color: Colors.white,
+                      size: 18 * height,
+                    ),
+                    onPressed: () {},
+                  )),
+              Positioned(
+                top: 87,
+                left: 12,
+                child: Container(
+                  height: 18 * height,
+                  width: 47 * width,
+                  decoration: const BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                  child: Center(
+                      child: Text(
+                    'web dev',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width),
+                  )),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 108, left: 12, right: 16 * width),
+                child: SizedBox(
+                  height: 5 * height,
+                  width: 195 * width,
+                  child: Wrap(
+                    children: [
+                      Text(
+                        'Digital Despach: Tech Inshights',
+                        style: TextStyle(
+                            fontSize: 13.5 * width,
+                            height: 1.2,
+                            fontFamily: "AeonikTRIAL",
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

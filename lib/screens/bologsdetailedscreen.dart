@@ -154,7 +154,8 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                 )),
           ),
           Positioned(
-            top: height * 565,
+            top: height * 530
+            ,
             left: width * 103,
             child: Container(
               decoration: BoxDecoration(

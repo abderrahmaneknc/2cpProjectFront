@@ -47,10 +47,11 @@ class _BlogsListState extends State<BlogsList> {
                 child: Text(
                   'Tranding blogs and news',
                   style: TextStyle(
-                      height: 1,
-                      fontSize: 11 * width,
-                      color: Color.fromARGB(206, 49, 54, 56),
-                      fontFamily: "AeonikTRIAL",),
+                    height: 1,
+                    fontSize: 11 * width,
+                    color: Color.fromARGB(206, 49, 54, 56),
+                    fontFamily: "AeonikTRIAL",
+                  ),
                 ),
               ),
               // ignore: prefer_const_constructors
@@ -86,7 +87,7 @@ class _BlogsListState extends State<BlogsList> {
                       borderRadius: const BorderRadius.all(
                         Radius.circular(25),
                       ),
-                      color: Colors.black12.withOpacity(0.5),
+                      color: Colors.black12.withOpacity(0.4),
                     ),
                   ),
                   Positioned(
@@ -104,8 +105,10 @@ class _BlogsListState extends State<BlogsList> {
                         ),
                         Text(
                           'Jane Cooper. 5 days',
-                          style: TextStyle( fontFamily: "AeonikTRIAL",
-                              color: Colors.white, fontSize: 10 * width),
+                          style: TextStyle(
+                              fontFamily: "AeonikTRIAL",
+                              color: Colors.white,
+                              fontSize: 10 * width),
                         ),
                       ],
                     ),
