@@ -174,8 +174,8 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: SizedBox(
-                  height: 16 * height,
-                  width: 132 * width,
+                  height: 21 * height,
+                  width: 136 * width,
                   child: Row(
                     children: [
                       GestureDetector(
