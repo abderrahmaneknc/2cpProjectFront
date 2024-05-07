@@ -48,7 +48,7 @@ class _CourseItem2State extends State<CourseItem2> {
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(25)),
                   child: Image.asset(
-                    'assets/anime-Profile-Pictures.jpg',
+                    'assets/squirrel-animal-cute-rodents-47547.jpeg',
                     width: 66 * width,
                     height: 71 * height,
                     fit: BoxFit.cover,

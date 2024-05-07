@@ -43,7 +43,7 @@ class CourseItem extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(25)),
                     child: Image.asset(
-                      'assets/anime-Profile-Pictures.jpg',
+                      'assets/istockphoto-1367357589-612x612.jpg',
                       width: 129 * width,
                       height: 82 * height,
                       fit: BoxFit.cover,

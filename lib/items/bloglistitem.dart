@@ -75,7 +75,7 @@ class _BlogsListState extends State<BlogsList> {
                   ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(25)),
                     child: Image.asset(
-                      'assets/ph4.jpg',
+                      'assets/coolest-pictures-88c269e953ar0aw4.jpg',
                       width: 312 * width,
                       height: 182 * height,
                       fit: BoxFit.cover,

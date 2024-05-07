@@ -32,7 +32,7 @@ class _RessourcesitemState extends State<Ressourcesitem> {
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(13)),
                 child: Image.asset(
-                  'assets/anime-Profile-Pictures.jpg',
+                  'assets/CLI406.wildlife_photography_awards.SleepingWithDandelionsLewisNewmanBritishWildlifePhotographyAwards-920x691.jpg',
                   width: 160 * width,
                   height: 160 * height,
                   fit: BoxFit.cover,

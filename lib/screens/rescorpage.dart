@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 import '../items/courseitem.dart';
 import '../items/courseitem2.dart';
@@ -158,20 +161,43 @@ class resoursespage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            width: width * 165,
-            height: 25 * height,
-            child: Center(
-              child: Text(
-                'Explore The Res',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 19, 21, 22),
-                  fontSize: 22 * width,
-                  fontFamily: "AeonikTRIAL",
+          Row(
+            children: [
+              SizedBox(
+                width: width * 169,
+                height: 25 * height,
+                child: Center(
+                  child: Text(
+                    'Explore The Res',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 19, 21, 22),
+                      fontSize: 22 * width,
+                      fontFamily: "AeonikTRIAL",
+                    ),
+                  ),
                 ),
               ),
-            ),
+              SizedBox(
+                width: width * 120,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'resdp');
+                  },
+                  child: SizedBox(
+                    height: 18 * height,
+                    width: 18 * width,
+                    child: Image.asset(
+                        height: 18 * height,
+                        width: 19 * width,
+                        'assets/Tune (1).jpg'),
+                  ),
+                ),
+              ),
+            ],
           ),
           SizedBox(
             height: 5 * height,

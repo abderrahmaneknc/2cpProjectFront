@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:prj/items/resitem.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
+import 'screens/resoursesdetailedpage.dart';
 import 'screens/verified.dart';
 import 'screens/addBlog.dart';
 import 'screens/add_certf.dart';
@@ -58,6 +60,7 @@ class MyApp extends StatelessWidget {
           'blogsds': (context) => BlogsDetailScreen(),
           'btnavbar': (context) => MyBottomNavigationBar(),
           'b': (context) => ResCorPage(),
+            'resdp': (context) => ResoursesDP(),
         });
   }
 }

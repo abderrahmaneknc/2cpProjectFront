@@ -299,12 +299,12 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                       Image.asset(
                         'assets/icons8-accueil-48.png',
                         fit: BoxFit.cover,
-                        height: 24 * height * 0.87,
-                        width: 24 * width * 0.87,
+                        height: 22 * height * 0.87,
+                        width: 22 * width * 0.87,
                       ),
                       SizedBox(
-                        height: 11 * height * 0.87,
-                        width: 23 * width * 0.87,
+                        height: 12 * height * 0.87,
+                        width: 24 * width * 0.87,
                         child: Text(
                           'Home',
                           style: TextStyle(

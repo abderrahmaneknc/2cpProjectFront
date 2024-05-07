@@ -19,7 +19,7 @@ class MyProfile extends StatelessWidget {
               width: double.infinity,
               height: 291 * height,
               child: Image.asset(
-                'assets/anime-Profile-Pictures.jpg',
+                'assets/images (1).jpg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -91,9 +91,9 @@ class MyProfile extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(42 * width),
                       child: Image(
-                          fit: BoxFit.fitHeight,
+                          fit: BoxFit.cover,
                           image: AssetImage(
-                            'assets/images.jpg',
+                            'assets/664248f7b8c1f11b41446b0b7e01be16.jpg',
                           )),
                     ),
                   ),
