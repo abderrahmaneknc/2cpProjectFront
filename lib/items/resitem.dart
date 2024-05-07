@@ -16,7 +16,9 @@ class _RessourcesitemState extends State<Ressourcesitem> {
     double height = screenHeight / 640;
     double width = screenWidth / 360;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, 'resdp');
+      },
       child: Container(
         width: 160 * width,
         height: 160 * height,

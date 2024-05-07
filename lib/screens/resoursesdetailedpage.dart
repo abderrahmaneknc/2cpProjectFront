@@ -30,49 +30,17 @@ class ResoursesDP extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 130.0, left: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 250,
-                  child: Text(
-                    'Digital Despach: Tec inshights',
-                    style: TextStyle(
-                        fontFamily: "AeonikTRIAL",
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ),
-                SizedBox(height: 8),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.abc,
-                      color: Colors.white,
-                    ),
-                    Text(
-                      'Jane cooper .5days',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "AeonikTRIAL",
-                      ),
-                    ),
-                    Icon(
-                      Icons.abc,
-                      color: Colors.white,
-                    ),
-                    Text(
-                      'Jane cooper .5days',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "AeonikTRIAL",
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+            padding: EdgeInsets.only(top: 130.0, left: 24 * width),
+            child: SizedBox(
+              width: 250,
+              child: Text(
+                'Name Course',
+                style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
+                    fontSize: 22 * width,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
             ),
           ),
           SizedBox(
