@@ -91,7 +91,7 @@ class MyProfile extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(42 * width),
                       child: Image(
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fitHeight,
                           image: AssetImage(
                             'assets/images.jpg',
                           )),

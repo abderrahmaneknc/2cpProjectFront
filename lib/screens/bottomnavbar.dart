@@ -317,7 +317,6 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                               height: 1),
                         ),
                       ),
-                      
                     ],
                   ),
                 ),

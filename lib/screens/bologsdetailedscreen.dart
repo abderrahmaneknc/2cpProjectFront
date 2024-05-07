@@ -179,18 +179,18 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                   width: 136 * width,
                   child: Row(
                     children: [
-                      GestureDetector(
-                        onTap: () => setState(() {
-                          b0 = !b0;
-                        }),
-                        child: Image.asset(
-                          b0
-                              ? 'assets/icons8-bookmark-48.png'
-                              : 'assets/icons8-bookmark-24.png',
-                          height: 16 * height,
-                          width: width * 16,
+                        GestureDetector(
+                          onTap: () => setState(() {
+                            b0 = !b0;
+                          }),
+                          child: Image.asset(
+                            b0
+                                ? 'assets/icons8-bookmark-48.png'
+                                : 'assets/icons8-bookmark-24.png',
+                            height: 16 * height,
+                            width: width * 16,
+                          ),
                         ),
-                      ),
                       SizedBox(
                         width: 21 * width,
                       ),

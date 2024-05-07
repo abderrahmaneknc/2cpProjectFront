@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Ressourcesitem extends StatelessWidget {
+class Ressourcesitem extends StatefulWidget {
   const Ressourcesitem({super.key});
 
+  @override
+  State<Ressourcesitem> createState() => _RessourcesitemState();
+}
+
+class _RessourcesitemState extends State<Ressourcesitem> {
+  bool b0 = false;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -65,16 +71,22 @@ class Ressourcesitem extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: -height * 6,
-                  left: 114 * width,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.bookmark_border,
-                      color: Colors.white,
-                      size: 18 * height,
-                    ),
-                    onPressed: () {},
-                  )),
+                top: height * 6,
+                left: 130 * width,
+                child: GestureDetector(
+                  onTap: () => setState(() {
+                    b0 = !b0;
+                  }),
+                  child: Image.asset(
+                    b0
+                        ? 'assets/icons8-bookmark-48.png'
+                        : 'assets/icons8-bookmark-24.png',
+                    height: 16 * height,
+                    width: width * 16,
+                    color: b0 ? null : Colors.white,
+                  ),
+                ),
+              ),
               Positioned(
                 top: 87,
                 left: 12,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../items/courseitem.dart';
+import '../items/courseitem2.dart';
 import '../items/resitem.dart';
 import '../items/txtfdbutton.dart';
 
@@ -27,8 +28,8 @@ class _ResCorPageState extends State<ResCorPage> {
         child: Scaffold(
       backgroundColor: Color(0xFFFBFBFB),
       body: Padding(
-        padding: EdgeInsets.only(
-            top: 28 * height, left: 24 * width, right: 24 * width),
+        padding:
+            EdgeInsets.only(top: height, left: 24 * width, right: 24 * width),
         child: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -132,69 +133,154 @@ class _ResCorPageState extends State<ResCorPage> {
             SizedBox(
               height: 10,
             ),
-            if (b)
-              SizedBox(
-                height: height * 600,
-                child: GridView.builder(
-                  physics: ScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      mainAxisSpacing: 12 * height,
-                      crossAxisSpacing: 12 * width,
-                      maxCrossAxisExtent: 145 * width),
-                  itemCount: 6, // Total number of items in the grid
-                  itemBuilder: (BuildContext context, int index) {
-                    return Ressourcesitem();
-                  },
+            if (b) resoursespage(height: height, width: width),
+            if (!b) coursespage(height: height, width: width),
+          ]),
+        ),
+      ),
+    ));
+  }
+}
+
+class resoursespage extends StatelessWidget {
+  const resoursespage({
+    super.key,
+    required this.height,
+    required this.width,
+  });
+
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: width * 165,
+            height: 25 * height,
+            child: Center(
+              child: Text(
+                'Explore The Res',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 19, 21, 22),
+                  fontSize: 22 * width,
+                  fontFamily: "AeonikTRIAL",
                 ),
               ),
-            if (!b)
-              Padding(
-                padding: EdgeInsets.only(top: 12.0 * height),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+          ),
+          SizedBox(
+            height: 5 * height,
+          ),
+          SizedBox(
+            height: height * 394,
+            child: GridView.builder(
+              physics: ScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  mainAxisSpacing: 5 * height,
+                  crossAxisSpacing: 12 * width,
+                  maxCrossAxisExtent: 145 * width),
+              itemCount: 8, // Total number of items in the grid
+              itemBuilder: (BuildContext context, int index) {
+                return Ressourcesitem();
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class coursespage extends StatelessWidget {
+  const coursespage({
+    super.key,
+    required this.height,
+    required this.width,
+  });
+
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: 2.0 * height),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: width * 93,
+                height: 25 * height,
+                child: Center(
+                  child: Text(
+                    'Live now',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 19, 21, 22),
+                      fontSize: 22 * width,
+                      fontFamily: "AeonikTRIAL",
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 5 * height,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
                   children: [
                     SizedBox(
-                      width: width * 93,
-                      height: 25 * height,
-                      child: Center(
-                        child: Text(
-                          'Live now',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 19, 21, 22),
-                            fontSize: 22 * width,
-                            fontFamily: "AeonikTRIAL",
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 12 * height,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            height: 160 * height,
-                            child: ListView.builder(
-                              physics: NeverScrollableScrollPhysics(),
-                              shrinkWrap: true,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) => CourseItem(),
-                              itemCount: 40,
-                            ),
-                          ),
-                        ],
+                      height: 160 * height,
+                      child: ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) => CourseItem(),
+                        itemCount: 40,
                       ),
                     ),
                   ],
                 ),
               ),
-          ]),
+            ],
+          ),
         ),
-      ),
-    ));
+        SizedBox(
+          width: width * 165,
+          height: 25 * height,
+          child: Center(
+            child: Text(
+              'Saved Courses',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 19, 21, 22),
+                fontSize: 22 * width,
+                fontFamily: "AeonikTRIAL",
+              ),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 10 * height,
+        ),
+        SizedBox(
+          height: 200 * height,
+          child: ListView.builder(
+            itemBuilder: (context, index) => CourseItem2(),
+            itemCount: 40,
+          ),
+        ),
+      ],
+    );
   }
 }
 
