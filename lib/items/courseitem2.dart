@@ -23,7 +23,7 @@ class _CourseItem2State extends State<CourseItem2> {
           bottom: 10 * height,
           left: 1 * width),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () { Navigator.pushNamed(context, 'cordp');},
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,

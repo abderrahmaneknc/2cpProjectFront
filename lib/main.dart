@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prj/items/resitem.dart';
+import 'package:prj/screens/coursedetailedpage.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
 import 'screens/resoursesdetailedpage.dart';
@@ -58,9 +58,21 @@ class MyApp extends StatelessWidget {
           'addBlog': (context) => AddBLog(),
           'blogs': (context) => BlogsScreen(),
           'blogsds': (context) => BlogsDetailScreen(),
-          'btnavbar': (context) => MyBottomNavigationBar(),
+          'btnavbarhome': (context) => MyBottomNavigationBar(
+                currentIndex: 0,
+              ),
+          'btnavbarblogs': (context) => MyBottomNavigationBar(
+                currentIndex: 1,
+              ),
+          'btnavbarres/cor': (context) => MyBottomNavigationBar(
+                currentIndex: 2,
+              ),
+          'btnavbarprofile': (context) => MyBottomNavigationBar(
+                currentIndex: 3,
+              ),
           'b': (context) => ResCorPage(),
-            'resdp': (context) => ResoursesDP(),
+          'resdp': (context) => ResoursesDP(),
+          'cordp': (context) => CourseDP(),
         });
   }
 }

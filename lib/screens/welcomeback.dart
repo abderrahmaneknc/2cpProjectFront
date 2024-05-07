@@ -130,7 +130,7 @@ class _WelcbackState extends State<MySignInPage> {
                   assets: '',
                   txtcolor: Colors.white,
                   onPressed: () {
-                    Navigator.pushNamed(context, 'btnavbar');
+                    Navigator.pushNamed(context, 'btnavbarhome');
                   },
                 ),
                 const SizedBox(
@@ -167,7 +167,7 @@ class _WelcbackState extends State<MySignInPage> {
                   assets: 'assets/google_logo_icon_147282.png',
                   txtcolor: Colors.black,
                   onPressed: () {
-                    Navigator.pushNamed(context, 'btnavbar');
+                    Navigator.pushNamed(context, 'btnavbarhome');
                   },
                 ),
                 const SizedBox(

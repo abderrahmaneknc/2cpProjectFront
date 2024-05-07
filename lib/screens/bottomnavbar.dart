@@ -7,12 +7,14 @@ import 'package:prj/screens/profilescreen.dart';
 import 'package:prj/screens/rescorpage.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
+  late int currentIndex;
+
+  MyBottomNavigationBar({super.key, required this.currentIndex});
   @override
   _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
 }
 
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
-  int _currentIndex = 0;
   bool showContainers = false;
 
   final List _pages = [
@@ -24,7 +26,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _currentIndex = index;
+      widget.currentIndex = index;
     });
   }
 
@@ -45,7 +47,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
       backgroundColor: Color(0xFFFBFBFB),
       body: Stack(
         children: <Widget>[
-          _pages[_currentIndex],
+          _pages[widget.currentIndex],
           if (showContainers)
             IgnorePointer(
               ignoring: showContainers ? false : true,
@@ -309,7 +311,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           'Home',
                           style: TextStyle(
                               fontFamily: "AeonikTRIAL",
-                              color: _currentIndex == 0
+                              color: widget.currentIndex == 0
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,
@@ -392,7 +394,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           'res/cor',
                           style: TextStyle(
                               fontFamily: "AeonikTRIAL",
-                              color: _currentIndex == 0
+                              color: widget.currentIndex == 0
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,
@@ -425,7 +427,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                           'Profile',
                           style: TextStyle(
                               fontFamily: "AeonikTRIAL",
-                              color: _currentIndex == 0
+                              color: widget.currentIndex == 0
                                   ? const Color(0xFF2D3D51)
                                   : null,
                               fontWeight: FontWeight.w600,

@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ResoursesDP extends StatelessWidget {
-  const ResoursesDP({super.key});
+class CourseDP extends StatelessWidget {
+  const CourseDP({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class ResoursesDP extends StatelessWidget {
                 const SizedBox(
                   width: 250,
                   child: Text(
-                    'Ressourses Name',
+                    'Course Name',
                     style: TextStyle(
                         fontFamily: "AeonikTRIAL",
                         fontSize: 20,
@@ -150,7 +150,7 @@ class ResoursesDP extends StatelessWidget {
                                 height: 25 * height,
                               ),
                               Text(
-                                'Live Links',
+                                'Links',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 38, 51, 68),

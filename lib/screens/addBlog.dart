@@ -150,7 +150,9 @@ class AddBLog extends StatelessWidget {
               logo: false,
               assets: '',
               txtcolor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'btnavbarblogs');
+              },
             ),
           ),
         ],
