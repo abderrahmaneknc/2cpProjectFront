@@ -29,10 +29,10 @@ class _CourseItem2State extends State<CourseItem2> {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.5),
+                color: Colors.black.withOpacity(0.3),
                 spreadRadius: 1.5,
                 blurRadius: 4,
-                offset: Offset(1, 2),
+                offset: Offset(0, 2),
               ),
             ],
             borderRadius: BorderRadius.all(
