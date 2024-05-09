@@ -38,7 +38,7 @@ class MyProfile extends StatelessWidget {
                   radius: 13 * width,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'btnavbar');
+                      Navigator.pushNamed(context, 'btnavbarhome');
                     },
                     child: Icon(
                       Icons.arrow_back_ios_rounded,

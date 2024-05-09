@@ -21,7 +21,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
     double width = screenWidth / 360;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color(0xFFFBFBFB),
+      backgroundColor: const Color(0xFFFBFBFB),
       body: Stack(
         children: [
           SizedBox(
@@ -40,11 +40,11 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 130.0, left: 25),
+            padding: const EdgeInsets.only(top: 130.0, left: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 250,
                   child: Text(
                     'Digital Despach: Tec inshights',
@@ -55,26 +55,39 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                         color: Colors.white),
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Row(
                   children: [
-                    Icon(
-                      Icons.abc,
-                      color: Colors.white,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
+                      child: Image.asset(
+                        height: 24 * height,
+                        width: width * 24,
+                        'assets/664248f7b8c1f11b41446b0b7e01be16.jpg',
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    Text(
-                      'Jane cooper .5days',
+                    SizedBox(
+                      width: 5 * width,
+                    ),
+                    const Text(
+                      'User Name',
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: "AeonikTRIAL",
                       ),
                     ),
-                    Icon(
-                      Icons.abc,
-                      color: Colors.white,
+                    SizedBox(
+                      width: 5 * width,
                     ),
-                    Text(
-                      'Jane cooper .5days',
+                    Image.asset(
+                      height: 20 * height,
+                      width: width * 20,
+                      'assets/Clock.png',
+                      fit: BoxFit.cover,
+                    ),
+                    const Text(
+                      '5days',
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: "AeonikTRIAL",
@@ -92,32 +105,45 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 250.0),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        color: Color(0xFFFBFBFB),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(40),
-                            topRight: Radius.circular(40))),
-                    width: double.infinity,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 25, right: 25),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text(
-                              style: TextStyle(
-                                height: 1.7,
-                                fontFamily: "AeonikTRIAL",
-                              ),
-                              'Artificial intelligence (AI) \n the field of computer science that studies how to create machines and software that can perform tasks that require human intelligence, such as reasoning, \n learning, perception, decision making, and natural language processing. AI has a long and rich his\ntory,\n dating back to ancient times, when philosophers and mathematicians tried to understand the nature and principles of human thought and reasoning. In this text, we will briefly overview some of the major milestones and achievements in the history of AI, from its origins to the present day.The Origins of AI: From Antiquity to the 19th CenturyThe idea of creating artificial beings that can think and act like humans can be traced back to ancient myths and legends, such  the golems of Jewish folklore, the mechanical servants of Hephaestus in Greek mythology, or the automata of Al-Jazari in medieval Islam. These stories reflect the human fascination and curiosity with the possibility of creating intelligent machines.The scientific foundations of AI began to emerge in the fields of logic, mathematics, and philosophy, with the works of thinkers such s Aristotle, Euclid, Descartes, Leibniz, and Boole. These pioneers developed formal systems of reasoning, calculation, and representation, which are essential for the development of AI. They also raised important questions about the nature and limits of human and machine intelligence, such as the mind-body problem, the Turing test, and the Chinese room argument.The birth of modern computers in the 19th and early 20th centuries provided the necessary tools and hardware for implementing AI. The inventions of Charles Babbage, Ada Lovelace, Alan Turing, John von Neumann, and others laid the foundations of computer science and engineering, and enabled the creation of programmable machines that can perform complex calculations and operations. These machines opened the door for the realization of AI'),
-                          SizedBox(
-                            height: 85,
-                          ),
-                        ],
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: 500,
+                        decoration: const BoxDecoration(
+                            color: Color(0xFFFBFBFB),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40),
+                                topRight: Radius.circular(40))),
+                        width: double.infinity,
                       ),
-                    ),
+                      Container(
+                        decoration: const BoxDecoration(
+                            color: Color(0xFFFBFBFB),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40),
+                                topRight: Radius.circular(40))),
+                        width: double.infinity,
+                        child: const Padding(
+                          padding: EdgeInsets.only(left: 25, right: 25),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                  style: TextStyle(
+                                    height: 1.7,
+                                    fontFamily: "AeonikTRIAL",
+                                  ),
+                                  'Ance and engineering, and ennce and engineeringns and operations. These machines opened the door for the realization of AI'),
+                              SizedBox(
+                                height: 85,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -133,7 +159,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back_ios_rounded,
                     color: Colors.white,
                   ),
@@ -147,7 +173,7 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
                 radius: 13 * width,
                 child: GestureDetector(
                   onTap: () {},
-                  child: Icon(
+                  child: const Icon(
                     Icons.more_vert_rounded,
                     color: Colors.white,
                   ),
@@ -158,14 +184,14 @@ class _BlogsDetailScreenState extends State<BlogsDetailScreen> {
             left: width * 103,
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.1),
                     spreadRadius: 3,
                     blurRadius: 10,
-                    offset: Offset(0, 2),
+                    offset: const Offset(0, 2),
                   ),
                 ],
               ),
