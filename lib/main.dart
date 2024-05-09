@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
           'blogsds': (context) => BlogsDetailScreen(),
           'btnavbar': (context) => MyBottomNavigationBar(),
           'b': (context) => ResCorPage(),
-            'resdp': (context) => ResoursesDP(),
+          'resdp': (context) => ResoursesDP(),
         });
   }
 }

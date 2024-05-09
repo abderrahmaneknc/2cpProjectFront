@@ -32,7 +32,7 @@ class _ResCorPageState extends State<ResCorPage> {
       backgroundColor: Color(0xFFFBFBFB),
       body: Padding(
         padding:
-            EdgeInsets.only(top: height, left: 24 * width, right: 24 * width),
+            EdgeInsets.only(top: height, left: 24 * width, right: 22 * width),
         child: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -184,9 +184,7 @@ class resoursespage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: GestureDetector(
-                  onTap: () {
-                  
-                  },
+                  onTap: () {},
                   child: SizedBox(
                     height: 18 * height,
                     width: 18 * width,
@@ -298,11 +296,9 @@ class coursespage extends StatelessWidget {
         SizedBox(
           height: 10 * height,
         ),
-        SizedBox(
-          height: 200 * height,
-          child: ListView.builder(
-            itemBuilder: (context, index) => CourseItem2(),
-            itemCount: 40,
+        Center(
+          child: Column(
+            children: List.generate(10, (index) => CourseItem2()),
           ),
         ),
       ],

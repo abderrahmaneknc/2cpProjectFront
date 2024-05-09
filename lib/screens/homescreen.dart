@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../items/courseitem.dart';
 import '../items/courseitem2.dart';
+import '../items/homeitem.dart';
 import '../items/txtfdbutton.dart';
 import 'rescorpage.dart';
 
@@ -28,7 +29,7 @@ class _MyHomeState extends State<MyHome> {
         backgroundColor: Color(0xFFFBFBFB),
         body: Padding(
           padding:
-              EdgeInsets.only(top: height, left: 16 * width, right: 16 * width),
+              EdgeInsets.only(top: height, left: 22 * width, right: 16 * width),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +126,7 @@ class coursespage extends StatelessWidget {
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => CourseItem(),
+                        itemBuilder: (context, index) => Homeitem(),
                         itemCount: 40,
                       ),
                     ),
@@ -167,12 +168,8 @@ class coursespage extends StatelessWidget {
         SizedBox(
           height: 20 * height,
         ),
-        SizedBox(
-          height: 250 * height,
-          child: ListView.builder(
-            itemBuilder: (context, index) => CourseItem2(),
-            itemCount: 40,
-          ),
+        Column(
+          children: List.generate(10, (index) => CourseItem2()),
         ),
       ],
     );
