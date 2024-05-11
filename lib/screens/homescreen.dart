@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../items/courseitem.dart';
-import '../items/courseitem2.dart';
 import '../items/homeitem.dart';
+import '../items/homeitem2.dart';
 import '../items/txtfdbutton.dart';
 import 'rescorpage.dart';
+import 'verifieDialogue.dart';
 
 class MyHome extends StatefulWidget {
   MyHome({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class _MyHomeState extends State<MyHome> {
         backgroundColor: Color(0xFFFBFBFB),
         body: Padding(
           padding:
-              EdgeInsets.only(top: height, left: 22 * width, right: 16 * width),
+              EdgeInsets.only(top: height, left: 22 * width, right: 0 * width),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +51,10 @@ class _MyHomeState extends State<MyHome> {
                     ),
                   ],
                 ),
-                coursespage(height: height, width: width),
+                Padding(
+                  padding: const EdgeInsets.only(right: 4, left: 4),
+                  child: coursespage(height: height, width: width),
+                ),
                 // Add other widgets here
               ],
             ),
@@ -82,25 +85,26 @@ class coursespage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    'Most active',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 19, 21, 22),
-                      fontSize: 22 * width,
-                      fontFamily: "AeonikTRIAL",
+              Padding(
+                padding: const EdgeInsets.only(right: 26.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Most active',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 19, 21, 22),
+                        fontSize: 22 * width,
+                        fontFamily: "AeonikTRIAL",
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 165 * width,
-                  ),
-                  Image.asset(
-                      height: 18 * height,
-                      width: 19 * width,
-                      'assets/Tune (1).jpg'),
-                ],
+                    Spacer(),
+                    Image.asset(
+                        height: 18 * height,
+                        width: 19 * width,
+                        'assets/Tune (1).jpg'),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 5 * height,
@@ -121,7 +125,7 @@ class coursespage extends StatelessWidget {
                 child: Row(
                   children: [
                     SizedBox(
-                      height: 160 * height,
+                      height: 145 * height,
                       child: ListView.builder(
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
@@ -136,23 +140,26 @@ class coursespage extends StatelessWidget {
             ],
           ),
         ),
-        Row(
-          children: [
-            Text(
-              'Saved Courses',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 19, 21, 22),
-                fontSize: 22 * width,
-                fontFamily: "AeonikTRIAL",
+        Padding(
+          padding: const EdgeInsets.only(right: 26.0),
+          child: Row(
+            children: [
+              Text(
+                'Our Brilliants',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 19, 21, 22),
+                  fontSize: 22 * width,
+                  fontFamily: "AeonikTRIAL",
+                ),
               ),
-            ),
-            SizedBox(
-              width: 130 * width,
-            ),
-            Image.asset(
-                height: 18 * height, width: 19 * width, 'assets/Tune (1).jpg'),
-          ],
+              Spacer(),
+              Image.asset(
+                  height: 18 * height,
+                  width: 19 * width,
+                  'assets/Tune (1).jpg'),
+            ],
+          ),
         ),
         SizedBox(
           height: 5 * height,
@@ -169,9 +176,44 @@ class coursespage extends StatelessWidget {
           height: 20 * height,
         ),
         Column(
-          children: List.generate(10, (index) => CourseItem2()),
+          children: List.generate(10, (index) => Homeitem2()),
         ),
       ],
+    );
+  }
+}
+
+class NotifIcon extends StatelessWidget {
+  const NotifIcon({
+    super.key,
+    required this.height,
+    required this.width,
+  });
+
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return VerificationDialog(); // Show the dialog
+          },
+        );
+      },
+      child: SizedBox(
+        height: 24 * height,
+        width: 24 * width,
+        child: Image.asset(
+          'assets/Group 309.png',
+          fit: BoxFit.contain,
+          height: 24 * height,
+          width: 22 * width,
+        ),
+      ),
     );
   }
 }
