@@ -73,9 +73,13 @@ class _Textfieldd2State extends State<Textfieldd2> {
           0, // Bottom padding
         ),
         counterText: '${_controller.text.length}/${widget.maxCharacters}',
-        counterStyle: TextStyle(color: Colors.grey[600], fontFamily: "AeonikTRIAL",),
+        counterStyle: TextStyle(
+          color: Colors.grey[600],
+          fontFamily: "AeonikTRIAL",
+        ),
       ),
-      style: TextStyle( fontFamily: "AeonikTRIAL",
+      style: TextStyle(
+        fontFamily: "AeonikTRIAL",
         fontSize: widget.size,
         fontWeight: widget.weight,
         color: widget.color,

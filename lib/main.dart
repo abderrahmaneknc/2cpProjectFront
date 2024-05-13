@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
           'success_after_payment': (context) => Success(),
           'add_toprofile': (context) => AddToProfile(),
           'add_media': (context) => Addmedia(),
+          'addrescors': (context) => AddResCors(),
           'add_fields': (context) => Addfields(),
           'add_language': (context) => Addlanguage(),
           'add_education': (context) => AddEducation(),

@@ -5,8 +5,8 @@
 
 import 'package:flutter/material.dart';
 
-class Mybuttons extends StatelessWidget {
-  const Mybuttons({
+class Homedialogue extends StatelessWidget {
+  const Homedialogue({
     Key? key,
     required this.text,
     required this.color,
@@ -37,7 +37,7 @@ class Mybuttons extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.0),
               side: const BorderSide(
                 style: BorderStyle.solid,
-                color: Color.fromARGB(255, 197, 193, 193),
+                color: Color(0xFF2D3D51),
               ),
             ),
           ),
@@ -55,7 +55,8 @@ class Mybuttons extends StatelessWidget {
                   Text(
                     text,
                     style: const TextStyle(
-                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF2D3D51),
                       fontFamily: "AeonikTRIAL",
                     ),
                   ),
