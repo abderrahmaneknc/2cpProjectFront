@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
+import 'items/liststringmodel.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
 import 'screens/resoursesdetailedpage.dart';
@@ -24,8 +25,17 @@ import 'screens/welcomeback.dart';
 import 'screens/profilescreen.dart';
 import 'screens/viewprofile.dart';
 
+import 'package:provider/provider.dart';
+
+// import your model file
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => SelectedStringModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -39,24 +49,24 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => IntroductionPages(),
-          'signIn': (context) => MySignInPage(),
-          'signUp': (context) => MySignUpPage(),
-          'bckDhabia': (context) => Edahbback(),
-          'success_after_payment': (context) => Success(),
-          'add_toprofile': (context) => AddToProfile(),
-          'add_media': (context) => Addmedia(),
-          'add_fields': (context) => Addfields(),
-          'add_language': (context) => Addlanguage(),
-          'add_education': (context) => AddEducation(),
-          'add_certf': (context) => AddCertf(),
-          'add_skills': (context) => AddSkills(),
-          'add_experiences': (context) => AddExperiences(),
-          'email_verification': (context) => EmailVerification(),
-          'verified': (context) => verified(),
+          'signIn': (context) => const MySignInPage(),
+          'signUp': (context) => const MySignUpPage(),
+          'bckDhabia': (context) => const Edahbback(),
+          'success_after_payment': (context) => const Success(),
+          'add_toprofile': (context) => const AddToProfile(),
+          'add_media': (context) => const Addmedia(),
+          'add_fields': (context) => const Addfields(),
+          'add_language': (context) => const Addlanguage(),
+          'add_education': (context) => const AddEducation(),
+          'add_certf': (context) => const AddCertf(),
+          'add_skills': (context) => const AddSkills(),
+          'add_experiences': (context) => const AddExperiences(),
+          'email_verification': (context) => const EmailVerification(),
+          'verified': (context) => const verified(),
           'viewprofile': (context) => ViewProfile(),
-          'profile': (context) => MyProfile(),
-          'addBlog': (context) => AddBLog(),
-          'blogs': (context) => BlogsScreen(),
+          'profile': (context) => const MyProfile(),
+          'addBlog': (context) => const AddBLog(),
+          'blogs': (context) => const BlogsScreen(),
           'blogsds': (context) => BlogsDetailScreen(),
           'btnavbarhome': (context) => MyBottomNavigationBar(
                 currentIndex: 0,
@@ -70,9 +80,9 @@ class MyApp extends StatelessWidget {
           'btnavbarprofile': (context) => MyBottomNavigationBar(
                 currentIndex: 3,
               ),
-          'b': (context) => ResCorPage(),
-          'resdp': (context) => ResoursesDP(),
-          'cordp': (context) => CourseDP(),
+          'b': (context) => const ResCorPage(),
+          'resdp': (context) => const ResoursesDP(),
+          'cordp': (context) => const CourseDP(),
         });
   }
 }

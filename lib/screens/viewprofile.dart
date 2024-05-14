@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:prj/items/clickbutton.dart';
+import 'package:prj/items/fileditem.dart';
+import 'package:provider/provider.dart';
+
+import '../items/liststringmodel.dart';
 
 class ViewProfile extends StatefulWidget {
-  const ViewProfile({super.key});
+  ViewProfile({super.key});
 
   @override
   State<ViewProfile> createState() => _ViewProfileState();
@@ -12,48 +16,12 @@ class ViewProfile extends StatefulWidget {
 class _ViewProfileState extends State<ViewProfile> {
   @override
   Widget build(BuildContext context) {
-    List<Widget> goodatlist = [
-      gdatitem(gdattxt: 'instagram'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Vedio editing'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Python'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'iui/ux '),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Mobile div'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Cyber Security'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Graphic Design'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Java'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Motion Graphic'),
-      SizedBox(
-        width: 2,
-      ),
-      gdatitem(gdattxt: 'Motion Graphic'),
-      SizedBox(
-        width: 2,
-      ),
-    ];
+    List<String> strings =
+        Provider.of<SelectedStringModel>(context, listen: false)
+            .trasnforedStrings;
+
+   
+
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     double height = screenHeight / 640;
@@ -310,15 +278,9 @@ class _ViewProfileState extends State<ViewProfile> {
                                       Spacer(),
                                       IconButton(
                                         icon: Icon(Icons.add),
-                                        onPressed: () {
-                                          setState(() {
-                                            goodatlist.addAll([
-                                              gdatitem(gdattxt: 'heeeelllo'),
-                                              SizedBox(width: 2)
-                                            ]);
-                                            goodatlist.add(SizedBox(width: 2));
-                                          });
-                                        },
+                                        onPressed: () =>
+                                            Navigator.popAndPushNamed(
+                                                context, 'add_fields'),
                                       ),
                                       IconButton(
                                         icon: Icon(Icons.edit),
@@ -329,7 +291,16 @@ class _ViewProfileState extends State<ViewProfile> {
                                   Wrap(
                                       crossAxisAlignment:
                                           WrapCrossAlignment.start,
-                                      children: goodatlist)
+                                      children: [
+                                        for (int i = 0; i < strings.length; i++)
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                left: 5.0 * width),
+                                            child: Filed(
+                                              string: strings[i],dynamic: false,
+                                            ),
+                                          ),
+                                      ])
                                 ],
                               ),
                             ),
@@ -387,45 +358,6 @@ class _ViewProfileState extends State<ViewProfile> {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class gdatitem extends StatelessWidget {
-  gdatitem({
-    super.key,
-    required this.gdattxt,
-  });
-
-  final String gdattxt;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(19.5),
-            side: BorderSide(
-                width: 2,
-                color: Color.fromARGB(255, 18, 56, 87),
-                strokeAlign: BorderSide.strokeAlignInside),
-          ),
-        ),
-        enableFeedback: false,
-        padding: MaterialStateProperty.all(EdgeInsets.zero),
-        elevation: MaterialStateProperty.all(0),
-        backgroundColor: MaterialStateProperty.all(Colors.transparent),
-      ),
-      onPressed: () {},
-      child: Text(
-        gdattxt,
-        style: TextStyle(
-          fontSize: 12,
-          color: Color.fromARGB(255, 18, 56, 87),
-          fontFamily: "AeonikTRIAL",
         ),
       ),
     );
