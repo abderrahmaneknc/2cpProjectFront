@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
 import 'items/liststringmodel.dart';
 import 'screens/addToProfile.dart';
@@ -49,20 +50,21 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => IntroductionPages(),
-          'signIn': (context) => const MySignInPage(),
-          'signUp': (context) => const MySignUpPage(),
-          'bckDhabia': (context) => const Edahbback(),
-          'success_after_payment': (context) => const Success(),
-          'add_toprofile': (context) => const AddToProfile(),
-          'add_media': (context) => const Addmedia(),
-          'add_fields': (context) => const Addfields(),
-          'add_language': (context) => const Addlanguage(),
-          'add_education': (context) => const AddEducation(),
-          'add_certf': (context) => const AddCertf(),
-          'add_skills': (context) => const AddSkills(),
-          'add_experiences': (context) => const AddExperiences(),
-          'email_verification': (context) => const EmailVerification(),
-          'verified': (context) => const verified(),
+          'signIn': (context) => MySignInPage(),
+          'signUp': (context) => MySignUpPage(),
+          'bckDhabia': (context) => Edahbback(),
+          'success_after_payment': (context) => Success(),
+          'add_toprofile': (context) => AddToProfile(),
+          'add_media': (context) => Addmedia(),
+            'addrescors': (context) => AddResCors(),
+          'add_fields': (context) => Addfields(),
+          'add_language': (context) => Addlanguage(),
+          'add_education': (context) => AddEducation(),
+          'add_certf': (context) => AddCertf(),
+          'add_skills': (context) => AddSkills(),
+          'add_experiences': (context) => AddExperiences(),
+          'email_verification': (context) => EmailVerification(),
+          'verified': (context) => verified(),
           'viewprofile': (context) => ViewProfile(),
           'profile': (context) => const MyProfile(),
           'addBlog': (context) => const AddBLog(),

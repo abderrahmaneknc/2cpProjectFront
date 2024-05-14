@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import '../items/homeitem.dart';
 import '../items/homeitem2.dart';
 import '../items/txtfdbutton.dart';
-import 'rescorpage.dart';
-import 'verifieDialogue.dart';
+import 'homeDialoge.dart';
 
 class MyHome extends StatefulWidget {
   MyHome({Key? key}) : super(key: key);
@@ -200,7 +199,7 @@ class NotifIcon extends StatelessWidget {
         showDialog(
           context: context,
           builder: (BuildContext context) {
-            return VerificationDialog(); // Show the dialog
+            return Homedialoge();
           },
         );
       },

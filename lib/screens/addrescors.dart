@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:prj/items/textfield2all.dart';
 
 import 'package:prj/items/elvButton.dart';
+import 'package:prj/items/textfield2all.dart';
 
-class AddExperiences extends StatelessWidget {
-  const AddExperiences({Key? key});
+class AddResCors extends StatefulWidget {
+  const AddResCors({Key? key}) : super(key: key);
+
+  @override
+  _AddResCorsState createState() => _AddResCorsState();
+}
+
+class _AddResCorsState extends State<AddResCors> {
+  String? selectedOption;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +38,7 @@ class AddExperiences extends StatelessWidget {
         title: Padding(
           padding: const EdgeInsets.only(top: 25),
           child: Text(
-            'Add Experiences',
+            'Add Res\\cour',
             style: TextStyle(
               color: Color(0xFF2D3D51),
               fontSize: 24,
@@ -55,13 +62,23 @@ class AddExperiences extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Elevate your profile. Showcase your experiences :',
+                          'Enrich our community by contributing your courses and resources :',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
                           ),
                         ),
                         SizedBox(height: 16),
+                        Text(
+                          'Categories (only one)',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 300,
+                        ),
                         Text(
                           'Title',
                           style: TextStyle(
@@ -81,7 +98,7 @@ class AddExperiences extends StatelessWidget {
                         ),
                         SizedBox(height: 0),
                         Text(
-                          'Employment type',
+                          'Select res\\cour',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
@@ -90,89 +107,70 @@ class AddExperiences extends StatelessWidget {
                         SizedBox(
                           height: 6,
                         ),
-                        Textfieldd2(
-                          maxCharacters: 80,
-                          texthint: '',
-                          size: 16,
-                          color: Color(0xFF2D3D51),
-                          weight: FontWeight.w400,
-                        ),
-                        SizedBox(height: 0),
-                        Text(
-                          'Company name',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                        Textfieldd2(
-                          maxCharacters: 80,
-                          texthint: '',
-                          size: 16,
-                          color: Color(0xFF2D3D51),
-                          weight: FontWeight.w400,
-                        ),
-                        SizedBox(
-                          height: 6,
-                        ),
-                        Text(
-                          'Location',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                        Textfieldd2(
-                          maxCharacters: 80,
-                          texthint: '',
-                          size: 16,
-                          color: Color(0xFF2D3D51),
-                          weight: FontWeight.w400,
-                        ),
-                        SizedBox(height: 0),
-                        Text(
-                          'Start date',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 6,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Color(0xFBFBFBFB),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.grey,
-                              ), // All border color
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 0.0),
-                            counterStyle: TextStyle(color: Colors.grey[600]),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                Icons.calendar_today,
-                                color: Colors.black
-                                    .withOpacity(0.5), // Adjust opacity here
-                              ),
-                              onPressed: () {
-                                // Add your calendar button functionality here
+                        Row(
+                          children: [
+                            Radio(
+                              value: 'resources',
+                              groupValue: selectedOption,
+                              activeColor: Color(0xFF2D3D51),
+                              onChanged: (value) {
+                                setState(() {
+                                  selectedOption = value as String?;
+                                });
                               },
                             ),
+                            Text(
+                              'Resources',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Color(0xFF2D3D51),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 24,
+                            ),
+                            Radio(
+                              value: 'courses',
+                              groupValue: selectedOption,
+                              activeColor: Color(0xFF2D3D51),
+                              onChanged: (value) {
+                                setState(() {
+                                  selectedOption = value as String?;
+                                });
+                              },
+                            ),
+                            Text(
+                              'Courses',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Color(0xFF2D3D51),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 0),
+                        Text(
+                          'Discription',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey[600],
                           ),
-                          style: TextStyle(),
+                        ),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Textfieldd2(
+                          maxCharacters: 1000,
+                          texthint: '',
+                          size: 16,
+                          color: Color(0xFF2D3D51),
+                          weight: FontWeight.w400,
                         ),
                         SizedBox(height: 16),
                         Text(
-                          'End date',
+                          'Your links',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
@@ -181,35 +179,12 @@ class AddExperiences extends StatelessWidget {
                         SizedBox(
                           height: 6,
                         ),
-                        TextField(
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Color(0xFBFBFBFB),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.grey,
-                              ), // All border color
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 0.0),
-                            counterStyle: TextStyle(color: Colors.grey[600]),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                Icons.calendar_today,
-                                color: Colors.black
-                                    .withOpacity(0.5), // Adjust opacity here
-                              ),
-                              onPressed: () {
-                                // Add your calendar button functionality here
-                              },
-                            ),
-                          ),
-                          style: TextStyle(),
+                        Textfieldd2(
+                          maxCharacters: 1000,
+                          texthint: '',
+                          size: 16,
+                          color: Color(0xFF2D3D51),
+                          weight: FontWeight.w400,
                         ),
                         SizedBox(height: 8),
                         Text(

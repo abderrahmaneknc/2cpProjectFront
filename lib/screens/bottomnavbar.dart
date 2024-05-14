@@ -172,7 +172,9 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                     height: 7 * height,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, 'addrescors');
+                    },
                     child: AnimatedContainer(
                       decoration: BoxDecoration(
                         color: Colors.white,

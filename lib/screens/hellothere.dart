@@ -59,6 +59,15 @@ class _MySignInPageState extends State<MySignUpPage> {
                   height: 40,
                 ),
                 MyBoxes(
+                  hint: 'Enter your Username',
+                  icon: Icons.person_2_outlined,
+                  show: false,
+                  isPassword: false,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                MyBoxes(
                   hint: 'Enter your email',
                   icon: Icons.email_outlined,
                   show: false,
