@@ -1,17 +1,80 @@
 import 'package:flutter/material.dart';
-
 import 'package:prj/items/elvButton.dart';
 import 'package:prj/items/textfield.dart';
+import 'package:provider/provider.dart';
 
-class Addmedia extends StatelessWidget {
-  const Addmedia({super.key});
+import '../items/liststringmodel.dart';
+
+class Addmedia extends StatefulWidget {
+  const Addmedia({Key? key}) : super(key: key);
+
+  @override
+  State<Addmedia> createState() => _AddmediaState();
+}
+
+class _AddmediaState extends State<Addmedia> {
+  late TextEditingController facebookController;
+  late TextEditingController instagramController;
+  late TextEditingController behanceController;
+  late TextEditingController whatsappController;
+  late TextEditingController gitController;
+  late TextEditingController twitterController;
+  late TextEditingController authoerController;
+  // Add controllers for other text fields
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the controllers with any existing values
+    facebookController = TextEditingController(
+        text: Provider.of<SelectedStringModel>(context, listen: false)
+                .facebookString ??
+            '');
+    instagramController = TextEditingController(
+        text: Provider.of<SelectedStringModel>(context, listen: false)
+                .instagramString ??
+            '');
+    // Initialize other controllers
+    whatsappController = TextEditingController(
+        text: Provider.of<SelectedStringModel>(context, listen: false)
+                .whatsappString ??
+            '');
+    behanceController = TextEditingController(
+        text: Provider.of<SelectedStringModel>(context, listen: false)
+                .behanceString ??
+            '');
+    gitController = TextEditingController(
+        text: Provider.of<SelectedStringModel>(context, listen: false)
+                .githubString ??
+            '');
+    twitterController = TextEditingController(
+        text: Provider.of<SelectedStringModel>(context, listen: false)
+                .twitterString ??
+            '');
+    authoerController = TextEditingController(
+        text: Provider.of<SelectedStringModel>(context, listen: false)
+                .authorString ??
+            '');
+  }
+
+  @override
+  void dispose() {
+    // Dispose of the controllers when the widget is disposed
+    facebookController.dispose();
+    instagramController.dispose();
+    behanceController.dispose();
+    whatsappController.dispose();
+authoerController.dispose();
+    gitController.dispose(); // Dispose of other controllers
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFBFBFB),
+      backgroundColor: const Color(0xFFFBFBFB),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFBFBFB),
+        backgroundColor: const Color(0xFFFBFBFB),
         leading: Padding(
           padding: const EdgeInsets.only(top: 25, left: 10),
           child: CircleAvatar(
@@ -19,17 +82,17 @@ class Addmedia extends StatelessWidget {
             radius: 15,
             child: GestureDetector(
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context, 'viewprofile');
               },
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_back_ios_rounded,
-                color: const Color(0xFF2D3D51),
+                color: Color(0xFF2D3D51),
               ),
             ),
           ),
         ),
-        title: Padding(
-          padding: const EdgeInsets.only(top: 25),
+        title: const Padding(
+          padding: EdgeInsets.only(top: 25),
           child: Text(
             'Add Media',
             style: TextStyle(
@@ -58,48 +121,83 @@ class Addmedia extends StatelessWidget {
                         color: Colors.grey[600],
                       ),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Textfieldd(
                       texthint: 'Facebook',
                       size: 16,
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
+                      onSave: (value) {
+                        Provider.of<SelectedStringModel>(context, listen: false)
+                            .setFacebookString(value);
+                      },
+                      controller: facebookController,
                     ),
                     Textfieldd(
                       texthint: 'Instagram',
                       size: 16,
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
+                      onSave: (value) {
+                        Provider.of<SelectedStringModel>(context, listen: false)
+                            .setInstagramString(value);
+                      },
+                      controller: instagramController,
                     ),
                     Textfieldd(
-                      texthint: 'Git Hub',
+                      texthint: 'GitHub',
                       size: 16,
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
+                      onSave: (value) {
+                        Provider.of<SelectedStringModel>(context, listen: false)
+                            .setGithubString(value);
+                      },
+                      controller: gitController,
                     ),
                     Textfieldd(
-                      texthint: 'Brhance',
+                      texthint: 'Behance',
                       size: 16,
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
+                      onSave: (value) {
+                        Provider.of<SelectedStringModel>(context, listen: false)
+                            .setBehanceString(value);
+                      },
+                      controller: behanceController,
                     ),
                     Textfieldd(
-                      texthint: 'Whatsapp',
+                      texthint: 'WhatsApp',
                       size: 16,
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
+                      onSave: (value) {
+                        Provider.of<SelectedStringModel>(context, listen: false)
+                            .setWhatsappString(value);
+                      },
+                      controller: whatsappController,
                     ),
                     Textfieldd(
                       texthint: 'Twitter',
                       size: 16,
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
+                      onSave: (value) {
+                        Provider.of<SelectedStringModel>(context, listen: false)
+                            .setTwitterString(value);
+                      },
+                      controller: twitterController,
                     ),
                     Textfieldd(
-                      texthint: 'Auther',
+                      texthint: 'Author',
                       size: 16,
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
+                      onSave: (value) {
+                        Provider.of<SelectedStringModel>(context, listen: false)
+                            .setAuthorString(value);
+                      },
+                      controller: authoerController,
                     ),
                   ],
                 ),
@@ -110,11 +208,21 @@ class Addmedia extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 34),
             child: Mybuttons(
               text: 'Save',
-              color: Color(0xFF2D3D51),
+              color: const Color(0xFF2D3D51),
               logo: false,
               assets: '',
               txtcolor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+            final mediaStrings = Provider.of<SelectedStringModel>(context, listen: false);
+      mediaStrings.setFacebookString(facebookController.text);
+      mediaStrings.setInstagramString(instagramController.text);
+      mediaStrings.setGithubString(gitController.text);
+      mediaStrings.setBehanceString(behanceController.text);
+      mediaStrings.setWhatsappString(whatsappController.text);
+      mediaStrings.setTwitterString(twitterController.text);
+      mediaStrings.setAuthorString(authoerController.text);
+      Navigator.pushNamed(context, 'viewprofile');
+              },
             ),
           ),
         ],
