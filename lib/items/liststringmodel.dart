@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
+import 'package:prj/items/exprienceitemsclass.dart';
 
 class SelectedStringModel extends ChangeNotifier {
   List<String> selectedStrings = [];
 List<String> trasnforedStrings = [];
+List<ExprienceItemClass> ExprienceItemList = [];
  String? facebookString;
   String? instagramString;
   String? githubString;
@@ -10,6 +12,11 @@ List<String> trasnforedStrings = [];
   String? whatsappString;
   String? twitterString;
   String? authorString;
+
+void addExperienceItem(ExprienceItemClass item) {
+    ExprienceItemList.add(item);
+    notifyListeners();
+  }
 
   void setFacebookString(String value) {
     facebookString = value;

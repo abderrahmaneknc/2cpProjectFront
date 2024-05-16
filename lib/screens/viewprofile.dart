@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:prj/items/clickbutton.dart';
 import 'package:prj/items/fileditem.dart';
+import 'package:prj/screens/exprienceitem.dart';
 import 'package:provider/provider.dart';
 
+import '../items/exprienceitemsclass.dart';
 import '../items/liststringmodel.dart';
 
 class ViewProfile extends StatefulWidget {
@@ -14,6 +16,7 @@ class ViewProfile extends StatefulWidget {
 }
 
 class _ViewProfileState extends State<ViewProfile> {
+  bool showAllExperiences = false;
   @override
   Widget build(BuildContext context) {
     List<String> strings =
@@ -248,10 +251,10 @@ class _ViewProfileState extends State<ViewProfile> {
                                       for (int i = 0;
                                           i < mediaStrings.length;
                                           i++)
-                                          if(mediaStrings[i]!="")
-                                        MediaItem(
-                                          mediastring:mediaStrings[i],
-                                        ),
+                                        if (mediaStrings[i] != "")
+                                          MediaItem(
+                                            mediastring: mediaStrings[i],
+                                          ),
                                       SizedBox(
                                         height: 5 * height,
                                       ),
@@ -293,6 +296,133 @@ class _ViewProfileState extends State<ViewProfile> {
                                     ],
                                   ),
                                 ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: 8.0 * height,
+                                      left: 30 * width,
+                                      right: 22 * width),
+                                  child: Wrap(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Experiancess',
+                                            style: TextStyle(
+                                              fontFamily: "AeonikTRIAL",
+                                              fontSize: 24,
+                                            ),
+                                          ),
+                                          Spacer(),
+                                          IconButton(
+                                            icon: Icon(Icons.add),
+                                            onPressed: () {
+                                              Navigator.pushNamed(
+                                                  context, 'add_experiences');
+                                            },
+                                          ),
+                                          IconButton(
+                                            icon: Icon(Icons.edit),
+                                            onPressed: () {},
+                                          ),
+                                        ],
+                                      ),
+                                      for (int i = 0;
+                                          i <
+                                              selectedStringModel
+                                                  .ExprienceItemList.length;
+                                          i++)
+                                        if (showAllExperiences || i < 4)
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              ExprianceItem(
+                                                title: selectedStringModel
+                                                    .ExprienceItemList[i].title,
+                                                companyname: selectedStringModel
+                                                    .ExprienceItemList[i]
+                                                    .companyname,
+                                                emplname: selectedStringModel
+                                                    .ExprienceItemList[i]
+                                                    .emplname,
+                                                location: selectedStringModel
+                                                    .ExprienceItemList[i]
+                                                    .location,
+                                                enddate: selectedStringModel
+                                                    .ExprienceItemList[i]
+                                                    .enddate,
+                                                startdate: selectedStringModel
+                                                    .ExprienceItemList[i]
+                                                    .startdate,
+                                              ),
+                                              if (i !=
+                                                  selectedStringModel
+                                                          .ExprienceItemList
+                                                          .length -
+                                                      1)
+                                                Divider(), // Add a divider after each item except the last one
+                                            ],
+                                          ),
+                                      if (selectedStringModel
+                                              .ExprienceItemList.length <
+                                          4)
+                                        SizedBox(
+                                          width: 500 * width,
+                                        ),
+                                      SizedBox(
+                                        width: width * 120,
+                                      ),
+                                      if (selectedStringModel
+                                              .ExprienceItemList.length >
+                                          4)
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: (1 / width) * 10),
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                showAllExperiences =
+                                                    !showAllExperiences;
+                                              });
+                                            },
+                                            child: SizedBox(
+                                              height: height * 23,
+                                              width: width * 75,
+                                              child: Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    !showAllExperiences
+                                                        ? "Show All"
+                                                        : 'Show Less',
+                                                    style: TextStyle(
+                                                        color: const Color
+                                                            .fromARGB(
+                                                            255, 31, 33, 34),
+                                                        fontSize: 12),
+                                                  ),
+                                                  SizedBox(
+                                                    width: width * 2,
+                                                  ),
+                                                  Icon(
+                                                    !showAllExperiences
+                                                        ? Icons
+                                                            .arrow_forward_outlined
+                                                        : Icons
+                                                            .arrow_back_outlined,
+                                                    size: width * 15,
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -307,7 +437,7 @@ class _ViewProfileState extends State<ViewProfile> {
                   child: CircleAvatar(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.pop(context);
+                          Navigator.pushNamed(context, 'btnavbarprofile');
                         },
                         child: Icon(
                           Icons.arrow_back_ios_rounded,
