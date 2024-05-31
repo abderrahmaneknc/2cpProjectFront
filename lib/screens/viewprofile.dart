@@ -1,11 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:prj/items/clickbutton.dart';
 import 'package:prj/items/fileditem.dart';
-import 'package:prj/screens/exprienceitem.dart';
+import 'package:prj/items/exprienceitem.dart';
 import 'package:provider/provider.dart';
 
-import '../items/exprienceitemsclass.dart';
+import '../items/educationitem.dart';
 import '../items/liststringmodel.dart';
 
 class ViewProfile extends StatefulWidget {
@@ -16,7 +17,7 @@ class ViewProfile extends StatefulWidget {
 }
 
 class _ViewProfileState extends State<ViewProfile> {
-  bool showAllExperiences = false;
+  bool showAll = false;
   @override
   Widget build(BuildContext context) {
     List<String> strings =
@@ -61,7 +62,7 @@ class _ViewProfileState extends State<ViewProfile> {
                 Positioned(
                     top: 24 * height,
                     left: 115 * width,
-                    child: Column(
+                    child: const Column(
                       children: [
                         Text(
                           'Meghar yacine',
@@ -77,7 +78,7 @@ class _ViewProfileState extends State<ViewProfile> {
                               fontFamily: "AeonikTRIAL",
                               fontSize: 12,
                               height: 1,
-                              color: const Color.fromARGB(236, 255, 255, 255)),
+                              color: Color.fromARGB(236, 255, 255, 255)),
                         )
                       ],
                     )),
@@ -91,7 +92,7 @@ class _ViewProfileState extends State<ViewProfile> {
                       radius: 42 * width,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(42 * width),
-                        child: Image(
+                        child: const Image(
                             fit: BoxFit.cover,
                             image: AssetImage(
                               'assets/images.jpg',
@@ -100,8 +101,24 @@ class _ViewProfileState extends State<ViewProfile> {
                     ),
                   ),
                 ),
+                Positioned(
+                  top: 200 * height,
+                  left: (width * 130) - 10,
+                  child: SizedBox(
+                    height: 34 * height,
+                    width: 117 * width,
+                    child: ClickButton(
+                      text: 'Add Selection',
+                      showicon: false,
+                      fill: Colors.transparent,
+                      txtclr: Colors.white,
+                      fnct: () {
+                        Navigator.pushNamed(context, 'profile');
+                      },
+                    ),
+                  ),
+                ), 
                 SizedBox(
-                  height: double.infinity,
                   width: double.infinity,
                   child: ListView(
                     children: [
@@ -124,7 +141,7 @@ class _ViewProfileState extends State<ViewProfile> {
                                       right: 22 * width),
                                   child: Row(
                                     children: [
-                                      Column(
+                                      const Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
@@ -144,9 +161,9 @@ class _ViewProfileState extends State<ViewProfile> {
                                           ),
                                         ],
                                       ),
-                                      Spacer(),
+                                      const Spacer(),
                                       IconButton(
-                                        icon: Icon(Icons.edit),
+                                        icon: const Icon(Icons.edit),
                                         onPressed: () {},
                                       ),
                                     ],
@@ -159,7 +176,7 @@ class _ViewProfileState extends State<ViewProfile> {
                                       right: 22 * width),
                                   child: Row(
                                     children: [
-                                      Column(
+                                      const Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
@@ -179,9 +196,9 @@ class _ViewProfileState extends State<ViewProfile> {
                                           ),
                                         ],
                                       ),
-                                      Spacer(),
+                                      const Spacer(),
                                       IconButton(
-                                        icon: Icon(Icons.edit),
+                                        icon: const Icon(Icons.edit),
                                         onPressed: () {},
                                       ),
                                     ],
@@ -196,21 +213,21 @@ class _ViewProfileState extends State<ViewProfile> {
                                     children: [
                                       Row(
                                         children: [
-                                          Text(
+                                          const Text(
                                             'About',
                                             style: TextStyle(
                                               fontFamily: "AeonikTRIAL",
                                               fontSize: 24,
                                             ),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           IconButton(
-                                            icon: Icon(Icons.edit),
+                                            icon: const Icon(Icons.edit),
                                             onPressed: () {},
                                           ),
                                         ],
                                       ),
-                                      Text(
+                                      const Text(
                                         'Lorem ipsum dolor sit amet consectetur. Vel quisque porta dignissim proin volutpat nibh faucibus. Faucibus pellentesque massa feugiat diam non sed risus malesuada.',
                                         style: TextStyle(
                                           fontSize: 13,
@@ -220,209 +237,12 @@ class _ViewProfileState extends State<ViewProfile> {
                                     ],
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: 10.0 * height,
-                                      left: 30 * width,
-                                      right: 22 * width),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            'MY Media',
-                                            style: TextStyle(
-                                              fontFamily: "AeonikTRIAL",
-                                              fontSize: 24,
-                                            ),
-                                          ),
-                                          Spacer(),
-                                          IconButton(
-                                            icon: Icon(Icons.edit),
-                                            onPressed: () {
-                                              Navigator.pushNamed(
-                                                  context, 'add_media');
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                      for (int i = 0;
-                                          i < mediaStrings.length;
-                                          i++)
-                                        if (mediaStrings[i] != "")
-                                          MediaItem(
-                                            mediastring: mediaStrings[i],
-                                          ),
-                                      SizedBox(
-                                        height: 5 * height,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                            'What I am Good At',
-                                            style: TextStyle(
-                                              fontFamily: "AeonikTRIAL",
-                                              fontSize: 23,
-                                            ),
-                                          ),
-                                          Spacer(),
-                                          IconButton(
-                                            icon: Icon(Icons.edit),
-                                            onPressed: () {
-                                              Navigator.popAndPushNamed(
-                                                  context, 'add_fields');
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                      Wrap(
-                                          crossAxisAlignment:
-                                              WrapCrossAlignment.start,
-                                          children: [
-                                            for (int i = 0;
-                                                i < strings.length;
-                                                i++)
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: 5.0 * width),
-                                                child: Filed(
-                                                  string: strings[i],
-                                                  dynamic: false,
-                                                ),
-                                              ),
-                                          ])
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: 8.0 * height,
-                                      left: 30 * width,
-                                      right: 22 * width),
-                                  child: Wrap(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            'Experiancess',
-                                            style: TextStyle(
-                                              fontFamily: "AeonikTRIAL",
-                                              fontSize: 24,
-                                            ),
-                                          ),
-                                          Spacer(),
-                                          IconButton(
-                                            icon: Icon(Icons.add),
-                                            onPressed: () {
-                                              Navigator.pushNamed(
-                                                  context, 'add_experiences');
-                                            },
-                                          ),
-                                          IconButton(
-                                            icon: Icon(Icons.edit),
-                                            onPressed: () {},
-                                          ),
-                                        ],
-                                      ),
-                                      for (int i = 0;
-                                          i <
-                                              selectedStringModel
-                                                  .ExprienceItemList.length;
-                                          i++)
-                                        if (showAllExperiences || i < 4)
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              ExprianceItem(
-                                                title: selectedStringModel
-                                                    .ExprienceItemList[i].title,
-                                                companyname: selectedStringModel
-                                                    .ExprienceItemList[i]
-                                                    .companyname,
-                                                emplname: selectedStringModel
-                                                    .ExprienceItemList[i]
-                                                    .emplname,
-                                                location: selectedStringModel
-                                                    .ExprienceItemList[i]
-                                                    .location,
-                                                enddate: selectedStringModel
-                                                    .ExprienceItemList[i]
-                                                    .enddate,
-                                                startdate: selectedStringModel
-                                                    .ExprienceItemList[i]
-                                                    .startdate,
-                                              ),
-                                              if (i !=
-                                                  selectedStringModel
-                                                          .ExprienceItemList
-                                                          .length -
-                                                      1)
-                                                Divider(), // Add a divider after each item except the last one
-                                            ],
-                                          ),
-                                      if (selectedStringModel
-                                              .ExprienceItemList.length <
-                                          4)
-                                        SizedBox(
-                                          width: 500 * width,
-                                        ),
-                                      SizedBox(
-                                        width: width * 120,
-                                      ),
-                                      if (selectedStringModel
-                                              .ExprienceItemList.length >
-                                          4)
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: (1 / width) * 10),
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                showAllExperiences =
-                                                    !showAllExperiences;
-                                              });
-                                            },
-                                            child: SizedBox(
-                                              height: height * 23,
-                                              width: width * 75,
-                                              child: Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    !showAllExperiences
-                                                        ? "Show All"
-                                                        : 'Show Less',
-                                                    style: TextStyle(
-                                                        color: const Color
-                                                            .fromARGB(
-                                                            255, 31, 33, 34),
-                                                        fontSize: 12),
-                                                  ),
-                                                  SizedBox(
-                                                    width: width * 2,
-                                                  ),
-                                                  Icon(
-                                                    !showAllExperiences
-                                                        ? Icons
-                                                            .arrow_forward_outlined
-                                                        : Icons
-                                                            .arrow_back_outlined,
-                                                    size: width * 15,
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                    ],
-                                  ),
-                                ),
+                                GoodAtANDMedia(height, width, context,
+                                    mediaStrings, strings),
+                                profilelists(height, width, context,
+                                    selectedStringModel, 'Experiance', 0),
+                                profilelists(height, width, context,
+                                    selectedStringModel, 'Education', 1),
                               ],
                             ),
                           ),
@@ -439,7 +259,7 @@ class _ViewProfileState extends State<ViewProfile> {
                         onTap: () {
                           Navigator.pushNamed(context, 'btnavbarprofile');
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios_rounded,
                           color: Colors.white,
                         ),
@@ -453,7 +273,7 @@ class _ViewProfileState extends State<ViewProfile> {
                   child: CircleAvatar(
                       child: GestureDetector(
                         onTap: () {},
-                        child: Icon(
+                        child: const Icon(
                           Icons.more_vert_rounded,
                           color: Colors.white,
                         ),
@@ -461,25 +281,203 @@ class _ViewProfileState extends State<ViewProfile> {
                       backgroundColor: Colors.grey.withOpacity(0.5),
                       radius: 13 * width),
                 ),
-                Positioned(
-                  left: (width * 130) - 10,
-                  top: 200 * height,
-                  child: SizedBox(
-                    height: 34 * height,
-                    width: 117 * width,
-                    child: ClickButton(
-                      text: 'Add Selection',
-                      showicon: false,
-                      fill: Colors.transparent,
-                      txtclr: Colors.white,
-                      fnct: () {},
-                    ),
-                  ),
-                ),
               ],
             );
           },
         ),
+      ),
+    );
+  }
+
+  Padding GoodAtANDMedia(double height, double width, BuildContext context,
+      List<String> mediaStrings, List<String> strings) {
+    return Padding(
+      padding: EdgeInsets.only(
+          top: 10.0 * height, left: 30 * width, right: 22 * width),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Text(
+                'MY Media',
+                style: TextStyle(
+                  fontFamily: "AeonikTRIAL",
+                  fontSize: 24,
+                ),
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'add_media');
+                },
+              ),
+            ],
+          ),
+          for (int i = 0; i < mediaStrings.length; i++)
+            if (mediaStrings[i] != "")
+              MediaItem(
+                mediastring: mediaStrings[i],
+              ),
+          SizedBox(
+            height: 5 * height,
+          ),
+          Row(
+            children: [
+              const Text(
+                'What I am Good At',
+                style: TextStyle(
+                  fontFamily: "AeonikTRIAL",
+                  fontSize: 23,
+                ),
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, 'add_fields');
+                },
+              ),
+            ],
+          ),
+          Wrap(crossAxisAlignment: WrapCrossAlignment.start, children: [
+            for (int i = 0; i < strings.length; i++)
+              Padding(
+                padding: EdgeInsets.only(left: 5.0 * width),
+                child: Filed(
+                  string: strings[i],
+                  dynamic: false,
+                ),
+              ),
+          ])
+        ],
+      ),
+    );
+  }
+
+  Padding profilelists(double height, double width, BuildContext context,
+      SelectedStringModel selectedStringModel, String listname, int listnum) {
+    int? length;
+    switch (listnum) {
+      case 0:
+        length = selectedStringModel.ExperianceitemList.length;
+        break;
+      case 1:
+        length = selectedStringModel.EducationItemList.length;
+        break;
+    }
+    List<String> editlist = ['experianceseditpage', 'educationseditpage'];
+    List<String> addlist = ['add_experiences', 'add_education'];
+    return Padding(
+      padding: EdgeInsets.only(
+          top: 1.0 * height, left: 30 * width, right: 22 * width),
+      child: Wrap(
+        children: [
+          Row(
+            children: [
+              Text(
+                listname,
+                style: TextStyle(
+                  fontFamily: "AeonikTRIAL",
+                  fontSize: 24,
+                ),
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: () {
+                  Navigator.pushNamed(context, addlist[listnum]);
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.pushNamed(context, editlist[listnum]);
+                },
+              ),
+            ],
+          ),
+          SizedBox(
+            height: height * 5,
+          ),
+          for (int i = 0; i < length!; i++)
+            if (showAll || i < 4)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (listnum == 0)
+                    ExprianceItem(
+                      title: selectedStringModel.ExperianceitemList[i].title,
+                      companyname:
+                          selectedStringModel.ExperianceitemList[i].companyname,
+                      emplname:
+                          selectedStringModel.ExperianceitemList[i].emplname,
+                      location:
+                          selectedStringModel.ExperianceitemList[i].location,
+                      enddate:
+                          selectedStringModel.ExperianceitemList[i].enddate,
+                      startdate:
+                          selectedStringModel.ExperianceitemList[i].startdate,
+                    )
+                  else if (listnum == 1)
+                    EducationItem(
+                      school: selectedStringModel.EducationItemList[i].school,
+                      fieldofstudy:
+                          selectedStringModel.EducationItemList[i].fieldofstudy,
+                      degree: selectedStringModel.EducationItemList[i].degree,
+                      enddate: selectedStringModel.EducationItemList[i].enddate,
+                      startdate:
+                          selectedStringModel.EducationItemList[i].startdate,
+                    ),
+                  if (i != length - 1)
+                    const Divider(), // Add a divider after each item except the last one
+                ],
+              ),
+          if (length! < 4)
+            SizedBox(
+              width: 500 * width,
+            ),
+          SizedBox(
+            width: width * 120,
+          ),
+          if (length! > 4)
+            Padding(
+              padding: EdgeInsets.only(left: (1 / width) * 10),
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    showAll = !showAll;
+                  });
+                },
+                child: SizedBox(
+                  height: height * 23,
+                  width: width * 75,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        !showAll ? "Show All" : 'Show Less',
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 31, 33, 34),
+                            fontSize: 12),
+                      ),
+                      SizedBox(
+                        width: width * 2,
+                      ),
+                      Icon(
+                        !showAll
+                            ? Icons.arrow_forward_outlined
+                            : Icons.arrow_back_outlined,
+                        size: width * 15,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -493,7 +491,7 @@ class MediaItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '-' + mediastring,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 13,
         fontFamily: "AeonikTRIAL",
       ),

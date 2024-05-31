@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
+import 'package:prj/screens/editpage.dart';
 import 'items/liststringmodel.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
@@ -40,7 +41,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   // ignore: use_key_in_widget_constructors
   const MyApp({Key? key});
 
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
           'success_after_payment': (context) => Success(),
           'add_toprofile': (context) => AddToProfile(),
           'add_media': (context) => Addmedia(),
-            'addrescors': (context) => AddResCors(),
+          'addrescors': (context) => AddResCors(),
           'add_fields': (context) => Addfields(),
           'add_language': (context) => Addlanguage(),
           'add_education': (context) => AddEducation(),
@@ -86,6 +86,12 @@ class MyApp extends StatelessWidget {
           'b': (context) => const ResCorPage(),
           'resdp': (context) => const ResoursesDP(),
           'cordp': (context) => const CourseDP(),
+          'experianceseditpage': (context) => EditPage(
+                editedpagenumber: 0,
+              ),
+              'educationseditpage': (context) => EditPage(
+                editedpagenumber: 1,
+              ),
         });
   }
 }

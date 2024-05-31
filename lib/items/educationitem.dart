@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:prj/screens/add_education.dart';
+import 'package:prj/screens/add_experiences.dart';
 
 // ignore: must_be_immutable
-class ExprianceItem extends StatelessWidget {
-  ExprianceItem({
-    super.key,
-    required this.title,
-    required this.companyname,
-    required this.emplname,
-    required this.location,
-    required this.startdate,
-    required this.enddate,
-  });
+class EducationItem extends StatelessWidget {
+  EducationItem(
+      {super.key,
+      required this.school,
+      required this.degree,
+      required this.fieldofstudy,
+      required this.startdate,
+      required this.enddate,
+      this.ineditpage,
+      this.itemnumber});
 
-  late String title, emplname, companyname, location, startdate, enddate;
-
+  late String school, fieldofstudy, degree, startdate, enddate;
+  bool? ineditpage;
+  int? itemnumber;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -23,14 +26,14 @@ class ExprianceItem extends StatelessWidget {
 
     return SizedBox(
       height: 51 * height,
-      width: 154 * width,
+      width: double.infinity,
       child: Stack(
         children: [
           SizedBox(
             height: height * 38,
             width: width * 38,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(10),
               child: Image.asset(
                 'assets/erwinsmithoo.jpg',
                 fit: BoxFit.cover,
@@ -46,20 +49,20 @@ class ExprianceItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    school,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontFamily: "AeonikTRIAL",
-                      fontSize: 9 * height,
+                      fontSize: 13 * height,
                     ),
                   ),
                   Text(
-                    companyname,
+                    '$degree,$fieldofstudy',
                     style: TextStyle(
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                       fontFamily: "AeonikTRIAL",
-                      fontSize: 8 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
+                      fontSize: 10 * height,
+                      color: Color.fromARGB(204, 0, 0, 0),
                     ),
                   ),
                   Text(
@@ -71,19 +74,27 @@ class ExprianceItem extends StatelessWidget {
                       color: Color.fromARGB(255, 93, 88, 88),
                     ),
                   ),
-                  Text(
-                    location,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 7 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
-                    ),
-                  ),
                 ],
               ),
             ),
-          )
+          ),
+          if (ineditpage == true)
+            Positioned(
+              left: 280 * width,
+              child: IconButton(
+                iconSize: 16 * width,
+                icon: Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          AddEducation(theediteditemnumber: itemnumber),
+                    ),
+                  );
+                },
+              ),
+            ),
         ],
       ),
     );
