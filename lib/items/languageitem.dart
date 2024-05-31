@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:prj/screens/add_education.dart';
+import 'package:prj/screens/add_language.dart';
 
 
 // ignore: must_be_immutable
-class EducationItem extends StatelessWidget {
-  EducationItem(
+class LanguagesItem extends StatelessWidget {
+  LanguagesItem(
       {super.key,
-      required this.school,
-      required this.degree,
-      required this.fieldofstudy,
-      required this.startdate,
-      required this.enddate,
+      required this.language,
+      required this.prof,
+    
       this.ineditpage,
       this.itemnumber});
 
-  late String school, fieldofstudy, degree, startdate, enddate;
+  late String language, prof;
   bool? ineditpage;
   int? itemnumber;
   @override
@@ -49,7 +48,7 @@ class EducationItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    school,
+                    language,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontFamily: "AeonikTRIAL",
@@ -57,7 +56,7 @@ class EducationItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '$degree,$fieldofstudy',
+                    prof,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontFamily: "AeonikTRIAL",
@@ -65,15 +64,7 @@ class EducationItem extends StatelessWidget {
                       color: Color.fromARGB(204, 0, 0, 0),
                     ),
                   ),
-                  Text(
-                    '$startdate - $enddate',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 7 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
-                    ),
-                  ),
+                
                 ],
               ),
             ),
@@ -89,7 +80,7 @@ class EducationItem extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          AddEducation(theediteditemnumber: itemnumber),
+                          Addlanguage(theediteditemnumber: itemnumber),
                     ),
                   );
                 },

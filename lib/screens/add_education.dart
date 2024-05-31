@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 
 import '../items/liststringmodel.dart';
 
+// ignore: must_be_immutable
 class AddEducation extends StatefulWidget {
   AddEducation({Key? key, this.theediteditemnumber}) : super(key: key);
   int? theediteditemnumber;

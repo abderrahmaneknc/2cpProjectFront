@@ -1,20 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:prj/screens/add_education.dart';
 
+import 'package:prj/screens/add_skills.dart';
 
 // ignore: must_be_immutable
-class EducationItem extends StatelessWidget {
-  EducationItem(
+class SkillsItem extends StatelessWidget {
+  SkillsItem(
       {super.key,
-      required this.school,
-      required this.degree,
-      required this.fieldofstudy,
-      required this.startdate,
-      required this.enddate,
+      required this.skil,
+      required this.get,
+    
       this.ineditpage,
       this.itemnumber});
 
-  late String school, fieldofstudy, degree, startdate, enddate;
+  late String skil, emplname, get;
   bool? ineditpage;
   int? itemnumber;
   @override
@@ -25,7 +24,7 @@ class EducationItem extends StatelessWidget {
     double width = screenWidth / 360;
 
     return SizedBox(
-      height: 51 * height,
+      height: 60 * height,
       width: double.infinity,
       child: Stack(
         children: [
@@ -33,7 +32,7 @@ class EducationItem extends StatelessWidget {
             height: height * 38,
             width: width * 38,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(15),
               child: Image.asset(
                 'assets/erwinsmithoo.jpg',
                 fit: BoxFit.cover,
@@ -43,37 +42,33 @@ class EducationItem extends StatelessWidget {
           Positioned(
             left: 50 * width,
             child: SizedBox(
-              width: 108 * width,
-              height: height * 61,
+              height: height * 60,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    school,
+                    skil,
                     style: TextStyle(
+                      height: 1,
                       fontWeight: FontWeight.w700,
                       fontFamily: "AeonikTRIAL",
                       fontSize: 13 * height,
                     ),
                   ),
+                  SizedBox(
+                    height: 4 * height,
+                  ),
                   Text(
-                    '$degree,$fieldofstudy',
+                    emplname,
                     style: TextStyle(
+                      height: 1,
                       fontWeight: FontWeight.w600,
                       fontFamily: "AeonikTRIAL",
                       fontSize: 10 * height,
-                      color: Color.fromARGB(204, 0, 0, 0),
+                      color: Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
-                  Text(
-                    '$startdate - $enddate',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 7 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
-                    ),
-                  ),
+                  
                 ],
               ),
             ),
@@ -89,7 +84,7 @@ class EducationItem extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          AddEducation(theediteditemnumber: itemnumber),
+                          AddSkills(theediteditemnumber: itemnumber),
                     ),
                   );
                 },

@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:prj/screens/add_education.dart';
-
+import 'package:prj/items/fileditem.dart';
+import 'package:prj/screens/add_certf.dart';
 
 // ignore: must_be_immutable
-class EducationItem extends StatelessWidget {
-  EducationItem(
+class LisAndCeltItem extends StatelessWidget {
+  LisAndCeltItem(
       {super.key,
-      required this.school,
-      required this.degree,
-      required this.fieldofstudy,
-      required this.startdate,
-      required this.enddate,
+      required this.name,
+      required this.issorg,
+      required this.url,
+      required this.date,
       this.ineditpage,
       this.itemnumber});
 
-  late String school, fieldofstudy, degree, startdate, enddate;
+  late String name, url, issorg, date;
   bool? ineditpage;
   int? itemnumber;
   @override
@@ -25,7 +24,7 @@ class EducationItem extends StatelessWidget {
     double width = screenWidth / 360;
 
     return SizedBox(
-      height: 51 * height,
+      height: 80 * height,
       width: double.infinity,
       child: Stack(
         children: [
@@ -44,12 +43,12 @@ class EducationItem extends StatelessWidget {
             left: 50 * width,
             child: SizedBox(
               width: 108 * width,
-              height: height * 61,
+              height: height * 83,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    school,
+                    name,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontFamily: "AeonikTRIAL",
@@ -57,7 +56,7 @@ class EducationItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '$degree,$fieldofstudy',
+                    '$issorg,$url',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontFamily: "AeonikTRIAL",
@@ -66,13 +65,17 @@ class EducationItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '$startdate - $enddate',
+                    date,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontFamily: "AeonikTRIAL",
                       fontSize: 7 * height,
                       color: Color.fromARGB(255, 93, 88, 88),
                     ),
+                  ),
+                  Filed(
+                    dynamic: false,
+                    string: 'show credentials',
                   ),
                 ],
               ),
@@ -89,7 +92,7 @@ class EducationItem extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          AddEducation(theediteditemnumber: itemnumber),
+                          AddCertf(theediteditemnumber: itemnumber),
                     ),
                   );
                 },

@@ -1,18 +1,21 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:prj/items/licenssesandceltitem.dart';
 import 'package:prj/items/liststringmodel.dart';
 import 'package:provider/provider.dart';
 
 import '../items/educationitem.dart';
 import '../items/exprienceitem.dart';
+import '../items/languageitem.dart';
+import '../items/skillsitem.dart';
 
 class EditPage extends StatelessWidget {
   EditPage({super.key, required this.editedpagenumber});
   int editedpagenumber;
   @override
   Widget build(BuildContext context) {
-    List<String> pagesitems = ['Experiances', 'Education'];
+    List<String> pagesitems = ['Experiances', 'Education', 'Certfications','Skills','Languages'];
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFFBFBFB),
@@ -57,11 +60,20 @@ class EditPage extends StatelessWidget {
             case 1:
               length = selectedStringModel.EducationItemList.length;
               break;
+            case 2:
+              length = selectedStringModel.LisitemList.length;
+              break;
+              case 3:
+               length = selectedStringModel.SkillsitemList.length;
+              break;
+               case 4:
+       length = selectedStringModel.LanguagesitemList.length;
+        break;
           }
-          double screenWidth = MediaQuery.of(context).size.width;
+
           double screenHeight = MediaQuery.of(context).size.height;
           double height = screenHeight / 640;
-          double width = screenWidth / 360;
+
           return SingleChildScrollView(
               child: Padding(
             padding: EdgeInsets.all(20.0 * height),
@@ -72,7 +84,8 @@ class EditPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (editedpagenumber == 0)
-                        ExprianceItem(ineditpage: true,
+                        ExprianceItem(
+                          ineditpage: true,
                           title:
                               selectedStringModel.ExperianceitemList[i].title,
                           companyname: selectedStringModel
@@ -84,10 +97,13 @@ class EditPage extends StatelessWidget {
                           enddate:
                               selectedStringModel.ExperianceitemList[i].enddate,
                           startdate: selectedStringModel
-                              .ExperianceitemList[i].startdate,itemnumber: i,
+                              .ExperianceitemList[i].startdate,
+                          itemnumber: i,
                         )
                       else if (editedpagenumber == 1)
-                        EducationItem(ineditpage: true,itemnumber: i,
+                        EducationItem(
+                          ineditpage: true,
+                          itemnumber: i,
                           school:
                               selectedStringModel.EducationItemList[i].school,
                           fieldofstudy: selectedStringModel
@@ -98,7 +114,20 @@ class EditPage extends StatelessWidget {
                               selectedStringModel.EducationItemList[i].enddate,
                           startdate: selectedStringModel
                               .EducationItemList[i].startdate,
-                        ),
+                        )
+                      else if (editedpagenumber == 2)
+                        LisAndCeltItem(
+                            ineditpage: true,
+                            itemnumber: i,
+                            name: selectedStringModel.LisitemList[i].name,
+                            issorg: selectedStringModel.LisitemList[i].issorg,
+                            url: selectedStringModel.LisitemList[i].url,
+                            date: selectedStringModel.LisitemList[i].date)else if(editedpagenumber==3)
+                        SkillsItem(skil: selectedStringModel.SkillsitemList[i].skil, get:selectedStringModel.SkillsitemList[i].get)else if (editedpagenumber== 4)
+                    LanguagesItem(
+                        language:
+                            selectedStringModel.LanguagesitemList[i].language,
+                        prof: selectedStringModel.LanguagesitemList[i].prof),
                       if (i != length - 1)
                         const Divider(), // Add a divider after each item except the last one
                     ],

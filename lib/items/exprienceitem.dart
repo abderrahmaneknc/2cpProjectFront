@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prj/screens/add_experiences.dart';
 
@@ -43,7 +44,6 @@ class ExprianceItem extends StatelessWidget {
           Positioned(
             left: 50 * width,
             child: SizedBox(
-              width: 108 * width,
               height: height * 60,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +61,7 @@ class ExprianceItem extends StatelessWidget {
                     height: 4 * height,
                   ),
                   Text(
-                    companyname,
+                    emplname,
                     style: TextStyle(
                       height: 1,
                       fontWeight: FontWeight.w600,
@@ -82,6 +82,7 @@ class ExprianceItem extends StatelessWidget {
                   Text(
                     location,
                     style: TextStyle(
+                      height: 1,
                       fontWeight: FontWeight.w500,
                       fontFamily: "AeonikTRIAL",
                       fontSize: 11 * height,

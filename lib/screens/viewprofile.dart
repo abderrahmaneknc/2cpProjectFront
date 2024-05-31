@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:prj/items/clickbutton.dart';
 import 'package:prj/items/fileditem.dart';
 import 'package:prj/items/exprienceitem.dart';
+import 'package:prj/items/languageitem.dart';
+import 'package:prj/items/skillsitem.dart';
 import 'package:provider/provider.dart';
 
 import '../items/educationitem.dart';
+import '../items/licenssesandceltitem.dart';
 import '../items/liststringmodel.dart';
 
 class ViewProfile extends StatefulWidget {
@@ -117,7 +120,7 @@ class _ViewProfileState extends State<ViewProfile> {
                       },
                     ),
                   ),
-                ), 
+                ),
                 SizedBox(
                   width: double.infinity,
                   child: ListView(
@@ -243,6 +246,12 @@ class _ViewProfileState extends State<ViewProfile> {
                                     selectedStringModel, 'Experiance', 0),
                                 profilelists(height, width, context,
                                     selectedStringModel, 'Education', 1),
+                                profilelists(height, width, context,
+                                    selectedStringModel, 'Certfications', 2),
+                                profilelists(height, width, context,
+                                    selectedStringModel, 'Skills', 3),
+                                profilelists(height, width, context,
+                                    selectedStringModel, 'languages', 4),
                               ],
                             ),
                           ),
@@ -366,9 +375,30 @@ class _ViewProfileState extends State<ViewProfile> {
       case 1:
         length = selectedStringModel.EducationItemList.length;
         break;
+      case 2:
+        length = selectedStringModel.LisitemList.length;
+        break;
+      case 3:
+        length = selectedStringModel.SkillsitemList.length;
+        break;
+      case 4:
+       length = selectedStringModel.LanguagesitemList.length;
+        break;
     }
-    List<String> editlist = ['experianceseditpage', 'educationseditpage'];
-    List<String> addlist = ['add_experiences', 'add_education'];
+    List<String> editlist = [
+      'experianceseditpage',
+      'educationseditpage',
+      'liceditpage',
+      'skillseditpage'
+          'languageseditpage'
+    ];
+    List<String> addlist = [
+      'add_experiences',
+      'add_education',
+      'add_certf',
+      'add_skills',
+      'add_languages'
+    ];
     return Padding(
       padding: EdgeInsets.only(
           top: 1.0 * height, left: 30 * width, right: 22 * width),
@@ -429,19 +459,34 @@ class _ViewProfileState extends State<ViewProfile> {
                       enddate: selectedStringModel.EducationItemList[i].enddate,
                       startdate:
                           selectedStringModel.EducationItemList[i].startdate,
-                    ),
+                    )
+                  else if (listnum == 2)
+                    LisAndCeltItem(
+                        name: selectedStringModel.LisitemList[i].name,
+                        issorg: selectedStringModel.LisitemList[i].issorg,
+                        url: selectedStringModel.LisitemList[i].url,
+                        date: selectedStringModel.LisitemList[i].date)
+                  else if (listnum == 3)
+                    SkillsItem(
+                        skil: selectedStringModel.SkillsitemList[i].skil,
+                        get: selectedStringModel.SkillsitemList[i].get)
+                  else if (listnum == 4)
+                    LanguagesItem(
+                        language:
+                            selectedStringModel.LanguagesitemList[i].language,
+                        prof: selectedStringModel.LanguagesitemList[i].prof),
                   if (i != length - 1)
                     const Divider(), // Add a divider after each item except the last one
                 ],
               ),
-          if (length! < 4)
+          if (length < 4)
             SizedBox(
               width: 500 * width,
             ),
           SizedBox(
             width: width * 120,
           ),
-          if (length! > 4)
+          if (length > 4)
             Padding(
               padding: EdgeInsets.only(left: (1 / width) * 10),
               child: GestureDetector(

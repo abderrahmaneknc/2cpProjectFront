@@ -90,7 +90,11 @@ class MyApp extends StatelessWidget {
                 editedpagenumber: 0,
               ),
               'educationseditpage': (context) => EditPage(
-                editedpagenumber: 1,
+                editedpagenumber: 1,),
+                'liceditpage': (context) => EditPage(
+                editedpagenumber: 2,),
+                  'skillseditpage': (context) => EditPage(
+                editedpagenumber: 3,
               ),
         });
   }
