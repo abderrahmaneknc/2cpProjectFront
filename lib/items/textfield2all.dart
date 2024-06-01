@@ -10,6 +10,7 @@ class Textfieldd2 extends StatefulWidget {
     this.maxCharacters,
     this.width,
     this.height,
+    this.prefixIcon,
   }) : super(key: key);
 
   final String texthint;
@@ -19,6 +20,8 @@ class Textfieldd2 extends StatefulWidget {
   final int? maxCharacters;
   final double? width;
   final double? height;
+  final IconData?
+      prefixIcon; // Icon to be displayed at the beginning of the text field
 
   @override
   _Textfieldd2State createState() => _Textfieldd2State();
@@ -51,6 +54,7 @@ class _Textfieldd2State extends State<Textfieldd2> {
       textAlign: TextAlign.left, // Align text to the left
       maxLines: null, // Allow multiple lines
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
         hintText: widget.texthint,
         filled: true,
         fillColor: Color(0xFBFBFBFB),
@@ -67,7 +71,9 @@ class _Textfieldd2State extends State<Textfieldd2> {
           borderRadius: BorderRadius.circular(5.0),
         ),
         contentPadding: EdgeInsets.fromLTRB(
-          widget.width ?? 5, // Left padding
+          (widget.prefixIcon != null
+              ? 0
+              : widget.width ?? 5), // Left padding including icon width
           widget.height ?? 0, // Top padding
           0, // Right padding
           0, // Bottom padding

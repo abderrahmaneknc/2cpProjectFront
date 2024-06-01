@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:prj/items/clickbutton.dart';
+import 'package:prj/screens/profilrDialogue.dart';
+
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
@@ -73,12 +75,10 @@ class MyProfile extends StatelessWidget {
               top: 24 * height,
               left: 305 * width,
               child: CircleAvatar(
-                  backgroundColor: Colors.grey.withOpacity(0.5),
-                  radius: 13 * width,
-                  child: Icon(
-                    Icons.more_vert_rounded,
-                    color: Colors.white,
-                  )),
+                backgroundColor: Colors.grey.withOpacity(0.5),
+                radius: 13 * width,
+                child: NotifIcon(height: height, width: width),
+              ),
             ),
             Positioned(
                 top: 91,
@@ -238,6 +238,44 @@ class MyProfile extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class NotifIcon extends StatelessWidget {
+  const NotifIcon({
+    super.key,
+    required this.height,
+    required this.width,
+  });
+
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return ProfileDialogue(
+              s1: 'Support our brilliant',
+              s2: 'repport',
+            );
+          },
+        );
+      },
+      child: SizedBox(
+        height: 24 * height,
+        width: 24 * width,
+        child: Image.asset(
+          'assets/Group 309.png',
+          fit: BoxFit.contain,
+          height: 24 * height,
+          width: 22 * width,
         ),
       ),
     );

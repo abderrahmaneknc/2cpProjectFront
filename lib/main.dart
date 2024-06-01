@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
+import 'package:prj/screens/edahabia.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
+import 'screens/dashboard.dart';
+import 'screens/myStat.dart';
 import 'screens/resoursesdetailedpage.dart';
 import 'screens/verified.dart';
 import 'screens/addBlog.dart';
@@ -15,7 +18,6 @@ import 'screens/add_skills.dart';
 import 'screens/blogsscreen.dart';
 import 'screens/bologsdetailedscreen.dart';
 import 'package:prj/screens/bottomnavbar.dart';
-import 'screens/edhabiabackground.dart';
 import 'screens/email_verification.dart';
 import 'screens/hellothere.dart';
 import 'screens/introductionPages.dart';
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => IntroductionPages(),
           'signIn': (context) => MySignInPage(),
           'signUp': (context) => MySignUpPage(),
-          'bckDhabia': (context) => Edahbback(),
+          'Edahabia': (context) => Edahabia(),
           'success_after_payment': (context) => Success(),
           'add_toprofile': (context) => AddToProfile(),
           'add_media': (context) => Addmedia(),
@@ -63,6 +65,7 @@ class MyApp extends StatelessWidget {
           'btnavbarhome': (context) => MyBottomNavigationBar(
                 currentIndex: 0,
               ),
+          'success': (context) => Success(),
           'btnavbarblogs': (context) => MyBottomNavigationBar(
                 currentIndex: 1,
               ),
@@ -75,6 +78,8 @@ class MyApp extends StatelessWidget {
           'b': (context) => ResCorPage(),
           'resdp': (context) => ResoursesDP(),
           'cordp': (context) => CourseDP(),
+          'dashboard': (context) => Dashboard(),
+          'myStat': (context) => Mystat(),
         });
   }
 }

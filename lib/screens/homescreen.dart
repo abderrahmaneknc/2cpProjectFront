@@ -199,7 +199,11 @@ class NotifIcon extends StatelessWidget {
         showDialog(
           context: context,
           builder: (BuildContext context) {
-            return Homedialoge();
+            return Homedialoge(
+              s1: 'Notification',
+              s2: 'App Dashboard',
+             
+            );
           },
         );
       },
