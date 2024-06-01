@@ -11,6 +11,8 @@ class Textfieldd2 extends StatefulWidget {
     this.width,
     this.height,
     this.prefixIcon,
+    this.controller,
+    this.validator,
   }) : super(key: key);
 
   final String texthint;
@@ -22,6 +24,8 @@ class Textfieldd2 extends StatefulWidget {
   final double? height;
   final IconData?
       prefixIcon; // Icon to be displayed at the beginning of the text field
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   _Textfieldd2State createState() => _Textfieldd2State();
@@ -33,7 +37,7 @@ class _Textfieldd2State extends State<Textfieldd2> {
   @override
   void initState() {
     super.initState();
-    _controller = TextEditingController();
+    _controller = widget.controller ?? TextEditingController();
   }
 
   @override
@@ -44,7 +48,7 @@ class _Textfieldd2State extends State<Textfieldd2> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       cursorHeight: 24,
       controller: _controller,
       onChanged: (_) {
@@ -53,19 +57,20 @@ class _Textfieldd2State extends State<Textfieldd2> {
       maxLength: widget.maxCharacters,
       textAlign: TextAlign.left, // Align text to the left
       maxLines: null, // Allow multiple lines
+      validator: widget.validator,
       decoration: InputDecoration(
         prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
         hintText: widget.texthint,
         filled: true,
-        fillColor: Color(0xFBFBFBFB),
+        fillColor: const Color(0xFBFBFBFB),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.grey,
           ),
           borderRadius: BorderRadius.circular(5.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Color(0xFF2D3D51),
           ),
           borderRadius: BorderRadius.circular(5.0),

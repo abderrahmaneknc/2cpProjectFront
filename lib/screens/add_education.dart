@@ -1,19 +1,61 @@
 import 'package:flutter/material.dart';
 
+import 'package:prj/items/educationitemclass.dart';
+
 import 'package:prj/items/elvButton.dart';
 import 'package:prj/items/textfield2all.dart';
+import 'package:provider/provider.dart';
 
-class AddEducation extends StatelessWidget {
-  const AddEducation({Key? key});
+import '../items/liststringmodel.dart';
+
+// ignore: must_be_immutable
+class AddEducation extends StatefulWidget {
+  AddEducation({Key? key, this.theediteditemnumber}) : super(key: key);
+  int? theediteditemnumber;
+
+  @override
+  State<AddEducation> createState() => _AddEducationState();
+}
+
+class _AddEducationState extends State<AddEducation> {
+  final _formKey = GlobalKey<FormState>();
+
+  late TextEditingController _schoolcontrller = TextEditingController();
+  late TextEditingController _fieldofstudycontroller = TextEditingController();
+  late TextEditingController _degreecontroller = TextEditingController();
+
+  late TextEditingController _startDateController = TextEditingController();
+  late TextEditingController _endDateController = TextEditingController();
+
+@override
+  void initState() {
+    super.initState();
+    if (widget.theediteditemnumber != null) {
+      var item = Provider.of<SelectedStringModel>(context, listen: false)
+          .EducationItemList[widget.theediteditemnumber!];
+
+      
+      _schoolcontrller = TextEditingController(text: item.school);
+      _fieldofstudycontroller = TextEditingController(text: item.fieldofstudy);
+     _degreecontroller = TextEditingController(text: item.degree);
+     
+      _startDateController = TextEditingController(text: item.startdate);
+      _endDateController = TextEditingController(text: item.enddate);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double height = screenHeight / 640;
+    double width = screenWidth / 360;
     return Scaffold(
-      backgroundColor: Color(0xFFFBFBFB),
+      backgroundColor: const Color(0xFFFBFBFB),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFBFBFB),
+        backgroundColor: const Color(0xFFFBFBFB),
         leading: Padding(
-          padding: const EdgeInsets.only(top: 25, left: 10),
+          padding: EdgeInsets.only(top: 20 * height, left: 10 * width),
           child: CircleAvatar(
             backgroundColor: const Color(0x592D3D51),
             radius: 15,
@@ -21,101 +63,126 @@ class AddEducation extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_back_ios_rounded,
-                color: const Color(0xFF2D3D51),
+                color: Color(0xFF2D3D51),
               ),
             ),
           ),
         ),
         title: Padding(
-          padding: const EdgeInsets.only(top: 25),
+          padding: EdgeInsets.only(top: 20 * height),
           child: Text(
-            'Add Education',
+            (widget.theediteditemnumber == null)
+                ? 'Add Education'
+                : 'Edit Education',
             style: TextStyle(
-              color: Color(0xFF2D3D51),
-              fontSize: 24,
+              color: const Color(0xFF2D3D51),
+              fontSize: 22 * width,
               fontWeight: FontWeight.w800,
             ),
           ),
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 20.0, left: 24, right: 24),
+      body: Consumer<SelectedStringModel>(builder: (context, Model, _) {
+        return Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Form(
+                  key: _formKey,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        top: 15 * height, left: 20 * width, right: 20 * width),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'choose the language that you can communicate with :',
+                          'choose your main school and degree :',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 10 * width,
                             color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 12 * height),
                         Text(
                           'School',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 10 * width,
                             color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 4 * height),
                         Textfieldd2(
+                          controller: _schoolcontrller,
                           maxCharacters: 80,
-                          texthint: '',
-                          size: 16,
-                          color: Color(0xFF2D3D51),
+                          texthint: (widget.theediteditemnumber == null)
+                              ? ''
+                              : Model
+                                  .ExperianceitemList[
+                                      widget.theediteditemnumber!]
+                                  .title,
+                          size: 15 * width,
+                          color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
+                          validator: (value) => value == null || value.isEmpty
+                              ? 'Please enter your schhol name'
+                              : null,
                         ),
-                        SizedBox(height: 0),
                         Text(
-                          'Degree',
+                          'field of study',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 10 * width,
                             color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 4 * height),
                         Textfieldd2(
+                          controller: _fieldofstudycontroller,
                           maxCharacters: 80,
-                          texthint: '',
-                          size: 16,
-                          color: Color(0xFF2D3D51),
+                          texthint: (widget.theediteditemnumber == null)
+                              ? ''
+                              : Model
+                                  .ExperianceitemList[
+                                      widget.theediteditemnumber!]
+                                  .emplname,
+                          size: 15 * width,
+                          color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
+                          validator: (value) => value == null || value.isEmpty
+                              ? 'Please enter your field  of study'
+
+                              : null,
                         ),
-                        SizedBox(height: 0),
                         Text(
-                          'Field of study',
+                          'degree ',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 10 * width,
                             color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 4 * height),
                         Textfieldd2(
+                          controller: _degreecontroller,
                           maxCharacters: 80,
-                          texthint: '',
-                          size: 16,
-                          color: Color(0xFF2D3D51),
+                          texthint: (widget.theediteditemnumber == null)
+                              ? ''
+                              : Model
+                                  .ExperianceitemList[
+                                      widget.theediteditemnumber!]
+                                  .companyname,
+                          size: 15 * width,
+                          color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
+                          validator: (value) => value == null || value.isEmpty
+                              ? 'Please enter your  degree'
+
+
+                              : null,
                         ),
-                        SizedBox(height: 0),
+                       
+                        SizedBox(height: 4 * height),
                         Text(
                           'Start date',
                           style: TextStyle(
@@ -123,40 +190,43 @@ class AddEducation extends StatelessWidget {
                             color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 4 * height),
                         TextField(
+                          controller: _startDateController,
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color(0xFBFBFBFB),
+                            fillColor: const Color(0xFBFBFBFB),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.grey,
-                              ), // All border color
+                              ),
                               borderRadius: BorderRadius.circular(5.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
+                              borderSide:
+                                  const BorderSide(color: Color(0xFF2D3D51)),
                               borderRadius: BorderRadius.circular(5.0),
                             ),
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 0.0),
                             counterStyle: TextStyle(color: Colors.grey[600]),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 Icons.calendar_today,
-                                color: Colors.black
-                                    .withOpacity(0.5), // Adjust opacity here
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               onPressed: () {
-                                // Add your calendar button functionality here
+                                // implement date picker logic
                               },
                             ),
+                            hintText: (widget.theediteditemnumber == null)
+                                ? 'Select Start Date'
+                                : Model
+                                    .ExperianceitemList[
+                                        widget.theediteditemnumber!]
+                                    .startdate,
                           ),
-                          style: TextStyle(),
                         ),
-                        SizedBox(height: 16),
                         Text(
                           'End date',
                           style: TextStyle(
@@ -164,62 +234,65 @@ class AddEducation extends StatelessWidget {
                             color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 4 * height),
                         TextField(
+                          controller: _endDateController,
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color(0xFBFBFBFB),
+                            fillColor: const Color(0xFBFBFBFB),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.grey,
-                              ), // All border color
+                              ),
                               borderRadius: BorderRadius.circular(5.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
+                              borderSide:
+                                  const BorderSide(color: Color(0xFF2D3D51)),
                               borderRadius: BorderRadius.circular(5.0),
                             ),
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 0.0),
                             counterStyle: TextStyle(color: Colors.grey[600]),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 Icons.calendar_today,
-                                color: Colors.black
-                                    .withOpacity(0.5), // Adjust opacity here
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               onPressed: () {
-                                // Add your calendar button functionality here
+                                // implement date picker logic
                               },
                             ),
+                            hintText: (widget.theediteditemnumber == null)
+                                ? 'Select End Date'
+                                : Model
+                                    .ExperianceitemList[
+                                        widget.theediteditemnumber!]
+                                    .startdate,
                           ),
-                          style: TextStyle(),
                         ),
-                        SizedBox(height: 8),
+                        SizedBox(height: 6 * height),
                         Text(
                           'Add your image',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 10 * width,
                             color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 4 * height),
                         ElevatedButton(
                           onPressed: () {},
                           style: ButtonStyle(
                             elevation: MaterialStateProperty.all(0),
-                            fixedSize: MaterialStateProperty.all(Size(80, 5)),
+                            fixedSize:
+                                MaterialStateProperty.all(const Size(80, 5)),
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.white),
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: BorderSide(
+                                side: const BorderSide(
                                   color: Color(0xFF2D3D51),
                                 ),
                               ),
@@ -228,8 +301,8 @@ class AddEducation extends StatelessWidget {
                           child: Text(
                             'Add',
                             style: TextStyle(
-                              color: Color(0xFF2D3D51),
-                              fontSize: 12,
+                              color: const Color(0xFF2D3D51),
+                              fontSize: 10 * width,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -237,23 +310,41 @@ class AddEducation extends StatelessWidget {
                       ],
                     ),
                   ),
-                ],
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Mybuttons(
-              text: 'Save',
-              color: Color(0xFF2D3D51),
-              logo: false,
-              assets: '',
-              txtcolor: Colors.white,
-              onPressed: () {},
+            Padding(
+              padding: EdgeInsets.all(15 * width),
+              child: Mybuttons(
+                text: 'Save',
+                color: const Color(0xFF2D3D51),
+                logo: false,
+                assets: '',
+                txtcolor: Colors.white,
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    EducationItemClass newItem = EducationItemClass(
+                      _schoolcontrller.text,
+                      _fieldofstudycontroller.text,
+                      _degreecontroller.text,
+                      _startDateController.text,
+                      _endDateController.text,
+                    );
+                    if (widget.theediteditemnumber == null) {
+                      Model.addEducationItem(newItem);
+                    } else {
+                      Model.editEducationItem(
+                          widget.theediteditemnumber!, newItem);
+                    }
+                    Navigator.pop(
+                        context); // or any other action you want to perform after saving
+                  }
+                },
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        );
+      }),
     );
   }
 }

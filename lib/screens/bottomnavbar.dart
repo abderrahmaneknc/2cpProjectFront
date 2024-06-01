@@ -6,6 +6,7 @@ import 'package:prj/screens/homescreen.dart';
 import 'package:prj/screens/profilescreen.dart';
 import 'package:prj/screens/rescorpage.dart';
 
+// ignore: must_be_immutable
 class MyBottomNavigationBar extends StatefulWidget {
   late int currentIndex;
 

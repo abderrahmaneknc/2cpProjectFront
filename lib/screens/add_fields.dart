@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:prj/items/allfields.dart';
 
-import 'package:prj/items/elvButton.dart';
+import 'package:provider/provider.dart';
+
+import '../items/liststringmodel.dart';
 
 class Addfields extends StatelessWidget {
   const Addfields({super.key});
@@ -18,7 +21,13 @@ class Addfields extends StatelessWidget {
             radius: 15,
             child: GestureDetector(
               onTap: () {
-                Navigator.pop(context);
+                List<String> Strings =
+                    Provider.of<SelectedStringModel>(context, listen: false)
+                        .trasnforedStrings;
+                Provider.of<SelectedStringModel>(context, listen: false)
+                    .selectedStrings = List.from(Strings);
+
+                Navigator.pushNamed(context, 'viewprofile');
               },
               child: Icon(
                 Icons.arrow_back_ios_rounded,
@@ -40,44 +49,31 @@ class Addfields extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20.0, left: 40, right: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Choose Your Expertise: Pick the fields you excel in from '
-                      'the available ones.',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey[600],
-                      ),
-                    ),
-                    SizedBox(height: 16),
-
-                    // Your other widgets go here
-                  ],
+      body: Expanded(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 24.0, left: 24, top: 10),
+                child: Text(
+                  'Choose Your Expertise: Pick the fields you excel in from '
+                  'the available ones.',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[600],
+                  ),
                 ),
               ),
-            ),
+              SizedBox(height: 16),
+              Padding(
+                padding: EdgeInsets.only(left: 9.0),
+                child: AllFileds(),
+              ),
+              // Your other widgets go here
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Mybuttons(
-              text: 'Save',
-              color: Color(0xFF2D3D51),
-              logo: false,
-              assets: '',
-              txtcolor: Colors.white,
-              onPressed: () {},
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

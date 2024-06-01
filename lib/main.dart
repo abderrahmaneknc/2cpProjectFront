@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
 import 'package:prj/screens/edahabia.dart';
+import 'package:prj/screens/editpage.dart';
+import 'items/liststringmodel.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
 import 'screens/dashboard.dart';
@@ -27,8 +29,17 @@ import 'screens/welcomeback.dart';
 import 'screens/profilescreen.dart';
 import 'screens/viewprofile.dart';
 
+import 'package:provider/provider.dart';
+
+// import your model file
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => SelectedStringModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -58,9 +69,9 @@ class MyApp extends StatelessWidget {
           'email_verification': (context) => EmailVerification(),
           'verified': (context) => verified(),
           'viewprofile': (context) => ViewProfile(),
-          'profile': (context) => MyProfile(),
-          'addBlog': (context) => AddBLog(),
-          'blogs': (context) => BlogsScreen(),
+          'profile': (context) => const MyProfile(),
+          'addBlog': (context) => const AddBLog(),
+          'blogs': (context) => const BlogsScreen(),
           'blogsds': (context) => BlogsDetailScreen(),
           'btnavbarhome': (context) => MyBottomNavigationBar(
                 currentIndex: 0,
@@ -80,6 +91,18 @@ class MyApp extends StatelessWidget {
           'cordp': (context) => CourseDP(),
           'dashboard': (context) => Dashboard(),
           'myStat': (context) => Mystat(),
+          'experianceseditpage': (context) => EditPage(
+                editedpagenumber: 0,
+              ),
+          'educationseditpage': (context) => EditPage(
+                editedpagenumber: 1,
+              ),
+          'liceditpage': (context) => EditPage(
+                editedpagenumber: 2,
+              ),
+          'skillseditpage': (context) => EditPage(
+                editedpagenumber: 3,
+              ),
         });
   }
 }
