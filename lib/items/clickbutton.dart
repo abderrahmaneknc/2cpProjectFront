@@ -18,8 +18,8 @@ class ClickButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-    double height = screenHeight / 640;
+ 
+   
     double width = screenWidth / 360;
     return InkWell(
       borderRadius: BorderRadius.circular(25),
