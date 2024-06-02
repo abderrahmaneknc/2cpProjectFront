@@ -9,6 +9,7 @@ import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
 import 'screens/dashboard.dart';
 import 'screens/myStat.dart';
+import 'screens/recentSearches.dart';
 import 'screens/resoursesdetailedpage.dart';
 import 'screens/verified.dart';
 import 'screens/addBlog.dart';
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
                   RoundRangeSliderThumbShape(enabledThumbRadius: 5.5)),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: '/',
+        initialRoute: 'recentSearches',
         routes: {
           '/': (context) => IntroductionPages(),
           'signIn': (context) => MySignInPage(),
@@ -110,6 +111,7 @@ class MyApp extends StatelessWidget {
                 editedpagenumber: 3,
               ),
           'pointscard': (context) => PointsCard(),
+          'recentSearches': (context) => SearchPage(),
         });
   }
 }
