@@ -4,6 +4,7 @@ import 'package:prj/screens/coursedetailedpage.dart';
 import 'package:prj/screens/edahabia.dart';
 import 'package:prj/screens/editpage.dart';
 import 'items/liststringmodel.dart';
+import 'items/pointscard.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
 import 'screens/dashboard.dart';
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/',
+        initialRoute: 'pointscard',
         routes: {
           '/': (context) => IntroductionPages(),
           'signIn': (context) => MySignInPage(),
@@ -103,6 +104,7 @@ class MyApp extends StatelessWidget {
           'skillseditpage': (context) => EditPage(
                 editedpagenumber: 3,
               ),
+          'pointscard': (context) => PointsCard(),
         });
   }
 }

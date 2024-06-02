@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 // Assuming that the Homedialogue widget is imported from the appropriate file
 import '../items/dialoogue.dart';
 import 'edahabia.dart';
-import 'forgotpassword.dart';
 import 'report1.dart'; // Adjust the import path as needed
 
 class ProfileDialogue extends StatelessWidget {
