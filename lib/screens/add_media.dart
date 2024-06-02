@@ -3,7 +3,7 @@ import 'package:prj/items/elvButton.dart';
 import 'package:prj/items/textfield.dart';
 import 'package:provider/provider.dart';
 
-import '../items/liststringmodel.dart';
+import '../items/mainclass.dart';
 
 class Addmedia extends StatefulWidget {
   const Addmedia({Key? key}) : super(key: key);
@@ -27,34 +27,27 @@ class _AddmediaState extends State<Addmedia> {
     super.initState();
     // Initialize the controllers with any existing values
     facebookController = TextEditingController(
-        text: Provider.of<SelectedStringModel>(context, listen: false)
-                .facebookString ??
+        text: Provider.of<MainClass>(context, listen: false).facebookString ??
             '');
     instagramController = TextEditingController(
-        text: Provider.of<SelectedStringModel>(context, listen: false)
-                .instagramString ??
+        text: Provider.of<MainClass>(context, listen: false).instagramString ??
             '');
     // Initialize other controllers
     whatsappController = TextEditingController(
-        text: Provider.of<SelectedStringModel>(context, listen: false)
-                .whatsappString ??
+        text: Provider.of<MainClass>(context, listen: false).whatsappString ??
             '');
     behanceController = TextEditingController(
-        text: Provider.of<SelectedStringModel>(context, listen: false)
-                .behanceString ??
-            '');
+        text:
+            Provider.of<MainClass>(context, listen: false).behanceString ?? '');
     gitController = TextEditingController(
-        text: Provider.of<SelectedStringModel>(context, listen: false)
-                .githubString ??
-            '');
+        text:
+            Provider.of<MainClass>(context, listen: false).githubString ?? '');
     twitterController = TextEditingController(
-        text: Provider.of<SelectedStringModel>(context, listen: false)
-                .twitterString ??
-            '');
+        text:
+            Provider.of<MainClass>(context, listen: false).twitterString ?? '');
     authoerController = TextEditingController(
-        text: Provider.of<SelectedStringModel>(context, listen: false)
-                .authorString ??
-            '');
+        text:
+            Provider.of<MainClass>(context, listen: false).authorString ?? '');
   }
 
   @override
@@ -64,7 +57,7 @@ class _AddmediaState extends State<Addmedia> {
     instagramController.dispose();
     behanceController.dispose();
     whatsappController.dispose();
-authoerController.dispose();
+    authoerController.dispose();
     gitController.dispose(); // Dispose of other controllers
     super.dispose();
   }
@@ -128,7 +121,7 @@ authoerController.dispose();
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
                       onSave: (value) {
-                        Provider.of<SelectedStringModel>(context, listen: false)
+                        Provider.of<MainClass>(context, listen: false)
                             .setFacebookString(value);
                       },
                       controller: facebookController,
@@ -139,7 +132,7 @@ authoerController.dispose();
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
                       onSave: (value) {
-                        Provider.of<SelectedStringModel>(context, listen: false)
+                        Provider.of<MainClass>(context, listen: false)
                             .setInstagramString(value);
                       },
                       controller: instagramController,
@@ -150,7 +143,7 @@ authoerController.dispose();
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
                       onSave: (value) {
-                        Provider.of<SelectedStringModel>(context, listen: false)
+                        Provider.of<MainClass>(context, listen: false)
                             .setGithubString(value);
                       },
                       controller: gitController,
@@ -161,7 +154,7 @@ authoerController.dispose();
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
                       onSave: (value) {
-                        Provider.of<SelectedStringModel>(context, listen: false)
+                        Provider.of<MainClass>(context, listen: false)
                             .setBehanceString(value);
                       },
                       controller: behanceController,
@@ -172,7 +165,7 @@ authoerController.dispose();
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
                       onSave: (value) {
-                        Provider.of<SelectedStringModel>(context, listen: false)
+                        Provider.of<MainClass>(context, listen: false)
                             .setWhatsappString(value);
                       },
                       controller: whatsappController,
@@ -183,7 +176,7 @@ authoerController.dispose();
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
                       onSave: (value) {
-                        Provider.of<SelectedStringModel>(context, listen: false)
+                        Provider.of<MainClass>(context, listen: false)
                             .setTwitterString(value);
                       },
                       controller: twitterController,
@@ -194,7 +187,7 @@ authoerController.dispose();
                       color: Color(0xFF2D3D51),
                       weight: FontWeight.w400,
                       onSave: (value) {
-                        Provider.of<SelectedStringModel>(context, listen: false)
+                        Provider.of<MainClass>(context, listen: false)
                             .setAuthorString(value);
                       },
                       controller: authoerController,
@@ -213,15 +206,16 @@ authoerController.dispose();
               assets: '',
               txtcolor: Colors.white,
               onPressed: () {
-            final mediaStrings = Provider.of<SelectedStringModel>(context, listen: false);
-      mediaStrings.setFacebookString(facebookController.text);
-      mediaStrings.setInstagramString(instagramController.text);
-      mediaStrings.setGithubString(gitController.text);
-      mediaStrings.setBehanceString(behanceController.text);
-      mediaStrings.setWhatsappString(whatsappController.text);
-      mediaStrings.setTwitterString(twitterController.text);
-      mediaStrings.setAuthorString(authoerController.text);
-      Navigator.pushNamed(context, 'viewprofile');
+                final mediaStrings =
+                    Provider.of<MainClass>(context, listen: false);
+                mediaStrings.setFacebookString(facebookController.text);
+                mediaStrings.setInstagramString(instagramController.text);
+                mediaStrings.setGithubString(gitController.text);
+                mediaStrings.setBehanceString(behanceController.text);
+                mediaStrings.setWhatsappString(whatsappController.text);
+                mediaStrings.setTwitterString(twitterController.text);
+                mediaStrings.setAuthorString(authoerController.text);
+                Navigator.pushNamed(context, 'viewprofile');
               },
             ),
           ),

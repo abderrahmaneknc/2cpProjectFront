@@ -87,15 +87,9 @@ class MyProfile extends StatelessWidget {
                   backgroundColor: Colors.white,
                   radius: 45 * width,
                   child: CircleAvatar(
+                    backgroundImage: AssetImage(
+                        'assets/664248f7b8c1f11b41446b0b7e01be16.jpg'),
                     radius: 42 * width,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(42 * width),
-                      child: Image(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            'assets/664248f7b8c1f11b41446b0b7e01be16.jpg',
-                          )),
-                    ),
                   ),
                 )),
             Positioned(

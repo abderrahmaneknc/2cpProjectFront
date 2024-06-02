@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-
-
 import 'package:prj/items/elvButton.dart';
 import 'package:prj/items/skillsclass.dart';
 import 'package:prj/items/textfield2all.dart';
 import 'package:provider/provider.dart';
 
-import '../items/liststringmodel.dart';
+import '../items/mainclass.dart';
 
 // ignore: must_be_immutable
 class AddSkills extends StatefulWidget {
@@ -23,19 +21,16 @@ class _AddSkillsState extends State<AddSkills> {
 
   late TextEditingController _skilcontrller = TextEditingController();
   late TextEditingController _getcontroller = TextEditingController();
- 
 
-@override
+  @override
   void initState() {
     super.initState();
     if (widget.theediteditemnumber != null) {
-      var item = Provider.of<SelectedStringModel>(context, listen: false)
+      var item = Provider.of<MainClass>(context, listen: false)
           .SkillsitemList[widget.theediteditemnumber!];
 
-      
       _skilcontrller = TextEditingController(text: item.skil);
       _getcontroller = TextEditingController(text: item.get);
-     
     }
   }
 
@@ -68,9 +63,7 @@ class _AddSkillsState extends State<AddSkills> {
         title: Padding(
           padding: EdgeInsets.only(top: 20 * height),
           child: Text(
-            (widget.theediteditemnumber == null)
-                ? 'Add Skil'
-                : 'Edit skil',
+            (widget.theediteditemnumber == null) ? 'Add Skill' : 'Edit skill',
             style: TextStyle(
               color: const Color(0xFF2D3D51),
               fontSize: 22 * width,
@@ -80,7 +73,7 @@ class _AddSkillsState extends State<AddSkills> {
         ),
         centerTitle: true,
       ),
-      body: Consumer<SelectedStringModel>(builder: (context, Model, _) {
+      body: Consumer<MainClass>(builder: (context, Model, _) {
         return Column(
           children: [
             Expanded(
@@ -102,7 +95,7 @@ class _AddSkillsState extends State<AddSkills> {
                         ),
                         SizedBox(height: 12 * height),
                         Text(
-                          'skil',
+                          'skill',
                           style: TextStyle(
                             fontSize: 10 * width,
                             color: Colors.grey[600],
@@ -115,18 +108,17 @@ class _AddSkillsState extends State<AddSkills> {
                           texthint: (widget.theediteditemnumber == null)
                               ? ''
                               : Model
-                                  .ExperianceitemList[
-                                      widget.theediteditemnumber!]
-                                  .title,
+                                  .SkillsitemList[widget.theediteditemnumber!]
+                                  .skil,
                           size: 15 * width,
                           color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
                           validator: (value) => value == null || value.isEmpty
-                              ? 'Please enter your skil'
+                              ? 'Please enter your skill'
                               : null,
                         ),
                         Text(
-                          'where did you get your skil',
+                          'where did you get your skill',
                           style: TextStyle(
                             fontSize: 10 * width,
                             color: Colors.grey[600],
@@ -139,18 +131,15 @@ class _AddSkillsState extends State<AddSkills> {
                           texthint: (widget.theediteditemnumber == null)
                               ? ''
                               : Model
-                                  .ExperianceitemList[
-                                      widget.theediteditemnumber!]
-                                  .emplname,
+                                  .SkillsitemList[widget.theediteditemnumber!]
+                                  .get,
                           size: 15 * width,
                           color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
                           validator: (value) => value == null || value.isEmpty
                               ? 'Please enter where did get youre skil'
-
                               : null,
                         ),
-                     
                         SizedBox(height: 6 * height),
                         Text(
                           'Add your image',
@@ -203,16 +192,12 @@ class _AddSkillsState extends State<AddSkills> {
                 txtcolor: Colors.white,
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    SkillsClass newItem = SkillsClass(
-                      _skilcontrller.text,
-                      _getcontroller.text
-                     
-                    );
+                    SkillsClass newItem =
+                        SkillsClass(_skilcontrller.text, _getcontroller.text);
                     if (widget.theediteditemnumber == null) {
-                      Model.addskilItem(newItem);
+                      Model.addSkillItem(newItem);
                     } else {
-                      Model.editskilItem(
-                          widget.theediteditemnumber!, newItem);
+                      Model.editSkillItem(widget.theediteditemnumber!, newItem);
                     }
                     Navigator.pop(
                         context); // or any other action you want to perform after saving

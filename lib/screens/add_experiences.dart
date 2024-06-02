@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../items/elvButton.dart';
 import '../items/exprienceitemsclass.dart';
-import '../items/liststringmodel.dart';
+import '../items/mainclass.dart';
 import '../items/textfield2all.dart';
 
 // ignore: must_be_immutable
@@ -27,7 +27,7 @@ class _AddExperiencesState extends State<AddExperiences> {
   void initState() {
     super.initState();
     if (widget.theediteditemnumber != null) {
-      var item = Provider.of<SelectedStringModel>(context, listen: false)
+      var item = Provider.of<MainClass>(context, listen: false)
           .ExperianceitemList[widget.theediteditemnumber!];
 
       _titleController = TextEditingController(text: item.title);
@@ -81,7 +81,7 @@ class _AddExperiencesState extends State<AddExperiences> {
         ),
         centerTitle: true,
       ),
-      body: Consumer<SelectedStringModel>(builder: (context, Model, _) {
+      body: Consumer<MainClass>(builder: (context, Model, _) {
         return Column(
           children: [
             Expanded(
@@ -349,7 +349,7 @@ class _AddExperiencesState extends State<AddExperiences> {
                     if (widget.theediteditemnumber == null) {
                       Model.addExperienceItem(newItem);
                     } else {
-                      Model.editExperainceItem(
+                      Model.editExperienceItem(
                           widget.theediteditemnumber!, newItem);
                     }
                     Navigator.pop(

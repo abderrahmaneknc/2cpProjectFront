@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prj/items/fileditem.dart';
+
 import 'package:prj/screens/add_certf.dart';
+
+import 'staticmethods.dart';
 
 // ignore: must_be_immutable
 class LisAndCeltItem extends StatelessWidget {
@@ -23,82 +25,136 @@ class LisAndCeltItem extends StatelessWidget {
     double height = screenHeight / 640;
     double width = screenWidth / 360;
 
-    return SizedBox(
-      height: 80 * height,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          SizedBox(
-            height: height * 38,
-            width: width * 38,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                'assets/erwinsmithoo.jpg',
-                fit: BoxFit.cover,
-              ),
+    return InkWell(
+      onTap: () {
+        if (ineditpage == true)
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddCertf(theediteditemnumber: itemnumber),
             ),
-          ),
-          Positioned(
-            left: 50 * width,
-            child: SizedBox(
-              width: 108 * width,
-              height: height * 83,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 13 * height,
-                    ),
-                  ),
-                  Text(
-                    '$issorg,$url',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 10 * height,
-                      color: Color.fromARGB(204, 0, 0, 0),
-                    ),
-                  ),
-                  Text(
-                    date,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 7 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
-                    ),
-                  ),
-                  Filed(
-                    dynamic: false,
-                    string: 'show credentials',
-                  ),
-                ],
-              ),
-            ),
-          ),
-          if (ineditpage == true)
+          );
+      },
+      child: SizedBox(
+        height: (ineditpage != true) ? 83 * height : height * 53,
+        width: double.infinity,
+        child: Stack(
+          children: [
             Positioned(
-              left: 280 * width,
-              child: IconButton(
-                iconSize: 16 * width,
-                icon: Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          AddCertf(theediteditemnumber: itemnumber),
-                    ),
-                  );
-                },
+              top: height * 4,
+              child: SizedBox(
+                height: height * 42,
+                width: width * 46,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    'assets/dbqcvvvv1ye-1-1069x720.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
-        ],
+            Positioned(
+              left: 55 * width,
+              child: SizedBox(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: height * 6,
+                    ),
+                    Text(
+                      name,
+                      style: TextStyle(
+                        height: 1,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 13 * width,
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * 3,
+                    ),
+                    Text(
+                      '$issorg, $url',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        height: 1.3,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                      ),
+                    ),
+                    Text(
+                      date,
+                      style: TextStyle(
+                        height: 1.3,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                        color: Color.fromARGB(255, 93, 88, 88),
+                      ),
+                    ),
+                    if (ineditpage != true)
+                      SizedBox(
+                        height: height * 5,
+                      ),
+                    if (ineditpage != true)
+                      Container(
+                        height: height * 19,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(19.5),
+                          color:
+                              Colors.white, // Set your desired background color
+                          border: Border.all(
+                            color: Color(0xFF2D3D51), // Blue border color
+                            width: 2.0, // Border width
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: 5 * width,
+                            ),
+                            Text(
+                              'Show Certaficate ',
+                              style: TextStyle(
+                                color: Color(0xFF2D3D51),
+                                fontWeight: FontWeight.w800,
+                                fontSize: 11 * width,
+                                fontFamily: "AeonikTRIAL",
+                              ),
+                            ),
+                            Icon(
+                              Icons.open_in_browser_sharp,
+                              size: 15 * width,
+                              color: Color(0xFF2D3D51),
+                            ),
+                            SizedBox(
+                              width: 5 * width,
+                            ),
+                          ],
+                        ),
+                      )
+                  ],
+                ),
+              ),
+            ),
+            if (ineditpage == true)
+              Positioned(
+                top: height * 10,
+                left: 279 * width,
+                child: IconButton(
+                  iconSize: 18 * width,
+                  icon: Icon(Icons.delete_outline_sharp),
+                  onPressed: () {
+                    StaticMethods.deleteItem('Certf', context, itemnumber!);
+                  },
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

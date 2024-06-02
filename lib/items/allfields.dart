@@ -4,7 +4,7 @@ import 'package:prj/items/fileditem.dart';
 import 'package:provider/provider.dart';
 
 import 'elvButton.dart';
-import 'liststringmodel.dart';
+import 'mainclass.dart';
 
 class AllFileds extends StatefulWidget {
   const AllFileds({super.key});
@@ -41,7 +41,10 @@ class _AllFiledsState extends State<AllFileds> {
             for (int i = 0; i < strings.length; i++)
               Padding(
                 padding: EdgeInsets.only(left: 5.0 * width),
-                child: Filed(string: strings[i],dynamic: true,),
+                child: Filed(
+                  string: strings[i],
+                  dynamic: true,
+                ),
               ),
           ],
         ),
@@ -56,11 +59,11 @@ class _AllFiledsState extends State<AllFileds> {
             txtcolor: Colors.white,
             onPressed: () {
               List<String> selectedStrings =
-                  Provider.of<SelectedStringModel>(context, listen: false)
+                  Provider.of<MainClass>(context, listen: false)
                       .selectedStrings;
-              Provider.of<SelectedStringModel>(context, listen: false)
-                  .trasnforedStrings = List.from(selectedStrings);
-                  
+              Provider.of<MainClass>(context, listen: false).trasnforedStrings =
+                  List.from(selectedStrings);
+
               Navigator.pushNamed(context, 'viewprofile');
             },
           ),

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:prj/items/staticmethods.dart';
 import 'package:prj/screens/add_experiences.dart';
+import 'package:prj/screens/editpage.dart';
 
 // ignore: must_be_immutable
 class ExprianceItem extends StatelessWidget {
@@ -25,92 +27,114 @@ class ExprianceItem extends StatelessWidget {
     double height = screenHeight / 640;
     double width = screenWidth / 360;
 
-    return SizedBox(
-      height: 60 * height,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          SizedBox(
-            height: height * 38,
-            width: width * 38,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Image.asset(
-                'assets/erwinsmithoo.jpg',
-                fit: BoxFit.cover,
-              ),
+    return InkWell(
+      onTap: () {
+        if (ineditpage == true)
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  AddExperiences(theediteditemnumber: itemnumber),
             ),
-          ),
-          Positioned(
-            left: 50 * width,
-            child: SizedBox(
-              height: height * 60,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      height: 1,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 13 * height,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 4 * height,
-                  ),
-                  Text(
-                    emplname,
-                    style: TextStyle(
-                      height: 1,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 10 * height,
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    ),
-                  ),
-                  Text(
-                    '$startdate - $enddate',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 10 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
-                    ),
-                  ),
-                  Text(
-                    location,
-                    style: TextStyle(
-                      height: 1,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 11 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          if (ineditpage == true)
+          );
+      },
+      child: SizedBox(
+        height: 60 * height,
+        width: double.infinity,
+        child: Stack(
+          children: [
             Positioned(
-              left: 280 * width,
-              child: IconButton(
-                iconSize: 16 * width,
-                icon: Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          AddExperiences(theediteditemnumber: itemnumber),
-                    ),
-                  );
-                },
+              top: 4 * height,
+              child: SizedBox(
+                height: height * 42,
+                width: width * 46,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.asset(
+                    'assets/most-beautiful-places-in-the-world-4-jpeg.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
-        ],
+            Positioned(
+              left: 55 * width,
+              child: SizedBox(
+                height: height * 60,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: height * 4.5,
+                    ),
+                    Text(
+                      title,
+                      style: TextStyle(
+                        height: 1,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 13 * width,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 2 * height,
+                    ),
+                    Text(
+                      emplname,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        height: 1.3,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                      ),
+                    ),
+                    Text(
+                      '$startdate - $enddate',
+                      style: TextStyle(
+                        height: 1.3,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                        color: Color.fromARGB(255, 93, 88, 88),
+                      ),
+                    ),
+                    Text(
+                      location,
+                      style: TextStyle(
+                        height: 1.3,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                        color: Color.fromARGB(255, 93, 88, 88),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            if (ineditpage == true)
+              Positioned(
+                top: height * 10,
+                left: 279 * width,
+                child: IconButton(
+                  iconSize: 18 * width,
+                  icon: Icon(Icons.delete_outline_sharp),
+                  onPressed: () {
+                    StaticMethods.deleteItem('E', context, itemnumber!);
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditPage(
+                          editedpagenumber: 0,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

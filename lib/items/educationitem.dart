@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:prj/screens/add_education.dart';
 
+import 'staticmethods.dart';
 
 // ignore: must_be_immutable
 class EducationItem extends StatelessWidget {
@@ -24,78 +26,96 @@ class EducationItem extends StatelessWidget {
     double height = screenHeight / 640;
     double width = screenWidth / 360;
 
-    return SizedBox(
-      height: 51 * height,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          SizedBox(
-            height: height * 38,
-            width: width * 38,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                'assets/erwinsmithoo.jpg',
-                fit: BoxFit.cover,
-              ),
+    return InkWell(
+      onTap: () {
+        if (ineditpage == true)
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  AddEducation(theediteditemnumber: itemnumber),
             ),
-          ),
-          Positioned(
-            left: 50 * width,
-            child: SizedBox(
-              width: 108 * width,
-              height: height * 61,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    school,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 13 * height,
-                    ),
-                  ),
-                  Text(
-                    '$degree,$fieldofstudy',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 10 * height,
-                      color: Color.fromARGB(204, 0, 0, 0),
-                    ),
-                  ),
-                  Text(
-                    '$startdate - $enddate',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 7 * height,
-                      color: Color.fromARGB(255, 93, 88, 88),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          if (ineditpage == true)
+          );
+      },
+      child: SizedBox(
+        height: 51 * height,
+        width: double.infinity,
+        child: Stack(
+          children: [
             Positioned(
-              left: 280 * width,
-              child: IconButton(
-                iconSize: 16 * width,
-                icon: Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          AddEducation(theediteditemnumber: itemnumber),
-                    ),
-                  );
-                },
+              top: height * 4,
+              child: SizedBox(
+                height: height * 42,
+                width: width * 46,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    'assets/1621980971547.jpeg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
-        ],
+            Positioned(
+              left: 55 * width,
+              child: SizedBox(
+                height: height * 61,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: height * 6,
+                    ),
+                    Text(
+                      school,
+                      style: TextStyle(
+                        height: 1,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 13 * width,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 3 * height,
+                    ),
+                    Text(
+                      '$degree, $fieldofstudy',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        height: 1.3,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                      ),
+                    ),
+                    Text(
+                      '$startdate - $enddate',
+                      style: TextStyle(
+                        height: 1.3,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                        color: Color.fromARGB(255, 93, 88, 88),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            if (ineditpage == true)
+              Positioned(
+                top: height * 10,
+                left: 279 * width,
+                child: IconButton(
+                  iconSize: 18 * width,
+                  icon: Icon(Icons.delete_outline_sharp),
+                  onPressed: () {
+                    StaticMethods.deleteItem('ED', context, itemnumber!);
+                  },
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
