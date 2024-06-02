@@ -57,7 +57,7 @@ class _MyHomeState extends State<MyHome> {
                   padding: const EdgeInsets.only(right: 4, left: 4),
                   child: coursespage(height: height, width: width),
                 ),
-                // Add other widgets here
+                
               ],
             ),
           ),

@@ -8,6 +8,8 @@ import 'items/mainclass.dart';
 import 'items/pointscard.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
+import 'screens/complete.dart';
+import 'screens/contactUs.dart';
 import 'screens/dashboard.dart';
 import 'screens/myStat.dart';
 import 'screens/recentActivity.dart';
@@ -59,7 +61,7 @@ class MyApp extends StatelessWidget {
                   RoundRangeSliderThumbShape(enabledThumbRadius: 5.5)),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: '/',
+        initialRoute: 'contactUs',
         routes: {
           '/': (context) => IntroductionPages(),
           'signIn': (context) => MySignInPage(),
@@ -118,6 +120,9 @@ class MyApp extends StatelessWidget {
           'pointscard': (context) => PointsCard(),
           'recentSearches': (context) => SearchPage(),
           'recentActivity': (context) => RecentActivity(),
+          'contactUs': (context) => ContactUs(),
+          'complete':(context) => Complete(),
         });
+
   }
 }
