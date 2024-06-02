@@ -50,6 +50,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(
+          sliderTheme: SliderThemeData(
+              rangeThumbShape:
+                  RoundRangeSliderThumbShape(enabledThumbRadius: 5.5)),
+        ),
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {

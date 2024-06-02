@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prj/items/boxes.dart';
-import 'forgotpassword.dart';
+import '../items/forgotpassword.dart';
 import 'package:prj/items/elvButton.dart';
 
 import 'package:prj/items/txtbutton.dart';

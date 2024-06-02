@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../items/filter2.dart';
 import '../items/homeitem.dart';
 import '../items/homeitem2.dart';
 import '../items/txtfdbutton.dart';
-import 'filter.dart';
-import 'forgotpassword.dart';
+import '../items/filter.dart';
+import '../items/forgotpassword.dart';
 import 'homeDialoge.dart';
 
 class MyHome extends StatefulWidget {
@@ -112,7 +113,7 @@ class coursespage extends StatelessWidget {
                                   bottom:
                                       MediaQuery.of(context).viewInsets.bottom,
                                 ),
-                                child: const Filter(),
+                                child: Filter2(),
                               ),
                             );
                           },
@@ -174,10 +175,28 @@ class coursespage extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Image.asset(
-                  height: 18 * height,
-                  width: 19 * width,
-                  'assets/Tune (1).jpg'),
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (BuildContext context) {
+                      return SingleChildScrollView(
+                        child: Container(
+                          padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom,
+                          ),
+                          child: Filter2(),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Image.asset(
+                    height: 18 * height,
+                    width: 19 * width,
+                    'assets/Tune (1).jpg'),
+              ),
             ],
           ),
         ),
