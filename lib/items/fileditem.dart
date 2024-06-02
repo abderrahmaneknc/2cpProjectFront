@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'mainclass.dart';
 
 class Filed extends StatefulWidget {
-  Filed({Key? key, required this.string,required this.dynamic}) : super(key: key);
+  Filed({Key? key, required this.string, required this.dynamic})
+      : super(key: key);
 
   final String string;
   final bool dynamic;
@@ -17,10 +18,12 @@ class _FiledState extends State<Filed> {
     bool isClicked = Provider.of<MainClass>(context, listen: false)
         .selectedStrings
         .contains(widget.string);
-    Color textColor =
-        (isClicked && widget.dynamic) ? Colors.white : Color.fromARGB(255, 18, 56, 87);
-    Color borderColor =
-        (isClicked && widget.dynamic)? Color.fromARGB(255, 18, 56, 87) : Colors.white;
+    Color textColor = (isClicked && widget.dynamic)
+        ? Colors.white
+        : Color.fromARGB(255, 18, 56, 87);
+    Color borderColor = (isClicked && widget.dynamic)
+        ? Color.fromARGB(255, 18, 56, 87)
+        : Colors.white;
 
     return ElevatedButton(
       style: ButtonStyle(
@@ -41,19 +44,17 @@ class _FiledState extends State<Filed> {
       ),
       onPressed: () {
         if (widget.dynamic)
-        setState(() {
-          
-          List<String> selectedStrings =
-              Provider.of<MainClass>(context, listen: false)
-                  .selectedStrings;
-          if (!selectedStrings.contains(widget.string)) {
-            selectedStrings.add(widget.string);
-            isClicked = true;
-          } else {
-            selectedStrings.remove(widget.string);
-            isClicked = false;
-          }
-        });
+          setState(() {
+            List<String> selectedStrings =
+                Provider.of<MainClass>(context, listen: false).selectedStrings;
+            if (!selectedStrings.contains(widget.string)) {
+              selectedStrings.add(widget.string);
+              isClicked = true;
+            } else {
+              selectedStrings.remove(widget.string);
+              isClicked = false;
+            }
+          });
       },
       child: Text(
         widget.string,

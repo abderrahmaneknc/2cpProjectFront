@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:prj/items/clickbutton.dart';
 import 'package:prj/screens/profilrDialogue.dart';
 
+import 'edahabia.dart';
+import 'recentActivity.dart';
+
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
 
@@ -177,7 +180,27 @@ class MyProfile extends StatelessWidget {
                             showborder: true,
                             fill: Colors.white,
                             txtclr: const Color(0xFF2D3D51),
-                            fnct: () {},
+                            fnct: () {
+
+                              showModalBottomSheet(
+                                backgroundColor: Colors.transparent,
+                                elevation: 0,
+                                context: context,
+                                isScrollControlled: true,
+                                builder: (BuildContext context) {
+                                  return SingleChildScrollView(
+                                    child: Container(
+                                      padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom,
+                                      ),
+                                      child: const RecentActivity(),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
                           ),
                         ),
                       ),
