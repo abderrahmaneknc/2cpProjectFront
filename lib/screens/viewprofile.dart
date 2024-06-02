@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:prj/items/clickbutton.dart';
@@ -10,7 +9,7 @@ import 'package:provider/provider.dart';
 
 import '../items/educationitem.dart';
 import '../items/licenssesandceltitem.dart';
-import '../items/liststringmodel.dart';
+import '../items/mainclass.dart';
 
 class ViewProfile extends StatefulWidget {
   ViewProfile({super.key});
@@ -20,12 +19,44 @@ class ViewProfile extends StatefulWidget {
 }
 
 class _ViewProfileState extends State<ViewProfile> {
-  bool showAll = false;
+  List<bool> showAllList = [false, false, false, false, false];
+  ScrollController _scrollController = ScrollController();
+  bool _showButtons = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  void _scrollListener() {
+    if (_scrollController.position.pixels > 50) {
+      if (_showButtons) {
+        print("Hiding buttons");
+        setState(() {
+          _showButtons = false;
+        });
+      }
+    } else {
+      if (!_showButtons) {
+        print("Showing buttons");
+        setState(() {
+          _showButtons = true;
+        });
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     List<String> strings =
-        Provider.of<SelectedStringModel>(context, listen: false)
-            .trasnforedStrings;
+        Provider.of<MainClass>(context, listen: false).trasnforedStrings;
 
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -33,7 +64,7 @@ class _ViewProfileState extends State<ViewProfile> {
     double width = screenWidth / 360;
     return SafeArea(
       child: Scaffold(
-        body: Consumer<SelectedStringModel>(
+        body: Consumer<MainClass>(
           builder: (context, selectedStringModel, _) {
             List<String> mediaStrings = [
               selectedStringModel.facebookString ?? "",
@@ -51,7 +82,7 @@ class _ViewProfileState extends State<ViewProfile> {
                   width: double.infinity,
                   height: 291 * height,
                   child: Image.asset(
-                    'assets/anime-Profile-Pictures.jpg',
+                    'assets/360_F_708477508_DNkzRIsNFgibgCJ6KoTgJjjRZNJD4mb4.jpg',
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -92,41 +123,20 @@ class _ViewProfileState extends State<ViewProfile> {
                     backgroundColor: Colors.white,
                     radius: 45 * width,
                     child: CircleAvatar(
+                      backgroundImage: AssetImage(
+                          'assets/animal-children-photography-elena-shumilova-2.jpg'),
                       radius: 42 * width,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(42 * width),
-                        child: const Image(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                              'assets/images.jpg',
-                            )),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 200 * height,
-                  left: (width * 130) - 10,
-                  child: SizedBox(
-                    height: 34 * height,
-                    width: 117 * width,
-                    child: ClickButton(
-                      text: 'Add Selection',
-                      showicon: false,
-                      fill: Colors.transparent,
-                      txtclr: Colors.white,
-                      fnct: () {
-                        Navigator.pushNamed(context, 'profile');
-                      },
                     ),
                   ),
                 ),
                 SizedBox(
                   width: double.infinity,
+                  height: double.infinity,
                   child: ListView(
+                    controller: _scrollController,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 266 * height),
+                        padding: EdgeInsets.only(top: 256 * height),
                         child: Container(
                           decoration: const BoxDecoration(
                               color: Colors.white,
@@ -251,7 +261,10 @@ class _ViewProfileState extends State<ViewProfile> {
                                 profilelists(height, width, context,
                                     selectedStringModel, 'Skills', 3),
                                 profilelists(height, width, context,
-                                    selectedStringModel, 'languages', 4),
+                                    selectedStringModel, 'Languages', 4),
+                                SizedBox(
+                                  height: 20 * height,
+                                ),
                               ],
                             ),
                           ),
@@ -290,6 +303,49 @@ class _ViewProfileState extends State<ViewProfile> {
                       backgroundColor: Colors.grey.withOpacity(0.5),
                       radius: 13 * width),
                 ),
+                _showButtons
+                    ? Positioned(
+                        top: 180 * height,
+                        left: width * 45,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 32 * height,
+                              width: 120 * width,
+                              child: ClickButton(
+                                borderclr: Colors.white,
+                                text: 'Add Section',
+                                showborder: true,
+                                fill: Colors.transparent,
+                                txtclr: Colors.white,
+                                fnct: () {
+                                  Navigator.pushNamed(context, 'add_toprofile');
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              width: width * 10,
+                            ),
+                            SizedBox(
+                              height: 32 * height,
+                              width: 125 * width,
+                              child: ClickButton(
+                                borderclr: Colors.white,
+                                text: 'See Your Stats',
+                                showborder: true,
+                                fill: Colors.transparent,
+                                txtclr: Colors.white,
+                                fnct: () {
+                                  Navigator.pushNamed(context, 'add_toprofile');
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : Container(),
               ],
             );
           },
@@ -366,7 +422,7 @@ class _ViewProfileState extends State<ViewProfile> {
   }
 
   Padding profilelists(double height, double width, BuildContext context,
-      SelectedStringModel selectedStringModel, String listname, int listnum) {
+      MainClass selectedStringModel, String listname, int listnum) {
     int? length;
     switch (listnum) {
       case 0:
@@ -382,23 +438,25 @@ class _ViewProfileState extends State<ViewProfile> {
         length = selectedStringModel.SkillsitemList.length;
         break;
       case 4:
-       length = selectedStringModel.LanguagesitemList.length;
+        length = selectedStringModel.LanguagesitemList.length;
         break;
     }
     List<String> editlist = [
       'experianceseditpage',
       'educationseditpage',
       'liceditpage',
-      'skillseditpage'
-          'languageseditpage'
+      'skillseditpage',
+      'languageeditpage',
     ];
     List<String> addlist = [
       'add_experiences',
       'add_education',
       'add_certf',
       'add_skills',
-      'add_languages'
+      'add_language',
     ];
+    // ignore: unrelated_type_equality_checks
+    int limit = (listnum == 2 || listnum == 3 || listnum == 4) ? 2 : 4;
     return Padding(
       padding: EdgeInsets.only(
           top: 1.0 * height, left: 30 * width, right: 22 * width),
@@ -432,7 +490,7 @@ class _ViewProfileState extends State<ViewProfile> {
             height: height * 5,
           ),
           for (int i = 0; i < length!; i++)
-            if (showAll || i < 4)
+            if (showAllList[listnum] || (i < limit))
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -479,20 +537,17 @@ class _ViewProfileState extends State<ViewProfile> {
                     const Divider(), // Add a divider after each item except the last one
                 ],
               ),
-          if (length < 4)
-            SizedBox(
-              width: 500 * width,
-            ),
           SizedBox(
             width: width * 120,
           ),
-          if (length > 4)
+          if (((length > 4) && (listnum != 3) && (listnum != 2)) ||
+              ((length > 2) && (listnum == 2 || listnum == 3 || listnum == 4)))
             Padding(
               padding: EdgeInsets.only(left: (1 / width) * 10),
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    showAll = !showAll;
+                    showAllList[listnum] = !showAllList[listnum];
                   });
                 },
                 child: SizedBox(
@@ -503,7 +558,7 @@ class _ViewProfileState extends State<ViewProfile> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        !showAll ? "Show All" : 'Show Less',
+                        !showAllList[listnum] ? "Show All" : 'Show Less',
                         style: const TextStyle(
                             color: Color.fromARGB(255, 31, 33, 34),
                             fontSize: 12),
@@ -512,7 +567,7 @@ class _ViewProfileState extends State<ViewProfile> {
                         width: width * 2,
                       ),
                       Icon(
-                        !showAll
+                        !showAllList[listnum]
                             ? Icons.arrow_forward_outlined
                             : Icons.arrow_back_outlined,
                         size: width * 15,

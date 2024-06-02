@@ -6,7 +6,7 @@ import 'package:prj/items/elvButton.dart';
 import 'package:prj/items/textfield2all.dart';
 import 'package:provider/provider.dart';
 
-import '../items/liststringmodel.dart';
+import '../items/mainclass.dart';
 
 // ignore: must_be_immutable
 class AddEducation extends StatefulWidget {
@@ -27,18 +27,17 @@ class _AddEducationState extends State<AddEducation> {
   late TextEditingController _startDateController = TextEditingController();
   late TextEditingController _endDateController = TextEditingController();
 
-@override
+  @override
   void initState() {
     super.initState();
     if (widget.theediteditemnumber != null) {
-      var item = Provider.of<SelectedStringModel>(context, listen: false)
+      var item = Provider.of<MainClass>(context, listen: false)
           .EducationItemList[widget.theediteditemnumber!];
 
-      
       _schoolcontrller = TextEditingController(text: item.school);
       _fieldofstudycontroller = TextEditingController(text: item.fieldofstudy);
-     _degreecontroller = TextEditingController(text: item.degree);
-     
+      _degreecontroller = TextEditingController(text: item.degree);
+
       _startDateController = TextEditingController(text: item.startdate);
       _endDateController = TextEditingController(text: item.enddate);
     }
@@ -85,7 +84,7 @@ class _AddEducationState extends State<AddEducation> {
         ),
         centerTitle: true,
       ),
-      body: Consumer<SelectedStringModel>(builder: (context, Model, _) {
+      body: Consumer<MainClass>(builder: (context, Model, _) {
         return Column(
           children: [
             Expanded(
@@ -120,9 +119,9 @@ class _AddEducationState extends State<AddEducation> {
                           texthint: (widget.theediteditemnumber == null)
                               ? ''
                               : Model
-                                  .ExperianceitemList[
+                                  .EducationItemList[
                                       widget.theediteditemnumber!]
-                                  .title,
+                                  .school,
                           size: 15 * width,
                           color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
@@ -144,15 +143,14 @@ class _AddEducationState extends State<AddEducation> {
                           texthint: (widget.theediteditemnumber == null)
                               ? ''
                               : Model
-                                  .ExperianceitemList[
+                                  .EducationItemList[
                                       widget.theediteditemnumber!]
-                                  .emplname,
+                                  .fieldofstudy,
                           size: 15 * width,
                           color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
                           validator: (value) => value == null || value.isEmpty
                               ? 'Please enter your field  of study'
-
                               : null,
                         ),
                         Text(
@@ -169,19 +167,16 @@ class _AddEducationState extends State<AddEducation> {
                           texthint: (widget.theediteditemnumber == null)
                               ? ''
                               : Model
-                                  .ExperianceitemList[
+                                  .EducationItemList[
                                       widget.theediteditemnumber!]
-                                  .companyname,
+                                  .degree,
                           size: 15 * width,
                           color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
                           validator: (value) => value == null || value.isEmpty
                               ? 'Please enter your  degree'
-
-
                               : null,
                         ),
-                       
                         SizedBox(height: 4 * height),
                         Text(
                           'Start date',
@@ -222,7 +217,7 @@ class _AddEducationState extends State<AddEducation> {
                             hintText: (widget.theediteditemnumber == null)
                                 ? 'Select Start Date'
                                 : Model
-                                    .ExperianceitemList[
+                                    .EducationItemList[
                                         widget.theediteditemnumber!]
                                     .startdate,
                           ),
@@ -266,7 +261,7 @@ class _AddEducationState extends State<AddEducation> {
                             hintText: (widget.theediteditemnumber == null)
                                 ? 'Select End Date'
                                 : Model
-                                    .ExperianceitemList[
+                                    .EducationItemList[
                                         widget.theediteditemnumber!]
                                     .startdate,
                           ),

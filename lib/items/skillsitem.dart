@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 
 import 'package:prj/screens/add_skills.dart';
 
+import 'staticmethods.dart';
+
 // ignore: must_be_immutable
 class SkillsItem extends StatelessWidget {
   SkillsItem(
       {super.key,
       required this.skil,
       required this.get,
-    
       this.ineditpage,
       this.itemnumber});
 
-  late String skil, emplname, get;
+  late String skil, get;
   bool? ineditpage;
   int? itemnumber;
   @override
@@ -23,74 +24,87 @@ class SkillsItem extends StatelessWidget {
     double height = screenHeight / 640;
     double width = screenWidth / 360;
 
-    return SizedBox(
-      height: 60 * height,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          SizedBox(
-            height: height * 38,
-            width: width * 38,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Image.asset(
-                'assets/erwinsmithoo.jpg',
-                fit: BoxFit.cover,
-              ),
+    return InkWell(
+      onTap: () {
+        if (ineditpage == true)
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddSkills(theediteditemnumber: itemnumber),
             ),
-          ),
-          Positioned(
-            left: 50 * width,
-            child: SizedBox(
-              height: height * 60,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+          );
+      },
+      child: SizedBox(
+      
+        width: double.infinity,
+        child: Stack(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 2.0 * width),
+                  child: Text(
                     skil,
-                    style: TextStyle(
-                      height: 1,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 13 * height,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 4 * height,
-                  ),
-                  Text(
-                    emplname,
                     style: TextStyle(
                       height: 1,
                       fontWeight: FontWeight.w600,
                       fontFamily: "AeonikTRIAL",
-                      fontSize: 10 * height,
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontSize: 15 * width,
                     ),
                   ),
-                  
-                ],
-              ),
-            ),
-          ),
-          if (ineditpage == true)
-            Positioned(
-              left: 280 * width,
-              child: IconButton(
-                iconSize: 16 * width,
-                icon: Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          AddSkills(theediteditemnumber: itemnumber),
+                ),
+                SizedBox(
+                  height: 6 * height,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: height * 34,
+                      width: width * 37,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          'assets/depositphotos_153083628-stock-photo-businesspeople-working-at-desk.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
-                  );
-                },
-              ),
+                    SizedBox(
+                      width: width * 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 9.0 * height),
+                      child: Text(
+                        get,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                          height: 1,
+                          fontFamily: "AeonikTRIAL",
+                          fontSize: 15 * width,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-        ],
+            if (ineditpage == true)
+              Positioned(
+                top: height * 10,
+                left: 279 * width,
+                child: IconButton(
+                  iconSize: 18 * width,
+                  icon: Icon(Icons.delete_outline_sharp),
+                  onPressed: () {
+                    StaticMethods.deleteItem('S', context, itemnumber!);
+                  },
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

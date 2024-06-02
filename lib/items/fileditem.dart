@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'liststringmodel.dart';
+import 'mainclass.dart';
 
 class Filed extends StatefulWidget {
   Filed({Key? key, required this.string,required this.dynamic}) : super(key: key);
@@ -14,7 +14,7 @@ class Filed extends StatefulWidget {
 class _FiledState extends State<Filed> {
   @override
   Widget build(BuildContext context) {
-    bool isClicked = Provider.of<SelectedStringModel>(context, listen: false)
+    bool isClicked = Provider.of<MainClass>(context, listen: false)
         .selectedStrings
         .contains(widget.string);
     Color textColor =
@@ -44,7 +44,7 @@ class _FiledState extends State<Filed> {
         setState(() {
           
           List<String> selectedStrings =
-              Provider.of<SelectedStringModel>(context, listen: false)
+              Provider.of<MainClass>(context, listen: false)
                   .selectedStrings;
           if (!selectedStrings.contains(widget.string)) {
             selectedStrings.add(widget.string);

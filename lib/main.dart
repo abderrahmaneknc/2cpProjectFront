@@ -3,7 +3,8 @@ import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
 import 'package:prj/screens/edahabia.dart';
 import 'package:prj/screens/editpage.dart';
-import 'items/liststringmodel.dart';
+import 'items/mainclass.dart';
+
 import 'items/pointscard.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
@@ -38,7 +39,7 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (_) => SelectedStringModel(),
+      create: (_) => MainClass(),
       child: const MyApp(),
     ),
   );
@@ -109,6 +110,9 @@ class MyApp extends StatelessWidget {
               ),
           'skillseditpage': (context) => EditPage(
                 editedpagenumber: 3,
+              ),
+              'languageeditpage': (context) => EditPage(
+                editedpagenumber: 4,
               ),
           'pointscard': (context) => PointsCard(),
           'recentSearches': (context) => SearchPage(),

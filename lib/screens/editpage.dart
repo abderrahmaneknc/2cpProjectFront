@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:prj/items/licenssesandceltitem.dart';
-import 'package:prj/items/liststringmodel.dart';
+import 'package:prj/items/mainclass.dart';
 import 'package:provider/provider.dart';
 
 import '../items/educationitem.dart';
@@ -15,7 +15,13 @@ class EditPage extends StatelessWidget {
   int editedpagenumber;
   @override
   Widget build(BuildContext context) {
-    List<String> pagesitems = ['Experiances', 'Education', 'Certfications','Skills','Languages'];
+    List<String> pagesitems = [
+      'Experiances',
+      'Education',
+      'Certfications',
+      'Skills',
+      'Languages'
+    ];
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFFBFBFB),
@@ -50,8 +56,7 @@ class EditPage extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body: Consumer<SelectedStringModel>(
-            builder: (context, selectedStringModel, _) {
+        body: Consumer<MainClass>(builder: (context, selectedStringModel, _) {
           int? length;
           switch (editedpagenumber) {
             case 0:
@@ -63,12 +68,12 @@ class EditPage extends StatelessWidget {
             case 2:
               length = selectedStringModel.LisitemList.length;
               break;
-              case 3:
-               length = selectedStringModel.SkillsitemList.length;
+            case 3:
+              length = selectedStringModel.SkillsitemList.length;
               break;
-               case 4:
-       length = selectedStringModel.LanguagesitemList.length;
-        break;
+            case 4:
+              length = selectedStringModel.LanguagesitemList.length;
+              break;
           }
 
           double screenHeight = MediaQuery.of(context).size.height;
@@ -122,12 +127,21 @@ class EditPage extends StatelessWidget {
                             name: selectedStringModel.LisitemList[i].name,
                             issorg: selectedStringModel.LisitemList[i].issorg,
                             url: selectedStringModel.LisitemList[i].url,
-                            date: selectedStringModel.LisitemList[i].date)else if(editedpagenumber==3)
-                        SkillsItem(skil: selectedStringModel.SkillsitemList[i].skil, get:selectedStringModel.SkillsitemList[i].get)else if (editedpagenumber== 4)
-                    LanguagesItem(
-                        language:
-                            selectedStringModel.LanguagesitemList[i].language,
-                        prof: selectedStringModel.LanguagesitemList[i].prof),
+                            date: selectedStringModel.LisitemList[i].date)
+                      else if (editedpagenumber == 3)
+                        SkillsItem(
+                            ineditpage: true,
+                            itemnumber: i,
+                            skil: selectedStringModel.SkillsitemList[i].skil,
+                            get: selectedStringModel.SkillsitemList[i].get)
+                      else if (editedpagenumber == 4)
+                        LanguagesItem(
+                            ineditpage: true,
+                            itemnumber: i,
+                            language: selectedStringModel
+                                .LanguagesitemList[i].language,
+                            prof:
+                                selectedStringModel.LanguagesitemList[i].prof),
                       if (i != length - 1)
                         const Divider(), // Add a divider after each item except the last one
                     ],

@@ -5,27 +5,32 @@ class ClickButton extends StatelessWidget {
   ClickButton(
       {super.key,
       required this.text,
-      required this.showicon,
+      required this.showborder,
       required this.fill,
       required this.txtclr,
-      required this.fnct});
+      required this.fnct,
+      this.borderclr});
   String text;
-  bool showicon;
+  bool showborder;
   Color fill, txtclr;
   VoidCallback fnct;
+  Color? borderclr;
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+ 
+   
+    double width = screenWidth / 360;
     return InkWell(
       borderRadius: BorderRadius.circular(25),
       onTap: fnct,
       child: Container(
-        height: 45,
         width: double.maxFinite,
         decoration: BoxDecoration(
-          border: showicon
+          border: showborder
               ? Border.all(
                   width: 1,
-                  color: Colors.grey,
+                  color: borderclr!,
                 )
               : null,
           color: fill,
@@ -43,8 +48,11 @@ class ClickButton extends StatelessWidget {
               style: TextStyle(
                   fontFamily: "AeonikTRIAL",
                   color: txtclr,
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold),
+                  fontSize:
+                      (borderclr != Colors.white) ? 16 * width : 13 * width,
+                  fontWeight: (borderclr != Colors.white)
+                      ? FontWeight.bold
+                      : FontWeight.w600),
             ),
           ],
         )),

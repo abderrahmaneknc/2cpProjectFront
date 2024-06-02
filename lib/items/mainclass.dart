@@ -6,11 +6,11 @@ import 'package:prj/items/lissclass.dart';
 import 'educationitemclass.dart';
 import 'skillsclass.dart';
 
-class SelectedStringModel extends ChangeNotifier {
+class MainClass extends ChangeNotifier {
   List<String> selectedStrings = [];
   List<String> trasnforedStrings = [];
   List<LanguagesClass> LanguagesitemList = [];
-   List<SkillsClass> SkillsitemList = [];
+  List<SkillsClass> SkillsitemList = [];
   List<LissClass> LisitemList = [];
   List<ExprienceItemClass> ExperianceitemList = [
     ExprienceItemClass('ESI', 'MOhamed abdelah el mahboul', '', 'algeria',
@@ -31,35 +31,57 @@ class SelectedStringModel extends ChangeNotifier {
   String? whatsappString;
   String? twitterString;
   String? authorString;
-
- void editlanguageItem(int i, LanguagesClass editedItem) {
-    LanguagesitemList[i] = editedItem;
+  // Skills management
+  void addSkillItem(SkillsClass item) {
+    SkillsitemList.add(item);
     notifyListeners();
   }
 
-  void addlanguageItem(LanguagesClass item) {
-    LanguagesitemList.add(item);
-    notifyListeners();
-  }
-
-
-
- void editskilItem(int i, SkillsClass editedItem) {
+  void editSkillItem(int i, SkillsClass editedItem) {
     SkillsitemList[i] = editedItem;
     notifyListeners();
   }
 
-  void addskilItem(SkillsClass item) {
-    SkillsitemList.add(item);
+  void deleteSkillItem(int index) {
+    SkillsitemList.removeAt(index);
     notifyListeners();
   }
+
+  // Languages management
+  void addLanguageItem(LanguagesClass item) {
+    LanguagesitemList.add(item);
+    notifyListeners();
+  }
+
+  void editLanguageItem(int i, LanguagesClass editedItem) {
+    LanguagesitemList[i] = editedItem;
+    notifyListeners();
+  }
+
+  void deleteLanguageItem(int index) {
+    LanguagesitemList.removeAt(index);
+    notifyListeners();
+  }
+
+  // List management
+  void addLisItem(LissClass item) {
+    LisitemList.add(item);
+    notifyListeners();
+  }
+
   void editLisItem(int i, LissClass editedItem) {
     LisitemList[i] = editedItem;
     notifyListeners();
   }
 
-  void addLisItem(LissClass item) {
-    LisitemList.add(item);
+  void deleteLisItem(int index) {
+    LisitemList.removeAt(index);
+    notifyListeners();
+  }
+
+  // Education management
+  void addEducationItem(EducationItemClass item) {
+    EducationItemList.add(item);
     notifyListeners();
   }
 
@@ -68,21 +90,28 @@ class SelectedStringModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addEducationItem(EducationItemClass item) {
-    EducationItemList.add(item);
+  void deleteEducationItem(int index) {
+    EducationItemList.removeAt(index);
     notifyListeners();
   }
 
-  void editExperainceItem(int i, ExprienceItemClass editedItem) {
-    ExperianceitemList[i] = editedItem;
-    notifyListeners();
-  }
-
+  // Experience management
   void addExperienceItem(ExprienceItemClass item) {
     ExperianceitemList.add(item);
     notifyListeners();
   }
 
+  void editExperienceItem(int i, ExprienceItemClass editedItem) {
+    ExperianceitemList[i] = editedItem;
+    notifyListeners();
+  }
+
+  void deleteExperienceItem(int index) {
+    ExperianceitemList.removeAt(index);
+    notifyListeners();
+  }
+
+//seperated
   void setFacebookString(String value) {
     facebookString = value;
     notifyListeners();

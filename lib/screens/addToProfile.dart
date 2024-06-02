@@ -81,17 +81,6 @@ class AddToProfile extends StatelessWidget {
               ),
               MyTxtButtons(
                 weight: FontWeight.w400,
-                text: 'Add Activity',
-                color: Color(0xFF2D3D51),
-                onPressed: () {},
-                size: 16,
-              ),
-              Divider(
-                color: Color(0xFF2D3D51),
-                height: 0,
-              ),
-              MyTxtButtons(
-                weight: FontWeight.w400,
                 text: 'Add Education',
                 color: Color(0xFF2D3D51),
                 onPressed: () {

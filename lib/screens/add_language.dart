@@ -5,11 +5,11 @@ import 'package:prj/items/languagesclass.dart';
 import 'package:prj/items/textfield2all.dart';
 import 'package:provider/provider.dart';
 
-import '../items/liststringmodel.dart';
+import '../items/mainclass.dart';
 
 // ignore: must_be_immutable
 class Addlanguage extends StatefulWidget {
-   Addlanguage({Key? key, this.theediteditemnumber}) : super(key: key);
+  Addlanguage({Key? key, this.theediteditemnumber}) : super(key: key);
   int? theediteditemnumber;
   @override
   State<Addlanguage> createState() => _AddlanguageState();
@@ -18,27 +18,24 @@ class Addlanguage extends StatefulWidget {
 class _AddlanguageState extends State<Addlanguage> {
   final _formKey = GlobalKey<FormState>();
 
-  late TextEditingController _nameController = TextEditingController();
-  late TextEditingController _orgController = TextEditingController();
-
-  
+  late TextEditingController _langController = TextEditingController();
+  late TextEditingController _profController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     if (widget.theediteditemnumber != null) {
-      var item = Provider.of<SelectedStringModel>(context, listen: false)
+      var item = Provider.of<MainClass>(context, listen: false)
           .LanguagesitemList[widget.theediteditemnumber!];
 
-      _nameController = TextEditingController(text: item.language);
-      _orgController = TextEditingController(text: item.prof);
-     
-    
+      _langController = TextEditingController(text: item.language);
+      _profController = TextEditingController(text: item.prof);
     }
   }
+
   @override
   Widget build(BuildContext context) {
-        double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     double height = screenHeight / 640;
     double width = screenWidth / 360;
@@ -66,8 +63,8 @@ class _AddlanguageState extends State<Addlanguage> {
           padding: EdgeInsets.only(top: 20 * height),
           child: Text(
             (widget.theediteditemnumber == null)
-                ? 'Add Certfication'
-                : 'Edit Certfication',
+                ? 'Add Language'
+                : 'Edit Language',
             style: TextStyle(
               color: const Color(0xFF2D3D51),
               fontSize: 22 * width,
@@ -77,7 +74,7 @@ class _AddlanguageState extends State<Addlanguage> {
         ),
         centerTitle: true,
       ),
-      body: Consumer<SelectedStringModel>(builder: (context, Model, _) {
+      body: Consumer<MainClass>(builder: (context, Model, _) {
         return Column(
           children: [
             Expanded(
@@ -91,7 +88,7 @@ class _AddlanguageState extends State<Addlanguage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'build trust add your cert and liss',
+                          'choose the language that you can communicate whit :',
                           style: TextStyle(
                             fontSize: 10 * width,
                             color: Colors.grey[600],
@@ -99,7 +96,7 @@ class _AddlanguageState extends State<Addlanguage> {
                         ),
                         SizedBox(height: 12 * height),
                         Text(
-                          'name',
+                          'language',
                           style: TextStyle(
                             fontSize: 10 * width,
                             color: Colors.grey[600],
@@ -107,23 +104,23 @@ class _AddlanguageState extends State<Addlanguage> {
                         ),
                         SizedBox(height: 4 * height),
                         Textfieldd2(
-                          controller: _nameController,
+                          controller: _langController,
                           maxCharacters: 80,
                           texthint: (widget.theediteditemnumber == null)
                               ? ''
                               : Model
-                                  .ExperianceitemList[
+                                  .LanguagesitemList[
                                       widget.theediteditemnumber!]
-                                  .title,
+                                  .language,
                           size: 15 * width,
                           color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
                           validator: (value) => value == null || value.isEmpty
-                              ? 'Please enter your  name'
+                              ? 'Please enter your language'
                               : null,
                         ),
                         Text(
-                          'org',
+                          'proficiency',
                           style: TextStyle(
                             fontSize: 10 * width,
                             color: Colors.grey[600],
@@ -131,63 +128,23 @@ class _AddlanguageState extends State<Addlanguage> {
                         ),
                         SizedBox(height: 4 * height),
                         Textfieldd2(
-                          controller:_orgController,
+                          controller: _profController,
                           maxCharacters: 80,
                           texthint: (widget.theediteditemnumber == null)
                               ? ''
                               : Model
-                                  .ExperianceitemList[
+                                  .LanguagesitemList[
                                       widget.theediteditemnumber!]
-                                  .emplname,
+                                  .prof,
                           size: 15 * width,
                           color: const Color(0xFF2D3D51),
                           weight: FontWeight.w400,
                           validator: (value) => value == null || value.isEmpty
-                              ? 'Please enter your org '
-
+                              ? 'Please enter your proficiency '
                               : null,
                         ),
-                      
-                       
-                        SizedBox(height: 4 * height),
-                       
-                     
                         SizedBox(height: 6 * height),
-                        Text(
-                          'Add your image',
-                          style: TextStyle(
-                            fontSize: 10 * width,
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                        SizedBox(height: 4 * height),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            elevation: MaterialStateProperty.all(0),
-                            fixedSize:
-                                MaterialStateProperty.all(const Size(80, 5)),
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(
-                                  color: Color(0xFF2D3D51),
-                                ),
-                              ),
-                            ),
-                          ),
-                          child: Text(
-                            'Add',
-                            style: TextStyle(
-                              color: const Color(0xFF2D3D51),
-                              fontSize: 10 * width,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        )
+                      
                       ],
                     ),
                   ),
@@ -205,15 +162,11 @@ class _AddlanguageState extends State<Addlanguage> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     LanguagesClass newItem = LanguagesClass(
-                      _nameController.text,
-                    _orgController.text
-                
-                    
-                    );
+                        _langController.text, _profController.text);
                     if (widget.theediteditemnumber == null) {
-                      Model.addlanguageItem(newItem);
+                      Model.addLanguageItem(newItem);
                     } else {
-                      Model.editlanguageItem(
+                      Model.editLanguageItem(
                           widget.theediteditemnumber!, newItem);
                     }
                     Navigator.pop(

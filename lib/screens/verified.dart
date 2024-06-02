@@ -13,6 +13,7 @@ class verified extends StatelessWidget {
         children: <Widget>[
           Text(
             'Forgot Password',
+            
             style: TextStyle(
               fontFamily: "AeonikTRIAL",
               fontSize: 24,

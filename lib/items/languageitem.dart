@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:prj/screens/add_language.dart';
 
+import 'staticmethods.dart';
 
 // ignore: must_be_immutable
 class LanguagesItem extends StatelessWidget {
@@ -9,7 +10,6 @@ class LanguagesItem extends StatelessWidget {
       {super.key,
       required this.language,
       required this.prof,
-    
       this.ineditpage,
       this.itemnumber});
 
@@ -23,70 +23,66 @@ class LanguagesItem extends StatelessWidget {
     double height = screenHeight / 640;
     double width = screenWidth / 360;
 
-    return SizedBox(
-      height: 51 * height,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          SizedBox(
-            height: height * 38,
-            width: width * 38,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                'assets/erwinsmithoo.jpg',
-                fit: BoxFit.cover,
-              ),
+    return InkWell(
+      onTap: () {
+        if (ineditpage == true)
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  Addlanguage(theediteditemnumber: itemnumber),
             ),
-          ),
-          Positioned(
-            left: 50 * width,
-            child: SizedBox(
-              width: 108 * width,
-              height: height * 61,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    language,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 13 * height,
-                    ),
-                  ),
-                  Text(
-                    prof,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "AeonikTRIAL",
-                      fontSize: 10 * height,
-                      color: Color.fromARGB(204, 0, 0, 0),
-                    ),
-                  ),
-                
-                ],
-              ),
-            ),
-          ),
-          if (ineditpage == true)
+          );
+      },
+      child: SizedBox(
+        width: double.infinity,
+        child: Stack(
+          children: [
             Positioned(
-              left: 280 * width,
-              child: IconButton(
-                iconSize: 16 * width,
-                icon: Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          Addlanguage(theediteditemnumber: itemnumber),
+              child: SizedBox(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      language,
+                      style: TextStyle(
+                        height: 1,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 14 * width,
+                      ),
                     ),
-                  );
-                },
+                    SizedBox(
+                      height: 3 * height,
+                    ),
+                    Text(
+                      prof,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "AeonikTRIAL",
+                        fontSize: 10 * width,
+                        color: Color.fromARGB(204, 0, 0, 0),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-        ],
+            if (ineditpage == true)
+              Positioned(
+                left: 279 * width,
+                child: IconButton(
+                  splashColor: Colors.transparent, // Remove splash color
+                  highlightColor: Colors.transparent,
+                  iconSize: 18 * width,
+                  icon: Icon(Icons.delete_outline_sharp),
+                  onPressed: () {
+                    StaticMethods.deleteItem('Lang', context, itemnumber!);
+                  },
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

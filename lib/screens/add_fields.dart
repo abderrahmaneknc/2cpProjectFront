@@ -4,7 +4,7 @@ import 'package:prj/items/allfields.dart';
 import 'package:provider/provider.dart';
 
 import '../items/elvButton.dart';
-import '../items/liststringmodel.dart';
+import '../items/mainclass.dart';
 
 class Addfields extends StatelessWidget {
   const Addfields({super.key});
@@ -23,10 +23,10 @@ class Addfields extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 List<String> Strings =
-                    Provider.of<SelectedStringModel>(context, listen: false)
+                    Provider.of<MainClass>(context, listen: false)
                         .trasnforedStrings;
-                Provider.of<SelectedStringModel>(context, listen: false)
-                    .selectedStrings = List.from(Strings);
+                Provider.of<MainClass>(context, listen: false).selectedStrings =
+                    List.from(Strings);
 
                 Navigator.pushNamed(context, 'viewprofile');
               },
@@ -80,9 +80,9 @@ class Addfields extends StatelessWidget {
                 txtcolor: Colors.white,
                 onPressed: () {
                   List<String> selectedStrings =
-                      Provider.of<SelectedStringModel>(context, listen: false)
+                      Provider.of<MainClass>(context, listen: false)
                           .selectedStrings;
-                  Provider.of<SelectedStringModel>(context, listen: false)
+                  Provider.of<MainClass>(context, listen: false)
                       .trasnforedStrings = List.from(selectedStrings);
 
                   Navigator.pushNamed(context, 'viewprofile');
