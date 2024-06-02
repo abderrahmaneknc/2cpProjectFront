@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: 'pointscard',
+        initialRoute: '/',
         routes: {
           '/': (context) => IntroductionPages(),
           'signIn': (context) => MySignInPage(),

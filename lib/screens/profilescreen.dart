@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:prj/items/clickbutton.dart';
 import 'package:prj/screens/profilrDialogue.dart';
 
-
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
 

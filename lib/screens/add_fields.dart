@@ -3,6 +3,7 @@ import 'package:prj/items/allfields.dart';
 
 import 'package:provider/provider.dart';
 
+import '../items/elvButton.dart';
 import '../items/liststringmodel.dart';
 
 class Addfields extends StatelessWidget {
@@ -69,6 +70,23 @@ class Addfields extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 9.0),
                 child: AllFileds(),
+              ),
+
+              Mybuttons(
+                text: 'Save',
+                color: Color(0xFF2D3D51),
+                logo: false,
+                assets: '',
+                txtcolor: Colors.white,
+                onPressed: () {
+                  List<String> selectedStrings =
+                      Provider.of<SelectedStringModel>(context, listen: false)
+                          .selectedStrings;
+                  Provider.of<SelectedStringModel>(context, listen: false)
+                      .trasnforedStrings = List.from(selectedStrings);
+
+                  Navigator.pushNamed(context, 'viewprofile');
+                },
               ),
               // Your other widgets go here
             ],

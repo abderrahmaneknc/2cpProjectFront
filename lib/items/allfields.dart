@@ -29,7 +29,16 @@ class _AllFiledsState extends State<AllFileds> {
       'Cyber Security',
       'Graphic Design',
       'Java',
-      'Motion Graphic'
+      'Motion Graphic',
+      'Web Dev',
+      'Video Editing',
+      'Python',
+      'UI/UX',
+      'Mobile Dev',
+      'Cyber Security',
+      'Graphic Design',
+      'Java',
+      'Motion Graphic',
     ];
     return Column(
       children: [
@@ -41,29 +50,12 @@ class _AllFiledsState extends State<AllFileds> {
             for (int i = 0; i < strings.length; i++)
               Padding(
                 padding: EdgeInsets.only(left: 5.0 * width),
-                child: Filed(string: strings[i],dynamic: true,),
+                child: Filed(
+                  string: strings[i],
+                  dynamic: true,
+                ),
               ),
           ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-              left: 20.0, right: 20, bottom: 20, top: 430),
-          child: Mybuttons(
-            text: 'Save',
-            color: Color(0xFF2D3D51),
-            logo: false,
-            assets: '',
-            txtcolor: Colors.white,
-            onPressed: () {
-              List<String> selectedStrings =
-                  Provider.of<SelectedStringModel>(context, listen: false)
-                      .selectedStrings;
-              Provider.of<SelectedStringModel>(context, listen: false)
-                  .trasnforedStrings = List.from(selectedStrings);
-                  
-              Navigator.pushNamed(context, 'viewprofile');
-            },
-          ),
         ),
       ],
     );
