@@ -29,7 +29,16 @@ class _AllFiledsState extends State<AllFileds> {
       'Cyber Security',
       'Graphic Design',
       'Java',
-      'Motion Graphic'
+      'Motion Graphic',
+      'Web Dev',
+      'Video Editing',
+      'Python',
+      'UI/UX',
+      'Mobile Dev',
+      'Cyber Security',
+      'Graphic Design',
+      'Java',
+      'Motion Graphic',
     ];
     return Column(
       children: [
@@ -61,9 +70,9 @@ class _AllFiledsState extends State<AllFileds> {
               List<String> selectedStrings =
                   Provider.of<MainClass>(context, listen: false)
                       .selectedStrings;
-              Provider.of<MainClass>(context, listen: false).trasnforedStrings =
-                  List.from(selectedStrings);
-
+              Provider.of<MainClass>(context, listen: false)
+                  .trasnforedStrings = List.from(selectedStrings);
+                  
               Navigator.pushNamed(context, 'viewprofile');
             },
           ),

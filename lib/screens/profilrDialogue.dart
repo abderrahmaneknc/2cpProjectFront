@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 // Assuming that the Homedialogue widget is imported from the appropriate file
-import '../items/dialoogue.dart'; // Adjust the import path as needed
+import '../items/dialoogue.dart';
+import 'edahabia.dart';
+import 'report1.dart'; // Adjust the import path as needed
 
-class Homedialoge extends StatelessWidget {
+class ProfileDialogue extends StatelessWidget {
   final String s1;
   final String s2;
 
-  const Homedialoge({
+  const ProfileDialogue({
     Key? key,
     required this.s1,
     required this.s2,
@@ -45,7 +47,26 @@ class Homedialoge extends StatelessWidget {
                 color: Colors.white,
                 logo: true,
                 txtcolor: Color(0xFF2D3D51),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+
+                  showModalBottomSheet(
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (BuildContext context) {
+                      return SingleChildScrollView(
+                        child: Container(
+                          padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom,
+                          ),
+                          child: const Edahabia(),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
               const SizedBox(
                 height: 8,
@@ -57,7 +78,21 @@ class Homedialoge extends StatelessWidget {
                 txtcolor: Colors.black,
                 onPressed: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, 'dashboard');
+
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (BuildContext context) {
+                      return SingleChildScrollView(
+                        child: Container(
+                          padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom,
+                          ),
+                          child: const Report1(),
+                        ),
+                      );
+                    },
+                  );
                 },
               ),
             ],

@@ -139,8 +139,7 @@ class Edahabia extends StatelessWidget {
                                             suffixIcon:
                                                 Icon(Icons.calendar_today),
                                           ),
-                                          keyboardType:
-                                              TextInputType.datetime,
+                                          keyboardType: TextInputType.datetime,
                                         ),
                                       ),
                                     ),
@@ -150,12 +149,10 @@ class Edahabia extends StatelessWidget {
                                           labelText: '',
                                           labelStyle:
                                               TextStyle(color: Colors.grey),
-                                          contentPadding:
-                                              EdgeInsets.symmetric(
-                                                  horizontal: 8.0),
+                                          contentPadding: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
                                           border: InputBorder.none,
-                                          suffixIcon:
-                                              Icon(Icons.help_outline),
+                                          suffixIcon: Icon(Icons.help_outline),
                                         ),
                                         keyboardType: TextInputType.number,
                                       ),
@@ -176,7 +173,7 @@ class Edahabia extends StatelessWidget {
                           assets: '',
                           txtcolor: Colors.white,
                           onPressed: () {
-                            Navigator.pushNamed(context, '/////');
+                            Navigator.pushNamed(context, 'success');
                           },
                         ),
                       ],

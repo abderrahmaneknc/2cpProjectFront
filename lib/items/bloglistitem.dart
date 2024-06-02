@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'filter.dart';
+
 // ignore: must_be_immutable
 class BlogsList extends StatefulWidget {
   BlogsList({super.key, required this.chek});
@@ -30,12 +32,40 @@ class _BlogsListState extends State<BlogsList> {
               SizedBox(
                 height: 25 * height,
                 width: 175 * width,
-                child: Text(
-                  'Blog of The Week',
-                  style: TextStyle(
-                      fontSize: 21 * width,
-                      height: 1,
-                      fontWeight: FontWeight.bold),
+                child: Row(
+                  children: [
+                    Text(
+                      'Blog of The Week',
+                      style: TextStyle(
+                          fontSize: 21 * width,
+                          height: 1,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Spacer(),
+                    GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          builder: (BuildContext context) {
+                            return SingleChildScrollView(
+                              child: Container(
+                                padding: EdgeInsets.only(
+                                  bottom:
+                                      MediaQuery.of(context).viewInsets.bottom,
+                                ),
+                                child: const Filter(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: Image.asset(
+                          height: 18 * height,
+                          width: 19 * width,
+                          'assets/Tune (1).jpg'),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
