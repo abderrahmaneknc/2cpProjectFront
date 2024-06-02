@@ -35,7 +35,7 @@ class SkillsItem extends StatelessWidget {
           );
       },
       child: SizedBox(
-        height: 60 * height,
+      
         width: double.infinity,
         child: Stack(
           children: [

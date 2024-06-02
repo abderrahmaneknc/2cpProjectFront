@@ -156,8 +156,9 @@ class MyProfile extends StatelessWidget {
                           height: 39 * height,
                           width: 311 * width,
                           child: ClickButton(
+                            borderclr: Colors.grey,
                             text: 'ViewProfile',
-                            showicon: true,
+                            showborder: true,
                             fill: Colors.white,
                             txtclr: const Color(0xFF2D3D51),
                             fnct: () {
@@ -172,8 +173,9 @@ class MyProfile extends StatelessWidget {
                           height: 39 * height,
                           width: 311 * width,
                           child: ClickButton(
+                            borderclr: Colors.grey,
                             text: 'Account Settings',
-                            showicon: true,
+                            showborder: true,
                             fill: Colors.white,
                             txtclr: const Color(0xFF2D3D51),
                             fnct: () {},
@@ -186,8 +188,9 @@ class MyProfile extends StatelessWidget {
                           height: 39 * height,
                           width: 311 * width,
                           child: ClickButton(
+                            borderclr: Colors.grey,
                             text: 'Saved',
-                            showicon: true,
+                            showborder: true,
                             fill: Colors.white,
                             txtclr: const Color(0xFF2D3D51),
                             fnct: () {},
@@ -200,8 +203,9 @@ class MyProfile extends StatelessWidget {
                           height: 39 * height,
                           width: 311 * width,
                           child: ClickButton(
+                            borderclr: Colors.grey,
                             text: 'Support',
-                            showicon: true,
+                            showborder: true,
                             fill: Colors.white,
                             txtclr: const Color(0xFF2D3D51),
                             fnct: () {},
@@ -216,8 +220,9 @@ class MyProfile extends StatelessWidget {
                           height: 39 * height,
                           width: 311 * width,
                           child: ClickButton(
+                            borderclr: Colors.grey,
                             text: 'Log Out',
-                            showicon: true,
+                            showborder: true,
                             fill: const Color(0xFF2D3D51),
                             txtclr: Colors.white,
                             fnct: () {

@@ -20,6 +20,38 @@ class ViewProfile extends StatefulWidget {
 
 class _ViewProfileState extends State<ViewProfile> {
   List<bool> showAllList = [false, false, false, false, false];
+  ScrollController _scrollController = ScrollController();
+  bool _showButtons = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  void _scrollListener() {
+    if (_scrollController.position.pixels > 50) {
+      if (_showButtons) {
+        print("Hiding buttons");
+        setState(() {
+          _showButtons = false;
+        });
+      }
+    } else {
+      if (!_showButtons) {
+        print("Showing buttons");
+        setState(() {
+          _showButtons = true;
+        });
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,26 +129,11 @@ class _ViewProfileState extends State<ViewProfile> {
                     ),
                   ),
                 ),
-                Positioned(
-                  top: 180 * height,
-                  left: (width * 130) - 10,
-                  child: SizedBox(
-                    height: 34 * height,
-                    width: 117 * width,
-                    child: ClickButton(
-                      text: 'Add Selection',
-                      showicon: false,
-                      fill: Colors.transparent,
-                      txtclr: Colors.white,
-                      fnct: () {
-                        Navigator.pushNamed(context, 'profile');
-                      },
-                    ),
-                  ),
-                ),
                 SizedBox(
                   width: double.infinity,
+                  height: double.infinity,
                   child: ListView(
+                    controller: _scrollController,
                     children: [
                       Padding(
                         padding: EdgeInsets.only(top: 256 * height),
@@ -286,6 +303,49 @@ class _ViewProfileState extends State<ViewProfile> {
                       backgroundColor: Colors.grey.withOpacity(0.5),
                       radius: 13 * width),
                 ),
+                _showButtons
+                    ? Positioned(
+                        top: 180 * height,
+                        left: width * 45,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 32 * height,
+                              width: 120 * width,
+                              child: ClickButton(
+                                borderclr: Colors.white,
+                                text: 'Add Section',
+                                showborder: true,
+                                fill: Colors.transparent,
+                                txtclr: Colors.white,
+                                fnct: () {
+                                  Navigator.pushNamed(context, 'add_toprofile');
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              width: width * 10,
+                            ),
+                            SizedBox(
+                              height: 32 * height,
+                              width: 125 * width,
+                              child: ClickButton(
+                                borderclr: Colors.white,
+                                text: 'See Your Stats',
+                                showborder: true,
+                                fill: Colors.transparent,
+                                txtclr: Colors.white,
+                                fnct: () {
+                                  Navigator.pushNamed(context, 'add_toprofile');
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : Container(),
               ],
             );
           },

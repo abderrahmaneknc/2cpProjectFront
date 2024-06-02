@@ -36,7 +36,7 @@ class LisAndCeltItem extends StatelessWidget {
           );
       },
       child: SizedBox(
-        height: (ineditpage != true) ? 83 * height : height * 53,
+        height: (ineditpage != true) ? 70 * height : height * 53,
         width: double.infinity,
         child: Stack(
           children: [
