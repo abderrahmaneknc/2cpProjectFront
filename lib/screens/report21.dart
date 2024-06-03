@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prj/screens/report1.dart';
 
-import 'package:prj/screens/report2.dart';
 
 import '../items/txtbutton.dart';
 import 'report211.dart';
-import 'report22.dart';
+
 import 'report222.dart';
 
 // ignore: camel_case_types

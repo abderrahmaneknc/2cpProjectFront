@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prj/items/boxes.dart';
-import 'package:prj/items/digits.dart';
+
 
 import 'package:prj/items/elvButton.dart';
-import 'package:prj/screens/report2.dart';
 
-import '../items/txtbutton.dart';
 import '../items/txtfdbutton.dart';
 import 'report211.dart';
 

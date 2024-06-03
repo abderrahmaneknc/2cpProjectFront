@@ -2,7 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../items/cardstat.dart';
-import '../items/columnstat.dart';
+
 import '../items/graphe.dart';
 import '../items/circlestat.dart';
 

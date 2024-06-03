@@ -12,14 +12,14 @@ import '../items/educationitem.dart';
 import '../items/licenssesandceltitem.dart';
 import '../items/mainclass.dart';
 
-class ViewProfile extends StatefulWidget {
-  ViewProfile({super.key});
+class NonUserProfile extends StatefulWidget {
+  NonUserProfile({super.key});
 
   @override
-  State<ViewProfile> createState() => _ViewProfileState();
+  State<NonUserProfile> createState() => _NonUserProfileState();
 }
 
-class _ViewProfileState extends State<ViewProfile> {
+class _NonUserProfileState extends State<NonUserProfile> {
   List<bool> showAllList = [false, false, false, false, false];
   ScrollController _scrollController = ScrollController();
   bool _showButtons = true;
@@ -176,10 +176,6 @@ class _ViewProfileState extends State<ViewProfile> {
                                         ],
                                       ),
                                       const Spacer(),
-                                      IconButton(
-                                        icon: const Icon(Icons.edit),
-                                        onPressed: () {},
-                                      ),
                                     ],
                                   ),
                                 ),
@@ -211,10 +207,6 @@ class _ViewProfileState extends State<ViewProfile> {
                                         ],
                                       ),
                                       const Spacer(),
-                                      IconButton(
-                                        icon: const Icon(Icons.edit),
-                                        onPressed: () {},
-                                      ),
                                     ],
                                   ),
                                 ),
@@ -235,10 +227,6 @@ class _ViewProfileState extends State<ViewProfile> {
                                             ),
                                           ),
                                           const Spacer(),
-                                          IconButton(
-                                            icon: const Icon(Icons.edit),
-                                            onPressed: () {},
-                                          ),
                                         ],
                                       ),
                                       const Text(
@@ -306,49 +294,6 @@ class _ViewProfileState extends State<ViewProfile> {
                       backgroundColor: Colors.grey.withOpacity(0.5),
                       radius: 13 * width),
                 ),
-                _showButtons
-                    ? Positioned(
-                        top: 180 * height,
-                        left: width * 45,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 32 * height,
-                              width: 120 * width,
-                              child: ClickButton(
-                                borderclr: Colors.white,
-                                text: 'Add Section',
-                                showborder: true,
-                                fill: Colors.transparent,
-                                txtclr: Colors.white,
-                                fnct: () {
-                                  Navigator.pushNamed(context, 'add_toprofile');
-                                },
-                              ),
-                            ),
-                            SizedBox(
-                              width: width * 10,
-                            ),
-                            SizedBox(
-                              height: 32 * height,
-                              width: 125 * width,
-                              child: ClickButton(
-                                borderclr: Colors.white,
-                                text: 'See Your Stats',
-                                showborder: true,
-                                fill: Colors.transparent,
-                                txtclr: Colors.white,
-                                fnct: () {
-                                  Navigator.pushNamed(context, 'add_toprofile');
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    : Container(),
               ],
             );
           },
@@ -375,12 +320,6 @@ class _ViewProfileState extends State<ViewProfile> {
                 ),
               ),
               const Spacer(),
-              IconButton(
-                icon: const Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushNamed(context, 'add_media');
-                },
-              ),
             ],
           ),
           for (int i = 0; i < mediaStrings.length; i++)
@@ -401,12 +340,6 @@ class _ViewProfileState extends State<ViewProfile> {
                 ),
               ),
               const Spacer(),
-              IconButton(
-                icon: const Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.popAndPushNamed(context, 'add_fields');
-                },
-              ),
             ],
           ),
           Wrap(crossAxisAlignment: WrapCrossAlignment.start, children: [
@@ -447,20 +380,7 @@ class _ViewProfileState extends State<ViewProfile> {
         length = 0;
         break;
     }
-    List<String> editlist = [
-      'experianceseditpage',
-      'educationseditpage',
-      'liceditpage',
-      'skillseditpage',
-      'languageeditpage',
-    ];
-    List<String> addlist = [
-      'add_experiences',
-      'add_education',
-      'add_certf',
-      'add_skills',
-      'add_language',
-    ];
+
     // ignore: unrelated_type_equality_checks
     int limit = (listnum == 2 || listnum == 3 || listnum == 4) ? 2 : 4;
     return Padding(
@@ -478,20 +398,6 @@ class _ViewProfileState extends State<ViewProfile> {
                 ),
               ),
               const Spacer(),
-              if (listnum != 5)
-                IconButton(
-                  icon: const Icon(Icons.add),
-                  onPressed: () {
-                    Navigator.pushNamed(context, addlist[listnum]);
-                  },
-                ),
-              if (listnum != 5)
-                IconButton(
-                  icon: const Icon(Icons.edit),
-                  onPressed: () {
-                    Navigator.pushNamed(context, editlist[listnum]);
-                  },
-                ),
             ],
           ),
           SizedBox(

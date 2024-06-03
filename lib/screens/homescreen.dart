@@ -4,8 +4,7 @@ import '../items/filter2.dart';
 import '../items/homeitem.dart';
 import '../items/homeitem2.dart';
 import '../items/txtfdbutton.dart';
-import '../items/filter.dart';
-import '../items/forgotpassword.dart';
+
 import 'homeDialoge.dart';
 
 class MyHome extends StatefulWidget {
@@ -57,7 +56,6 @@ class _MyHomeState extends State<MyHome> {
                   padding: const EdgeInsets.only(right: 4, left: 4),
                   child: coursespage(height: height, width: width),
                 ),
-                
               ],
             ),
           ),
@@ -279,3 +277,29 @@ class SearchBar extends StatelessWidget {
     );
   }
 }
+
+int calculateRank(int points) {
+  if (points < 0) {
+    throw ArgumentError('Points cannot be negative');
+  }
+
+  int rank = 1;
+  int pointsNeededForCurrentGroup = 100;
+  int pointsNeededForNextRank = 100;
+
+  while (points >= pointsNeededForNextRank) {
+    points -= pointsNeededForNextRank;
+    rank++;
+
+    if (rank % 10 == 1) {
+      pointsNeededForCurrentGroup *= 2;
+      pointsNeededForNextRank = pointsNeededForCurrentGroup;
+    }
+  }
+
+  return rank;
+}
+
+/*void main() {
+  print(calculateRank(8500)); // Output: 1
+}*/

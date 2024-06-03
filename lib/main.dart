@@ -3,9 +3,9 @@ import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
 import 'package:prj/screens/edahabia.dart';
 import 'package:prj/screens/editpage.dart';
+import 'package:prj/screens/nonuserprofile.dart';
 import 'items/mainclass.dart';
 
-import 'items/pointscard.dart';
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
 import 'screens/complete.dart';
@@ -15,6 +15,7 @@ import 'screens/myStat.dart';
 import 'screens/recentActivity.dart';
 import 'screens/recentSearches.dart';
 import 'screens/resoursesdetailedpage.dart';
+import 'screens/threetabs.dart';
 import 'screens/verified.dart';
 import 'screens/addBlog.dart';
 import 'screens/add_certf.dart';
@@ -117,11 +118,12 @@ class MyApp extends StatelessWidget {
           'languageeditpage': (context) => EditPage(
                 editedpagenumber: 4,
               ),
-          'pointscard': (context) => PointsCard(),
+          'threetabs': (context) => ThreeTabs(),
           'recentSearches': (context) => SearchPage(),
           'recentActivity': (context) => RecentActivity(),
           'contactUs': (context) => ContactUs(),
           'complete': (context) => Complete(),
+          'nonuserprofile': (Context) => NonUserProfile(),
         });
   }
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prj/screens/report1.dart';
 
-import 'package:prj/screens/report2.dart';
 import 'package:prj/screens/report21.dart';
 import 'package:prj/screens/report22.dart';
 
