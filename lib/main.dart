@@ -3,13 +3,17 @@ import 'package:prj/screens/addResCors.dart';
 import 'package:prj/screens/coursedetailedpage.dart';
 import 'package:prj/screens/edahabia.dart';
 import 'package:prj/screens/editpage.dart';
+import 'package:prj/screens/nonuserprofile.dart';
 import 'items/mainclass.dart';
-
 
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
+import 'screens/complete.dart';
+import 'screens/contactUs.dart';
 import 'screens/dashboard.dart';
 import 'screens/myStat.dart';
+import 'screens/recentActivity.dart';
+import 'screens/recentSearches.dart';
 import 'screens/resoursesdetailedpage.dart';
 import 'screens/threetabs.dart';
 import 'screens/verified.dart';
@@ -111,10 +115,15 @@ class MyApp extends StatelessWidget {
           'skillseditpage': (context) => EditPage(
                 editedpagenumber: 3,
               ),
-              'languageeditpage': (context) => EditPage(
+          'languageeditpage': (context) => EditPage(
                 editedpagenumber: 4,
               ),
-          'threetabs':(context) => ThreeTabs(),
+          'threetabs': (context) => ThreeTabs(),
+          'recentSearches': (context) => SearchPage(),
+          'recentActivity': (context) => RecentActivity(),
+          'contactUs': (context) => ContactUs(),
+          'complete': (context) => Complete(),
+          'nonuserprofile':(Context)=>NonUserProfile(),
         });
   }
 }

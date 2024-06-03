@@ -25,7 +25,7 @@ class _CourseItem2State extends State<Homeitem2> {
           left: 1 * width),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, 'cordp');
+         Navigator.pushNamed(context,'nonuserprofile');
         },
         child: Container(
           decoration: BoxDecoration(

@@ -17,7 +17,9 @@ class Homeitem extends StatelessWidget {
           bottom: 10 * height,
           left: 1 * width),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context,'nonuserprofile');
+        },
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,

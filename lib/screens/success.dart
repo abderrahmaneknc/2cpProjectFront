@@ -4,7 +4,6 @@ import 'package:prj/items/elvButton.dart';
 
 import 'intropagetemplate.dart';
 
-
 class Success extends StatelessWidget {
   const Success({Key? key}) : super(key: key);
 
@@ -12,7 +11,9 @@ class Success extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFFBFBFB),
         appBar: AppBar(
+          backgroundColor: Color(0xFFFBFBFB),
           leading: Padding(
             padding: const EdgeInsets.only(top: 25, left: 10),
             child: IconButton(
@@ -28,6 +29,7 @@ class Success extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
+                color: Color(0xFFFBFBFB),
                 child: Intropagetmplt(
                   picture: 'assets/Screenshot 2024-03-20 142202.png',
                   text1: 'Success',

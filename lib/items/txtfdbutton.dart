@@ -5,6 +5,7 @@ class TextFieldbt extends StatelessWidget {
   TextFieldbt(
       {super.key,
       required this.frontic,
+      this.suffix,
       required this.hinttext,
       required this.notshow,
       required this.fixed,
@@ -12,6 +13,8 @@ class TextFieldbt extends StatelessWidget {
   String hinttext;
   bool notshow, fixed;
   IconData? frontic;
+  IconData? suffix;
+
   double height;
   @override
   Widget build(BuildContext context) {
@@ -49,8 +52,15 @@ class TextFieldbt extends StatelessWidget {
             color: const Color.fromARGB(175, 158, 158, 158),
             size: 28,
           ),
+          suffixIcon: IconButton(
+            icon: Icon(suffix, color: Color(0xFF2D3D51), size: 15),
+            onPressed: () {
+              // Action to clear the text field
+              // Since there's no controller, this is just a placeholder
+            },
+          ),
           alignLabelWithHint: true,
-          contentPadding: const EdgeInsets.all(20),
+          contentPadding: const EdgeInsets.all(0),
         ),
       ),
     );
