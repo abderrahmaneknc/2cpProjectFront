@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
                   RoundRangeSliderThumbShape(enabledThumbRadius: 5.5)),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: 'contactUs',
+        initialRoute: '/',
         routes: {
           '/': (context) => IntroductionPages(),
           'signIn': (context) => MySignInPage(),
@@ -121,8 +121,7 @@ class MyApp extends StatelessWidget {
           'recentSearches': (context) => SearchPage(),
           'recentActivity': (context) => RecentActivity(),
           'contactUs': (context) => ContactUs(),
-          'complete':(context) => Complete(),
+          'complete': (context) => Complete(),
         });
-
   }
 }

@@ -18,14 +18,15 @@ class RecentActivity extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double height = screenHeight / 640;
     double width = screenWidth / 360;
-    return SingleChildScrollView(
-      child: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 100.0),
-            child: Column(
-              children: [
-                Container(
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 100.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 250.0),
+                child: Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(30),
@@ -44,17 +45,20 @@ class RecentActivity extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Row(
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 250.0),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               PointsCard(),
             ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
