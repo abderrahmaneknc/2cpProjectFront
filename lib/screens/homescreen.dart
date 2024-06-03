@@ -4,8 +4,8 @@ import '../items/filter2.dart';
 import '../items/homeitem.dart';
 import '../items/homeitem2.dart';
 import '../items/txtfdbutton.dart';
-import '../items/filter.dart';
-import '../items/forgotpassword.dart';
+
+
 import 'homeDialoge.dart';
 
 class MyHome extends StatefulWidget {

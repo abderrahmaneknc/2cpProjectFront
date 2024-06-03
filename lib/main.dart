@@ -5,12 +5,13 @@ import 'package:prj/screens/edahabia.dart';
 import 'package:prj/screens/editpage.dart';
 import 'items/mainclass.dart';
 
-import 'items/pointscard.dart';
+
 import 'screens/addToProfile.dart';
 import 'screens/add_media.dart';
 import 'screens/dashboard.dart';
 import 'screens/myStat.dart';
 import 'screens/resoursesdetailedpage.dart';
+import 'screens/threetabs.dart';
 import 'screens/verified.dart';
 import 'screens/addBlog.dart';
 import 'screens/add_certf.dart';
@@ -113,7 +114,7 @@ class MyApp extends StatelessWidget {
               'languageeditpage': (context) => EditPage(
                 editedpagenumber: 4,
               ),
-          'pointscard': (context) => PointsCard(),
+          'threetabs':(context) => ThreeTabs(),
         });
   }
 }

@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 
 import 'package:prj/items/bloglistitem.dart';
 import 'package:prj/items/txtfdbutton.dart';
+import 'package:provider/provider.dart';
+
+import '../items/mainclass.dart';
 
 class BlogsScreen extends StatelessWidget {
   const BlogsScreen({super.key});
@@ -17,57 +20,59 @@ class BlogsScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Color(0xFFFBFBFB),
-      body: Padding(
-        padding: EdgeInsets.only(
-            top: 28 * height, left: 24 * width, right: 24 * width),
-        child: SingleChildScrollView(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Row(
-              children: [
-                SizedBox(
-                  width: 269 * width,
-                  height: 40 * height,
-                  child: TextFieldbt(
-                    fixed: false,
-                    frontic: Icons.search,
-                    height: 1 * height,
-                    hinttext: 'What are you looking for',
-                    notshow: false,
+      body: Consumer<MainClass>(builder: (context, selectedStringModel, _) {
+        return Padding(
+          padding: EdgeInsets.only(
+              top: 28 * height, left: 24 * width, right: 24 * width),
+          child: SingleChildScrollView(
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(
+                children: [
+                  SizedBox(
+                    width: 269 * width,
+                    height: 40 * height,
+                    child: TextFieldbt(
+                      fixed: false,
+                      frontic: Icons.search,
+                      height: 1 * height,
+                      hinttext: 'What are you looking for',
+                      notshow: false,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 20 * height,
-                    bottom: 20 * height,
-                    left: 18 * width,
-                  ),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: SizedBox(
-                      height: 24 * height,
-                      width: 24 * width,
-                      child: Image.asset(
-                        'assets/Notification.png',
-                        fit: BoxFit.contain,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: 20 * height,
+                      bottom: 20 * height,
+                      left: 18 * width,
+                    ),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: SizedBox(
                         height: 24 * height,
-                        width: 22 * width,
+                        width: 24 * width,
+                        child: Image.asset(
+                          'assets/Notification.png',
+                          fit: BoxFit.contain,
+                          height: 24 * height,
+                          width: 22 * width,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 600,
-              child: ListView.builder(
-                itemBuilder: (context, index) => BlogsList(chek: index),
-                itemCount: 40,
+                ],
               ),
-            ),
-          ]),
-        ),
-      ),
+              SizedBox(
+                height: 600,
+                child: ListView.builder(
+                  itemBuilder: (context, index) => BlogsList(chek: index),
+                  itemCount: 40,
+                ),
+              ),
+            ]),
+          ),
+        );
+      }),
     ));
   }
 }

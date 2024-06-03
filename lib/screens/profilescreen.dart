@@ -192,7 +192,9 @@ class MyProfile extends StatelessWidget {
                             showborder: true,
                             fill: Colors.white,
                             txtclr: const Color(0xFF2D3D51),
-                            fnct: () {},
+                            fnct: () {
+                              Navigator.pushNamed(context, 'threetabs');
+                            },
                           ),
                         ),
                       ),

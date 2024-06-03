@@ -4,6 +4,7 @@ import 'package:prj/items/clickbutton.dart';
 import 'package:prj/items/fileditem.dart';
 import 'package:prj/items/exprienceitem.dart';
 import 'package:prj/items/languageitem.dart';
+import 'package:prj/items/pointscard.dart';
 import 'package:prj/items/skillsitem.dart';
 import 'package:provider/provider.dart';
 
@@ -253,6 +254,8 @@ class _ViewProfileState extends State<ViewProfile> {
                                 GoodAtANDMedia(height, width, context,
                                     mediaStrings, strings),
                                 profilelists(height, width, context,
+                                    selectedStringModel, 'Activity', 5),
+                                profilelists(height, width, context,
                                     selectedStringModel, 'Experiance', 0),
                                 profilelists(height, width, context,
                                     selectedStringModel, 'Education', 1),
@@ -440,6 +443,9 @@ class _ViewProfileState extends State<ViewProfile> {
       case 4:
         length = selectedStringModel.LanguagesitemList.length;
         break;
+      case 5:
+        length = 0;
+        break;
     }
     List<String> editlist = [
       'experianceseditpage',
@@ -472,111 +478,123 @@ class _ViewProfileState extends State<ViewProfile> {
                 ),
               ),
               const Spacer(),
-              IconButton(
-                icon: const Icon(Icons.add),
-                onPressed: () {
-                  Navigator.pushNamed(context, addlist[listnum]);
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.pushNamed(context, editlist[listnum]);
-                },
-              ),
+              if (listnum != 5)
+                IconButton(
+                  icon: const Icon(Icons.add),
+                  onPressed: () {
+                    Navigator.pushNamed(context, addlist[listnum]);
+                  },
+                ),
+              if (listnum != 5)
+                IconButton(
+                  icon: const Icon(Icons.edit),
+                  onPressed: () {
+                    Navigator.pushNamed(context, editlist[listnum]);
+                  },
+                ),
             ],
           ),
           SizedBox(
             height: height * 5,
           ),
-          for (int i = 0; i < length!; i++)
-            if (showAllList[listnum] || (i < limit))
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (listnum == 0)
-                    ExprianceItem(
-                      title: selectedStringModel.ExperianceitemList[i].title,
-                      companyname:
-                          selectedStringModel.ExperianceitemList[i].companyname,
-                      emplname:
-                          selectedStringModel.ExperianceitemList[i].emplname,
-                      location:
-                          selectedStringModel.ExperianceitemList[i].location,
-                      enddate:
-                          selectedStringModel.ExperianceitemList[i].enddate,
-                      startdate:
-                          selectedStringModel.ExperianceitemList[i].startdate,
-                    )
-                  else if (listnum == 1)
-                    EducationItem(
-                      school: selectedStringModel.EducationItemList[i].school,
-                      fieldofstudy:
-                          selectedStringModel.EducationItemList[i].fieldofstudy,
-                      degree: selectedStringModel.EducationItemList[i].degree,
-                      enddate: selectedStringModel.EducationItemList[i].enddate,
-                      startdate:
-                          selectedStringModel.EducationItemList[i].startdate,
-                    )
-                  else if (listnum == 2)
-                    LisAndCeltItem(
-                        name: selectedStringModel.LisitemList[i].name,
-                        issorg: selectedStringModel.LisitemList[i].issorg,
-                        url: selectedStringModel.LisitemList[i].url,
-                        date: selectedStringModel.LisitemList[i].date)
-                  else if (listnum == 3)
-                    SkillsItem(
-                        skil: selectedStringModel.SkillsitemList[i].skil,
-                        get: selectedStringModel.SkillsitemList[i].get)
-                  else if (listnum == 4)
-                    LanguagesItem(
-                        language:
-                            selectedStringModel.LanguagesitemList[i].language,
-                        prof: selectedStringModel.LanguagesitemList[i].prof),
-                  if (i != length - 1)
-                    const Divider(), // Add a divider after each item except the last one
-                ],
-              ),
+          if (listnum == 5)
+            Padding(
+              padding: EdgeInsets.only(
+                  left: width * 28.0, top: height * 10, bottom: height * 10),
+              child: PointsCard(),
+            ),
+          if (listnum != 5)
+            for (int i = 0; i < length!; i++)
+              if (showAllList[listnum] || (i < limit))
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (listnum == 0)
+                      ExprianceItem(
+                        title: selectedStringModel.ExperianceitemList[i].title,
+                        companyname: selectedStringModel
+                            .ExperianceitemList[i].companyname,
+                        emplname:
+                            selectedStringModel.ExperianceitemList[i].emplname,
+                        location:
+                            selectedStringModel.ExperianceitemList[i].location,
+                        enddate:
+                            selectedStringModel.ExperianceitemList[i].enddate,
+                        startdate:
+                            selectedStringModel.ExperianceitemList[i].startdate,
+                      )
+                    else if (listnum == 1)
+                      EducationItem(
+                        school: selectedStringModel.EducationItemList[i].school,
+                        fieldofstudy: selectedStringModel
+                            .EducationItemList[i].fieldofstudy,
+                        degree: selectedStringModel.EducationItemList[i].degree,
+                        enddate:
+                            selectedStringModel.EducationItemList[i].enddate,
+                        startdate:
+                            selectedStringModel.EducationItemList[i].startdate,
+                      )
+                    else if (listnum == 2)
+                      LisAndCeltItem(
+                          name: selectedStringModel.LisitemList[i].name,
+                          issorg: selectedStringModel.LisitemList[i].issorg,
+                          url: selectedStringModel.LisitemList[i].url,
+                          date: selectedStringModel.LisitemList[i].date)
+                    else if (listnum == 3)
+                      SkillsItem(
+                          skil: selectedStringModel.SkillsitemList[i].skil,
+                          get: selectedStringModel.SkillsitemList[i].get)
+                    else if (listnum == 4)
+                      LanguagesItem(
+                          language:
+                              selectedStringModel.LanguagesitemList[i].language,
+                          prof: selectedStringModel.LanguagesitemList[i].prof),
+                    if (i != length - 1)
+                      const Divider(), // Add a divider after each item except the last one
+                  ],
+                ),
           SizedBox(
             width: width * 120,
           ),
-          if (((length > 4) && (listnum != 3) && (listnum != 2)) ||
-              ((length > 2) && (listnum == 2 || listnum == 3 || listnum == 4)))
-            Padding(
-              padding: EdgeInsets.only(left: (1 / width) * 10),
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    showAllList[listnum] = !showAllList[listnum];
-                  });
-                },
-                child: SizedBox(
-                  height: height * 23,
-                  width: width * 75,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        !showAllList[listnum] ? "Show All" : 'Show Less',
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 31, 33, 34),
-                            fontSize: 12),
-                      ),
-                      SizedBox(
-                        width: width * 2,
-                      ),
-                      Icon(
-                        !showAllList[listnum]
-                            ? Icons.arrow_forward_outlined
-                            : Icons.arrow_back_outlined,
-                        size: width * 15,
-                      )
-                    ],
+          if (listnum != 5)
+            if (((length! > 4) && (listnum != 3) && (listnum != 2)) ||
+                ((length > 2) &&
+                    (listnum == 2 || listnum == 3 || listnum == 4)))
+              Padding(
+                padding: EdgeInsets.only(left: (1 / width) * 10),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      showAllList[listnum] = !showAllList[listnum];
+                    });
+                  },
+                  child: SizedBox(
+                    height: height * 23,
+                    width: width * 75,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          !showAllList[listnum] ? "Show All" : 'Show Less',
+                          style: const TextStyle(
+                              color: Color.fromARGB(255, 31, 33, 34),
+                              fontSize: 12),
+                        ),
+                        SizedBox(
+                          width: width * 2,
+                        ),
+                        Icon(
+                          !showAllList[listnum]
+                              ? Icons.arrow_forward_outlined
+                              : Icons.arrow_back_outlined,
+                          size: width * 15,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
         ],
       ),
     );

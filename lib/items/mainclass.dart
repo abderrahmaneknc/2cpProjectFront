@@ -1,17 +1,35 @@
 import 'package:flutter/foundation.dart';
+
 import 'package:prj/items/exprienceitemsclass.dart';
+import 'package:prj/items/languageitem.dart';
 import 'package:prj/items/languagesclass.dart';
 import 'package:prj/items/lissclass.dart';
+import 'package:prj/items/saveditem.dart';
 
 import 'educationitemclass.dart';
 import 'skillsclass.dart';
 
 class MainClass extends ChangeNotifier {
+  List<SavedItem> SavedBlogs = [
+    SavedItem(title1: 'lolo', title2: 'nono', timestamp: ''),
+    SavedItem(title1: 'lolo', title2: 'nono', timestamp: ''),
+    SavedItem(title1: 'lolo', title2: 'nono', timestamp: ''),
+    SavedItem(title1: 'lolo', title2: 'nono', timestamp: ''),
+    SavedItem(title1: 'lolo', title2: 'nono', timestamp: ''),
+    SavedItem(title1: 'lolo', title2: 'nono', timestamp: ''),
+    SavedItem(title1: 'lolo', title2: 'nono', timestamp: '')
+  ];
   List<String> selectedStrings = [];
   List<String> trasnforedStrings = [];
-  List<LanguagesClass> LanguagesitemList = [];
-  List<SkillsClass> SkillsitemList = [];
-  List<LissClass> LisitemList = [];
+  List<LanguagesClass> LanguagesitemList = [
+    LanguagesClass('ENGLISH', 'My profecien')
+  ];
+  List<SkillsClass> SkillsitemList = [
+    SkillsClass('Web Dev', 'Wehre i get it from')
+  ];
+  List<LissClass> LisitemList = [
+    LissClass('Daoud the Dev', 'ESI', 'My URL', '2 years')
+  ];
   List<ExprienceItemClass> ExperianceitemList = [
     ExprienceItemClass('ESI', 'MOhamed abdelah el mahboul', '', 'algeria',
         'nhar tnin-2017', 'b larb3a 2020'),
@@ -31,6 +49,12 @@ class MainClass extends ChangeNotifier {
   String? whatsappString;
   String? twitterString;
   String? authorString;
+  //blogs management
+  void addBlogItem(SavedItem item) {
+    SavedBlogs.add(item);
+    notifyListeners();
+  }
+
   // Skills management
   void addSkillItem(SkillsClass item) {
     SkillsitemList.add(item);
