@@ -181,7 +181,6 @@ class MyProfile extends StatelessWidget {
                             fill: Colors.white,
                             txtclr: const Color(0xFF2D3D51),
                             fnct: () {
-
                               showModalBottomSheet(
                                 backgroundColor: Colors.transparent,
                                 elevation: 0,
@@ -250,7 +249,7 @@ class MyProfile extends StatelessWidget {
                             fill: const Color(0xFF2D3D51),
                             txtclr: Colors.white,
                             fnct: () {
-                              Navigator.pushNamed(context, 'signUp');
+                              showSignOutDialog(context);
                             },
                           ),
                         ),
@@ -303,4 +302,115 @@ class NotifIcon extends StatelessWidget {
       ),
     );
   }
+}
+
+void showSignOutDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+              25.0), // Adjust border radius of the dialog itself
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(
+              25.0), // Border radius of the container inside the dialog
+          child: Container(
+            color: Color(0xFFFBFBFB),
+            padding: EdgeInsets.only(top: 20.0, left: 16, right: 16),
+            height: 160,
+            width: 270,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const Text(
+                  'Sign out?',
+                  style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
+                    height: 0.9,
+                    fontSize: 16,
+                    color: Color(0xFF2D3D51),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'Are you sure want to sign out?',
+                  style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
+                    fontSize: 12,
+                    color: Colors.grey[500],
+                  ),
+                ),
+                SizedBox(height: 18.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          side: const BorderSide(
+                            style: BorderStyle.solid,
+                            color: Color(0xFF2D3D51),
+                          ),
+                        ),
+                        minimumSize: Size(116, 40), // Adjusted size
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                            vertical: 10.0), // Adjusted padding
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        'cancel',
+                        style: const TextStyle(
+                          color: Color(0xFF2D3D51),
+                          fontFamily: "AeonikTRIAL",
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF2D3D51),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          side: const BorderSide(
+                            style: BorderStyle.solid,
+                            color: Color(0xFF2D3D51),
+                          ),
+                        ),
+                        minimumSize: Size(116, 40), // Adjusted size
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                            vertical: 10.0), // Adjusted padding
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'signIn');
+                      },
+                      child: Text(
+                        'Log Out',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontFamily: "AeonikTRIAL",
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    },
+  );
 }
