@@ -407,7 +407,9 @@ class _NonUserProfileState extends State<NonUserProfile> {
             Padding(
               padding: EdgeInsets.only(
                   left: width * 28.0, top: height * 10, bottom: height * 10),
-              child: PointsCard(),
+              child: PointsCard(
+                colorr: const Color(0xFF2D3D51),
+              ),
             ),
           if (listnum != 5)
             for (int i = 0; i < length!; i++)

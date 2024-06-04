@@ -54,7 +54,9 @@ class RecentActivity extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              PointsCard(),
+              PointsCard(
+                colorr: const Color(0xFF4A85CE),
+              ),
             ],
           ),
         ),
