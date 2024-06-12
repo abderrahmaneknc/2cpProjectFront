@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import '../items/educationitem.dart';
 import '../items/licenssesandceltitem.dart';
 import '../items/mainclass.dart';
+import 'profilrDialogue.dart';
 
 class NonUserProfile extends StatefulWidget {
   NonUserProfile({super.key});
@@ -121,7 +122,7 @@ class _NonUserProfileState extends State<NonUserProfile> {
                   top: 91,
                   left: width * 130,
                   child: CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.grey,
                     radius: 45 * width,
                     child: CircleAvatar(
                       backgroundImage: AssetImage(
@@ -523,4 +524,153 @@ class MediaItem extends StatelessWidget {
       ),
     );
   }
+}
+
+class NotifIcon extends StatelessWidget {
+  const NotifIcon({
+    super.key,
+    required this.height,
+    required this.width,
+  });
+
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return ProfileDialogue(
+              s1: 'Support our brilliant',
+              s2: 'repport',
+            );
+          },
+        );
+      },
+      child: SizedBox(
+        height: 24 * height,
+        width: 24 * width,
+        child: Image.asset(
+          'assets/Group 309.png',
+          fit: BoxFit.contain,
+          height: 24 * height,
+          width: 22 * width,
+        ),
+      ),
+    );
+  }
+}
+
+void showSignOutDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+              25.0), // Adjust border radius of the dialog itself
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(
+              25.0), // Border radius of the container inside the dialog
+          child: Container(
+            color: Color(0xFFFBFBFB),
+            padding: EdgeInsets.only(top: 20.0, left: 16, right: 16),
+            height: 160,
+            width: 270,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const Text(
+                  'Sign out?',
+                  style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
+                    height: 0.9,
+                    fontSize: 16,
+                    color: Color(0xFF2D3D51),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'Are you sure want to sign out?',
+                  style: TextStyle(
+                    fontFamily: "AeonikTRIAL",
+                    fontSize: 12,
+                    color: Colors.grey[500],
+                  ),
+                ),
+                SizedBox(height: 18.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          side: const BorderSide(
+                            style: BorderStyle.solid,
+                            color: Color(0xFF2D3D51),
+                          ),
+                        ),
+                        minimumSize: Size(116, 40), // Adjusted size
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                            vertical: 10.0), // Adjusted padding
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        'cancel',
+                        style: const TextStyle(
+                          color: Color(0xFF2D3D51),
+                          fontFamily: "AeonikTRIAL",
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF2D3D51),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          side: const BorderSide(
+                            style: BorderStyle.solid,
+                            color: Color(0xFF2D3D51),
+                          ),
+                        ),
+                        minimumSize: Size(116, 40), // Adjusted size
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                            vertical: 10.0), // Adjusted padding
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'signIn');
+                      },
+                      child: Text(
+                        'Log Out',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontFamily: "AeonikTRIAL",
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    },
+  );
 }
